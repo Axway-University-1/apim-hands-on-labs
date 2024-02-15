@@ -116,6 +116,166 @@ Some APIs are already virtualized. The goal of this scenario is to virtualize th
 
 ### Lab solution steps
 
+#### API Virtualization
+
+The following points explain the virtualization process:
+* The “Consumer” (on the left) calls a service “Supplier” (on the right) through the “API Management” solution.
+* There are 2 connections to access the virtualized service / API
+    * From the consumer to the API Management solution: “Frontend API”
+    * From the API Management solution to the backend service: “Backend API”
+
+![Alt text](image-6.png)
+
+The virtualization of a service with the API Manager consists of creating the Backend and Frontend APIs.
+
+**Creation of the Backend API**
+
+The “Backend API” represents the API provided by the backend system in API Manager. This “Backend API” can be created manually or by importing a file that describes a service contract.  
+
+In this example, we are going to import a file in “Swagger” format provided by the Order Management System and which describes the service.
+
+* Click on the tab **API**, 
+* Select **Backend API** in the menu
+* Click **New API**
+* Select **Import Swagger API**
+
+![Alt text](image-7.png)
+
+You are currently in the menu which allows to create or reference an API that will be managed by the API Manager.  
+
+In the window **Import from**,
+* Keep the default value **Swagger definition file** in the field **Source**
+* Click **Select file** in the field **File**
+
+![Alt text](image-8.png)
+
+In the menu “File Upload” that opens:
+* Click the map **axway** -> **TechLab** -> **TechLabs Resources**  
+    Note : Depending on the screen, it is possible that you need to use the vertical scrollbar to show the map
+* In the right section, select the file **oms_v1.json** (this file describes the service)
+* Click **Open**
+
+![Alt text](image-9.png)
+
+In the window **Import from**:
+* Replace the default text with **OMSv1.1** in the field **API Name**
+* Select **API Development** in the list **Organization**
+* Click **Import**
+
+![Alt text](image-10.png)
+
+You will see a message that the API is successfully imported.
+* Click **ok**
+
+![Alt text](image-11.png)
+
+Let’s take a look at the imported API.
+
+Click the **OMSv1.1** API in the list (you may need to select “All” in the “Show” drop-down menu on the right)
+
+![Alt text](image-12.png)
+
+In the first tab **API**, you find all the general information like name, type (REST or SOAP), Base Path URL, Resource Path and a summary.
+
+![Alt text](image-13.png)
+
+The second tab “API Methods” shows all the available API Methods belonging to the API:
+* Click **API Methods**. The OMS API provides two methods **read** and **submit**.
+
+![Alt text](image-14.png)
+
+In the next steps, we will use the **read** method to get details of an order.
+
+**Creation of a public _Frontend_ API**
+
+The public API allows to define the way that the internal resource (“Backend” API) will be exposed so that it can be consumed.
+
+Open the administration console of the API Manager (if you are disconnected, check the instructions in section 3.3)
+* Select the tab **API**
+* Select the sub-tab **Frontend API**
+* Click **New API**
+* Select **New API from backend API**
+
+![Alt text](image-15.png)
+
+* Select **OMSv1 1.0** in the list
+* Click **OK**
+
+![Alt text](image-16.png)
+
+You will now see a form that allows you to create the public API.
+
+In the tab “Inbound”,
+* Select **Pass Through** in the field **Inbound Security**. This allows you to verify if the API is working without having to manage access rights. We will change it later.
+
+![Alt text](image-17.png)
+
+A configuration window **Pass Through Device** appears.
+* Keep the default value and click **OK**
+
+![Alt text](image-18.png)
+
+* Click **Save**
+
+![Alt text](image-19.png)
+
+The API is now ready to be tested.
+* Open a new tab in Firefox (blue “+” button)
+* Enter the URL: `https://api-env.demo.axway.com:8065/mockup/oms/v1/order/123123`
+* Hit enter on the keyboard 
+
+![Alt text](image-20.png)
+
+The resource is consumed and returns a value. it works!
+
+#### Publishing the API
+
+Now that the API has been defined and tested, it can be published.
+
+As you’ve noticed, the virtualization of an API is simple and fast.
+Some additional steps are required to allow this API to be shared with the application developers.
+* Change the authentication
+* Update the documentation
+* Change the status of the API
+* Share the API with the partners
+* Put quotas in place
+
+Let’s go back to the “Frontend API” to change the authentication mechanism:
+* Go back to the page **Axway API Manager**
+* Select **Frontend API** in the menu **API**
+* Type oms in filter API to find it easily
+
+![Alt text](image-21.png)
+
+* Click **OMSv1.1**
+
+![Alt text](image-22.png)
+
+ In the “Inbound” tab,  
+ * Select **API Key** for the field **Inbound security**, to indicate that this resource requires an API key
+
+ ![Alt text](image-23.png)
+
+ In a new window, “API Key Device” appears:
+
+ ![Alt text](image-24.png)
+
+ * Click **OK** (Leave the default options, the API key is passed in an http header)
+
+Now we will complete information related to this API. 
+* Click the **API** tab.
+* Enter **Order Management System** in the field **API Summary**
+
+![Alt text](image-25.png)
+
+* Click **Add image**
+
+![Alt text](image-26.png)
+
+
+
+
+
 
 
 ## Summary
