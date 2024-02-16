@@ -27,10 +27,8 @@ $hr-border-color: #eff0f1 !default;
   margin-right: auto;
 }
 
-#main {
-  
-  padding: 0 20px 40px;
- 
+.page {
+  width: calc(100% - #{$right-sidebar-width-narrow});
 }
 
 @import 'jekyll-theme-cayman';
