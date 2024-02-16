@@ -533,6 +533,67 @@ Gabriel wishes to get information on the GET method:
 
 Looking at the description of the API method, an API key is required. The next step consists of creating one.
 
+The creation of an API key is done through the creation of an “Application”. An “Application” represents a set of API usage rights for the final application (e.g. a mobile application)
+
+* Click on the menu **Applications**
+
+![Alt text](image-62.png)
+
+* Click **Create application**
+* Enter **Gabriel’s shop** in the field **Application name** 
+* Check **Enable application** to activate the application
+* On the bottom, in the table **Select APIs**, check the box corresponding to **OMSv1.1**
+* Click **Next**
+
+![Alt text](image-63.png)
+
+Now we will continue with the generation of authentication elements.
+
+![Alt text](image-64.png)
+
+* Scroll down to the authentication section
+* Under **API KEYS**, click **Generate**
+
+An API Key is generated:
+
+![Alt text](image-65.png)
+
+Click on **Save**
+
+![Alt text](image-66.png)
+
+It is now time to test the API.
+* Click on the menu **APIs**
+* In the methods section for the **OMSv1.1** API, click the drop-down selection for **Security method** and select the **Gabriel’s shop** key.
+
+![Alt text](image-67.png)
+
+You can now test the GET method in of the OMSv1 API. 
+* Click **Get order** 
+* Click on **Try it out**
+
+![Alt text](image-68.png)
+
+* Enter a random value (e.g.123123) in the `orderId` field
+* Click **Execute**
+
+![Alt text](image-69.png)
+
+It works, you have a successful response! 
+
+![Alt text](image-70.png)
+
+### 5.4.1. Monitoring
+
+Gabriel can also check details on the consumption of his application with the embedded monitoring.
+* Click **APIs** 
+* Click **Documentation** link for **OMSv1.1**
+* Click on **Usage**
+
+
+Gabriel can access all his applications and select search criteria: per application, API, time. For now, he is only testing his app, but in the future, he hopes to have a lot of users for his new application.
+
+![Alt text](image-71.png)
 
 
 
@@ -542,7 +603,7 @@ Looking at the description of the API method, an API key is required. The next s
 
 
 
-## Summary
+## 6. Summary
 
 The API Manager is an easy to use interface to
 * Virtualize APIs in just a few steps
