@@ -593,7 +593,7 @@ Gabriel can also check details on the consumption of his application with the em
 
 Gabriel can access all his applications and select search criteria: per application, API, time. For now, he is only testing his app, but in the future, he hopes to have a lot of users for his new application.
 
-![Alt text](image-71.png)
+![Alt-text](image-71.png)
 
 
 
