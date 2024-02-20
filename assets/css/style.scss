@@ -27,7 +27,11 @@ img {
   margin-right: auto;
 }
 
-$content-width: 100%;
+.main-content {
+    width: 90%;
+    margin: 0 auto; /* This centers the content */
+}
+
 
 
 @import 'jekyll-theme-cayman';
