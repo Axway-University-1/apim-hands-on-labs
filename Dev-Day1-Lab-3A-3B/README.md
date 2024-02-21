@@ -75,12 +75,12 @@ Gerard Lambert needs your expert knowledge to put a Portal in place that allows 
 
 If you are disconnected, click on the username “Axway”:
 
- ![Alt text](image005.png)
+ ![Alt text](images/image005.png)
 
 Enter “axway” in the field “Password”.
 Click on the button “Unlock” 
  
-![Alt text](image006.png)
+![Alt text](images/image006.png)
 
 #### 4.2. Start Server Components
 If products are not started (you can check with the command “statusAll” anywhere from a terminal), double click the following desktop shortcut:
