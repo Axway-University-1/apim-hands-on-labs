@@ -75,19 +75,19 @@ Gerard Lambert needs your expert knowledge to put a Portal in place that allows 
 
 If you are disconnected, click on the username “Axway”:
 
- ![Alt text](image.png)
+ ![Alt text](image005.png)
 
 Enter “axway” in the field “Password”.
 Click on the button “Unlock” 
  
-![Alt text](image-1.png){:centered}
+![Alt text](image006.png)
 
 #### 4.2. Start Server Components
 If products are not started (you can check with the command “statusAll” anywhere from a terminal), double click the following desktop shortcut:
 * “Start API Management”
 * “Start Backend Services”
 
-![Alt text](image-2.png)
+![Alt text](images/image007.png)
 
 
 
@@ -96,11 +96,11 @@ Connect to the API Manager:
 
 * Start “Firefox” by double-clicking the icon on the desktop:
 
-![Alt text](image-3.png)
+![Alt text](images/image008.png)
 
 * Click on the shortcut “API Manager” which is available in Firefox (URL: “https://api-env.demo.axway.com:8075/”).
  
-![Alt text](image-4.png)
+![Alt text](images/image009.png)
 
 Login as administrator.
 Enter the following information in the login screen:
@@ -110,9 +110,13 @@ Enter the following information in the login screen:
 * Click on the tab “API”
 
 
-Some APIs are already virtualized. The goal of this scenario is to virtualize the Order Management System (OMS) of the company. 
 
- ![Alt text](image-5.png)
+
+ ![Alt text](images/image010.png)
+
+ Some APIs are already virtualized. The goal of this scenario is to virtualize the Order Management System (OMS) of the company. 
+
+  ![Alt text](images/image011.png)
 
 ## 5 Lab solution steps
 
@@ -124,7 +128,7 @@ The following points explain the virtualization process:
     * From the consumer to the API Management solution: “Frontend API”
     * From the API Management solution to the backend service: “Backend API”
 
-![Alt text](image-6.png)
+![Alt text](images/image013.png)
 
 The virtualization of a service with the API Manager consists of creating the Backend and Frontend APIs.
 
@@ -139,7 +143,7 @@ In this example, we are going to import a file in “Swagger” format provided 
 * Click **New API**
 * Select **Import Swagger API**
 
-![Alt text](image-7.png)
+![Alt text](images/image014.png)
 
 You are currently in the menu which allows to create or reference an API that will be managed by the API Manager.  
 
@@ -147,7 +151,7 @@ In the window **Import from**,
 * Keep the default value **Swagger definition file** in the field **Source**
 * Click **Select file** in the field **File**
 
-![Alt text](image-8.png)
+![Alt text](images/image015.png)
 
 In the menu “File Upload” that opens:
 * Click the map **axway** -> **TechLab** -> **TechLabs Resources**  
@@ -155,34 +159,34 @@ In the menu “File Upload” that opens:
 * In the right section, select the file **oms_v1.json** (this file describes the service)
 * Click **Open**
 
-![Alt text](image-9.png)
+![Alt text](images/image016.png)
 
 In the window **Import from**:
 * Replace the default text with **OMSv1.1** in the field **API Name**
 * Select **API Development** in the list **Organization**
 * Click **Import**
 
-![Alt text](image-10.png)
+![Alt text](images/image017.png)
 
 You will see a message that the API is successfully imported.
 * Click **ok**
 
-![Alt text](image-11.png)
+![Alt text](images/image018.png)
 
 Let’s take a look at the imported API.
 
 Click the **OMSv1.1** API in the list (you may need to select “All” in the “Show” drop-down menu on the right)
 
-![Alt text](image-12.png)
+![Alt text](images/image019.png)
 
 In the first tab **API**, you find all the general information like name, type (REST or SOAP), Base Path URL, Resource Path and a summary.
 
-![Alt text](image-13.png)
+![Alt text](images/image020.png)
 
 The second tab “API Methods” shows all the available API Methods belonging to the API:
 * Click **API Methods**. The OMS API provides two methods **read** and **submit**.
 
-![Alt text](image-14.png)
+![Alt text](images/image021.png)
 
 In the next steps, we will use the **read** method to get details of an order.
 
@@ -196,35 +200,35 @@ Open the administration console of the API Manager (if you are disconnected, che
 * Click **New API**
 * Select **New API from backend API**
 
-![Alt text](image-15.png)
+![Alt text](images/image022.png)
 
 * Select **OMSv1 1.0** in the list
 * Click **OK**
 
-![Alt text](image-16.png)
+![Alt text](images/image023.png)
 
 You will now see a form that allows you to create the public API.
 
 In the tab “Inbound”,
 * Select **Pass Through** in the field **Inbound Security**. This allows you to verify if the API is working without having to manage access rights. We will change it later.
 
-![Alt text](image-17.png)
+![Alt text](images/image024.png)
 
 A configuration window **Pass Through Device** appears.
 * Keep the default value and click **OK**
 
-![Alt text](image-18.png)
+![Alt text](images/image025.png)
 
 * Click **Save**
 
-![Alt text](image-19.png)
+![Alt text](images/image026.png)
 
 The API is now ready to be tested.
 * Open a new tab in Firefox (blue “+” button)
 * Enter the URL: `https://api-env.demo.axway.com:8065/mockup/oms/v1/order/123123`
 * Hit enter on the keyboard 
 
-![Alt text](image-20.png)
+![Alt text](images/image027.png)
 
 The resource is consumed and returns a value. it works!
 
@@ -245,20 +249,20 @@ Let’s go back to the “Frontend API” to change the authentication mechanism
 * Select **Frontend API** in the menu **API**
 * Type oms in filter API to find it easily
 
-![Alt text](image-21.png)
+![Alt text](images/image028.png)
 
 * Click **OMSv1.1**
 
-![Alt text](image-22.png)
+![Alt text](images/image029.png)
 
  In the “Inbound” tab,  
  * Select **API Key** for the field **Inbound security**, to indicate that this resource requires an API key
 
- ![Alt text](image-23.png)
+ ![Alt text](images/image030.png)
 
  In a new window, “API Key Device” appears:
 
- ![Alt text](image-24.png)
+ ![Alt text](images/image031.png)
 
  * Click **OK** (Leave the default options, the API key is passed in an http header)
 
@@ -266,44 +270,44 @@ Now we will complete information related to this API.
 * Click the **API** tab.
 * Enter **Order Management System** in the field **API Summary**
 
-![Alt text](image-25.png)
+![Alt text](images/image032.png)
 
 * Click **Add image**
 
-![Alt text](image-26.png)
+![Alt text](images/image033.png)
 
 The menu **File Upload** opens:
 * Click **Axway -> TechLab -> TechLabs Resources**
 * Select **OMS.jpg**
 * Click **Open**
 
-![Alt text](image-27.png)
+![Alt text](images/image034.png)
 
 You should have the following screen:
 
-![Alt text](image-28.png)
+![Alt text](images/image035.png)
 
 Tags allow application developers to search for APIs in the API Catalog. Let’s add one:
 * At the bottom of the tab **API**, in the section **Tags**, create a new tag by clicking **“+”**  
 **Note:** You may need to scroll down to see **Tags**
 
-![Alt text](image-29.png)
+![Alt text](images/image036.png)
 
 * Enter **Type** in the field **Tag** 
 * Enter **Corporate OMS** in the field **Values**
 
-![Alt text](image-30.png)
+![Alt text](images/image037.png)
 
 The update of the **Frontend API** is now finished. 
 
 * Click **Save** at the top of the page
 
-![Alt text](image-31.png)
+![Alt text](images/image038.png)
 
 The last step consists of publishing the API from **Manage frontend API**:
 * Check the box next to the **OMSv1.1** API
 
-![Alt text](image-32.png)
+![Alt text](images/image039.png)
 
 * In the top menu, click **Manage selected**
 * Select **Publish**
@@ -311,11 +315,11 @@ The last step consists of publishing the API from **Manage frontend API**:
 Leave the default values in the window **Publish API** that pops ups:
 * Click **OK**
 
-![Alt text](image-33.png)
+![Alt text](images/image040.png)
 
 The status of the API becomes **Published**. Your API is now published!
 
-![Alt text](image-34.png)
+![Alt text](images/image041.png)
 
 Every API belongs to an organization. In the current example, **OMSv1** belongs to the organization **API Development**. This organization is only for internal developers.
 
@@ -323,7 +327,7 @@ To make the **OMSv1** API available in the **Partners** organization, we will gr
 * Select a check box next to the **OMSv1** API in the **Manage frontend API** screen
 * Click **Manage selected** in the top menu
 
-![Alt text](image-35.png)
+![Alt text](images/image042.png)
 
 * Select **Grant access**
 
@@ -333,12 +337,12 @@ A new window **Grant API access** appears:
 * Select **Partners**
 * Click **OK**
 
-![Alt text](image-36.png)
+![Alt text](images/image043.png)
 
 A confirmation window “Grant access” appears:
 * Click **ok**
 
-![Alt text](image-37.png)
+![Alt text](images/image044.png)
 
 
 Now we will set quota to protect our backend servers and allocate resources between the applications. We will configure two types of quota:
@@ -350,39 +354,39 @@ To limit the number of transactions on a system level (100 transactions per seco
 * Click **Default Quotas**
 * Click **System**
 
-![Alt text](image-38.png)
+![Alt text](images/image046.png)
 
 * Click **Add API**
 * In the list, select **OMSv1.1** (you may start typing in the “Filter” text box for quick selection of an API)
 
-![Alt text](image-39.png)
+![Alt text](images/image045.png)
 
 * Set the number of messages as **100**
 * Set the number of seconds as **1**
 
 Note: if these 2 values are not entered, the orange button indicates that there are still invalid fields present.
 
-![Alt text](image-40.png)
+![Alt text](images/image047.png)
 
 
 * Click outside the field and click **Save**
 
-![Alt text](image-41.png)
+![Alt text](images/image048.png)
 
 To limit the number of transactions per application (In our case, a transaction every 3 seconds):
 * Click **Application Default**
 
-![Alt text](image-42.png)
+![Alt text](images/image049.png)
 
 * Click **Add API**
 * Select **OMSv1**
 
-![Alt text](image-43.png)
+![Alt text](images/image050.png)
 
 * Set the number of messages as “1” and the number of seconds as “3”
 * Click outside the field and click **Save**
 
-![Alt text](image-44.png)
+![Alt text](images/image051.png)
 
 This configuration allows the API Manager to apply the following quota:
 * The total amount of calls to the OMSv1 API, for all methods and all consumers, is limited to 100 messages per second. This prevents an overload of the backend system.
@@ -402,18 +406,18 @@ Log out as the **apiadmin** user:
 * Click on the menu at the top right (cog wheel)
 * Click **Sign Out**
 
-![Alt text](image-45.png)
+![Alt text](images/image052.png)
 
 A sign-in window appears:
 * Enter **renee** as **Username** 
 * Enter **renee** in **Password**
 * Click **Sign in**
 
-![Alt text](image-46.png)
+![Alt text](images/image053.png)
 
 * Click on the menu **Clients**
 
-![Alt text](image-47.png)
+![Alt text](images/image054.png)
 
 * Click **Application Developers**.  
     * You can notice that Renée is member of the organization. She will provide a registration code to new developers so that they can enroll in the **Partners** organization. They will enroll using the subscription mechanism of the API Manager:
@@ -422,25 +426,25 @@ A sign-in window appears:
 
 Renée manages the organization, the APIs, the users and the applications that we will see in the following exercise.
 
-![Alt text](image-48.png)
+![Alt text](images/image055.png)
 
-![Alt text](image-49.png)
+![Alt text](images/image056.png)
 
 The available APIs are listed for this organization. We can see the API “OMSv1.1”.  
 **Note:** You may need to scroll down to see the APIs.
 
-![Alt text](image-50.png)
+![Alt text](images/image057.png)
 
 Now, we need to create the registration codes that allows application developers to enroll automatically.
 
 * Click **Generate code** in the menu **Registration Codes** with default values selected
 * In the window that opens, click **Generate**
 
-![Alt text](image-51.png)
+![Alt text](images/image058.png)
 
 This action creates an auto registration code, as it can be seen in the example below. This code is valid for 10 user registrations over a period of one month (here by example the 29th of June 2019). Past this date, the code will no longer be valid.
 
-![Alt text](image-52.png)
+![Alt text](images/image059.png)
 
 Click in the code box, select all, copy and paste your code somewhere. We will need it later.
 
@@ -459,11 +463,11 @@ Gabriel connects using Firefox:
 * Open a new tab in Firefox (blue “+” button)
 * Click on the “Portal” shortcut available in Firefox (URL: `https://api-env.demo.axway.com`)
 
-![Alt text](image-53.png)
+![Alt text](images/image060.png)
 
 The following screen opens:
 
-![Alt text](image-54.png)
+![Alt text](images/image061.png)
 
 * Click **Sign In**
 
@@ -478,9 +482,10 @@ In the registration screen of the API Portal:
 * Accept the Terms & Conditions and Privacy Policy by checking the boxes
 * Click **Sign up** to register
 
+![Alt text](images/image063.png)
 You will see a message on the top.
 
-![Alt text](image-55.png)
+![Alt text](images/image065.png)
 
 The message indicates that you will receive an activation email for the account. You will consult your email to finalize your registration in the API Portal.
 
@@ -491,16 +496,16 @@ You will use the Webmail interface to read the emails of Gabriel:
 * Enter **gabriel** in the field **Password**
 * Click on the front arrow or press Enter 
 
-![Alt text](image-56.png)
+![Alt text](images/image066.png)
 
 In the inbox, you see a new email:
 * Click on the mail with the subject: “Registration Request”
 
-![Alt text](image-57.png)
+![Alt text](images/image067.png)
 
 * Click the **Activate Account** link to complete the registration process.
 
-![Alt text](image-58.png)
+![Alt text](images/image068.png)
 
 Your account is activated
 
@@ -509,7 +514,7 @@ Connect to the API Portal:
 * Enter **Techlabs99*** in the field **Password**
 * Click **Sign In**
 
-![Alt text](image-59.png)
+![Alt text](images/image069.png)
 
 As you may have noticed, an application developer has fewer rights than an organization administrator or an administrator of the API Manager. The application developer uses the API Portal to:
 * Look for APIs and check their documentation: **API Catalog**
@@ -520,13 +525,14 @@ First, let’s access the API catalog:
 * The menu API Catalog should already be open. Click **APIs** if it is not the case.
 * Click the **Documentation** link in **OMSv1.1** for more details
 
-![Alt text](image-60.png)
+![Alt text](images/image070.png)
 
 The documentation allows an application developer to discover the functionality of an API.
 
 The service contract of an API is available in the API Portal in Swagger 2.0 format. You can find this in the **Methods** tab.
 
-![Alt text](image-61.png)
+
+![Alt text](images/image071.png)
 
 Gabriel wishes to get information on the GET method:
 * Click **Get order**  
@@ -537,7 +543,7 @@ The creation of an API key is done through the creation of an “Application”.
 
 * Click on the menu **Applications**
 
-![Alt text](image-62.png)
+![Alt text](images/image072.png)
 
 * Click **Create application**
 * Enter **Gabriel’s shop** in the field **Application name** 
@@ -545,43 +551,43 @@ The creation of an API key is done through the creation of an “Application”.
 * On the bottom, in the table **Select APIs**, check the box corresponding to **OMSv1.1**
 * Click **Next**
 
-![Alt text](image-63.png)
+![Alt text](images/image073.png)
 
 Now we will continue with the generation of authentication elements.
 
-![Alt text](image-64.png)
+![Alt text](images/image074.png)
 
 * Scroll down to the authentication section
 * Under **API KEYS**, click **Generate**
 
 An API Key is generated:
 
-![Alt text](image-65.png)
+![Alt text](images/image075.png)
 
 Click on **Save**
 
-![Alt text](image-66.png)
+![Alt text](images/image076.png)
 
 It is now time to test the API.
 * Click on the menu **APIs**
 * In the methods section for the **OMSv1.1** API, click the drop-down selection for **Security method** and select the **Gabriel’s shop** key.
 
-![Alt text](image-67.png)
+![Alt text](images/image077.png)
 
 You can now test the GET method in of the OMSv1 API. 
 * Click **Get order** 
 * Click on **Try it out**
 
-![Alt text](image-68.png)
+![Alt text](images/image078.png)
 
 * Enter a random value (e.g.123123) in the `orderId` field
 * Click **Execute**
 
-![Alt text](image-69.png)
+![Alt text](images/image079.png)
 
 It works, you have a successful response! 
 
-![Alt text](image-70.png)
+![Alt text](images/image080.png)
 
 ### 5.4.1. Monitoring
 
@@ -593,7 +599,7 @@ Gabriel can also check details on the consumption of his application with the em
 
 Gabriel can access all his applications and select search criteria: per application, API, time. For now, he is only testing his app, but in the future, he hopes to have a lot of users for his new application.
 
-![Alt-text](image-71.png)
+![Alt-text](images/image081.png)
 
 
 
