@@ -1,7 +1,7 @@
 # API Testing
 
 
-In this lab, you will perform some tasks that will help you to get yourself familiar with API testing using API Manager and API Portal. 
+In this lab, you will perform some tasks that will help you to get familiar with API testing using API Manager and API Portal. You will also be introduced to some other common and basic ways to test the API.
 
 
 ## Test from API Management interfaces
@@ -10,7 +10,7 @@ In this lab, you will perform some tasks that will help you to get yourself fami
 
 StockQuote is a trading API providing the value of a company stock
 
-**Task**: Test the GET method of Stockquote, for the company Google, meaning with parameter symbol = GOOG. Get a positive response
+**Task**: Test the GET method of Stockquote, for the company Google, meaning with parameter `symbol = GOOG`. Get a positive response
 * Note : Stockquote is running on the Backend Server, backend services must be started
 
 #### With API Portal
@@ -28,7 +28,7 @@ StockQuote is a trading API providing the value of a company stock
 **Task**: Test the Stockquote API with Postman.
 
 * Open Postman 
-* Invoke https://api-env.demo.axway.com:8065/stockquote/rest?symbol=GOOG 
+* Invoke `https://api-env.demo.axway.com:8065/stockquote/rest?symbol=GOOG`
 * Set the header `KeyId=<API key from API Manager or Portal>`
 
 ![Alt text](images/image22.png)
@@ -40,11 +40,11 @@ StockQuote is a trading API providing the value of a company stock
 The API Gateway has an API to test the connection to an API Gateway instance called healthcheck.
 
 **Task**: Test the healthcheck API with the following parameters
-* Method: GET
-* Security: HTTP
-* Host: api-env
-* Port: 8080
-* Path: healthcheck
+* **Method:** `GET`
+* **Security:** `HTTP`
+* **Host:** `api-env`
+* **Port:** `8080`
+* **Path:** `healthcheck`
 
 ## Test from the command line
 
