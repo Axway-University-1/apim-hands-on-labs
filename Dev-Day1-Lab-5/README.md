@@ -50,47 +50,47 @@ The API Gateway has an API to test the connection to an API Gateway instance cal
 
 * Syntax : `curl [options] url`
 * Options :
-    * **-X/--request HTTP verb:** GET, POST PUT, DELETE
-    * **-H/--header: header** e.g. `-H “keyId: YTphB”`
-    * **-u/--user  `<user:password>`**: send user and password over HTTP Basic
-    * **-d/--data: payload**. Prefix by @ to load a file. Use `--data-binary` if required
-    * **-k/--insecure**:  validates any HTTPS certificate
-    * **-v/-- verbose**: used for debugging purposes
+    * **-X HTTP verb:** GET, POST PUT, DELETE
+    * **-H "--header: header"** e.g. `-H “keyId: YTphB”`
+    * **-u `<user:password>`**: send user and password over HTTP Basic
+    * **-d data payload**. Prefix by @ to load a file. Use `--data-binary` if required
+    * **-k --insecure**:  validates any HTTPS certificate
+    * **-v -- verbose**: used for debugging purposes
 
-* See man curl for more info
+* Type `man curl` in the terminal for more info
 
 **Task**: Test the healthcheck API with a CURL command and the following parameters
-* Method: GET
-* Security: HTTP
-* Host: api-env
-* Port: 8080
-* Path: healthcheck
+* **Method:** GET
+* **Security:** HTTP
+* **Host:** api-env
+* **Port:** 8080
+* **Path:** healthcheck
 
 
 **Task**: Test the Stockquote API with a CURL command and the following parameters
-* Method: GET
-* Security: HTTPS
-* Host: api-env
-* Port: 8065
-* Path: /stockquote/rest
-* Parameter: symbol=GOOG
-* KeyId : get the apikey from an application in API Portal or API Manager
+* **Method:** GET
+* **Security:** HTTPS
+* **Host:** api-env
+* **Port:** 8065
+* **Path:** /stockquote/rest
+* **Parameter:** symbol=GOOG
+* **KeyId:** get the apikey from an application in API Portal or API Manager
 
 **Task**: Test the Stockpurchase API with a CURL command and the following parameters
-* Method: POST
-* Security: HTTP
-* Host: api-env
-* Port: 5080
-* Path: /mockup/stockpurchase/rest
-* Parameter: symbol=GOOG
-* Data to provide in the request body :  {“buyStockSymbol” : ”1”}
+* **Method:** POST
+* **Security:** HTTP
+* **Host:** api-env
+* **Port:** 5080
+* **Path:** /mockup/stockpurchase/rest
+* **Parameter:** symbol=GOOG
+* **Data to provide in the request body:**  {“buyStockSymbol” : ”1”}
 
 
 ## Activity troubleshooting 
 
 * Connect to API Gateway Manager to follow transactions  
-    https://api-env.demo.axway.com:8090/ with user/password : admin/changeme 
-* Look at the dashboard and see traffic overview : which are the calls?
+    `https://api-env.demo.axway.com:8090/` with user/password : `admin/changeme`
+* Look at the dashboard and see traffic overview: which are the calls?
 * Click on the messages in the graph to see transaction details
     * Click on a request and see HTTP request and response
 
@@ -102,7 +102,7 @@ The API Gateway has an API to test the connection to an API Gateway instance cal
 
 ## Test from API Management interfaces - API Portal
 
-* Connect to API Portal with anna/anna: https://api-env.demo.axway.com/
+* Connect to API Portal with `anna/anna`: `https://api-env.demo.axway.com/`
 * In Applications tab, create an application to define rights for API Stockquote called `Stockquote app`
 * Select Stockquote API and click **Next**
 
@@ -128,19 +128,19 @@ The API Gateway has an API to test the connection to an API Gateway instance cal
 
 ![Alt text](images/image31.png)
 
-* See the 200 OK result, and the response headers and body. 
+* See the `200 OK` result, and the response headers and body. 
 
-If the result is not 200 OK, check that backend services have started.
+If the result is not 200 OK, check that backend services have been started.
 
 ![Alt text](images/image32.png)
 
 ## Test from API Management interfaces - API Manager
 
-* Connect to API Manager with anna/anna: https://api-env.demo.axway.com:8075/
+* Connect to API Manager with `anna/anna`: `https://api-env.demo.axway.com:8075/`
 
 * Go to **Clients > Applications** and create a new application named  **Stockquote application**
 
-* Add API access for Stockquote by checking the checkbox
+* Add API access for **Stockquote** by checking the checkbox
 
 * Click **Create** to save the application
 
@@ -167,7 +167,7 @@ If the result is not 200 OK, check that backend services have started.
 
 ## Test from a browser
 
-* Type http://api-env:8080/healthcheck in a browser
+* Type `http://api-env:8080/healthcheck` in a browser
 
 ![Alt text](images/image37.png)
 
