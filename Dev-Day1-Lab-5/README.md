@@ -50,12 +50,12 @@ The API Gateway has an API to test the connection to an API Gateway instance cal
 
 * Syntax : `curl [options] url`
 * Options :
-    * -X/--request HTTP verb: GET, POST PUT, DELETE, ...
-    * -H/--header: header, e.g. -H “keyId: YTphB”. Multiple authorized
-    * -u/--user  `<user:password>`: send user and password in HTTP Basic
-    * -d/--data: payload. Prefix by @ to load a file. Use --data-binary if required
-    * -k/--insecure:  validates any HTTPS certificate
-    * -v/-- verbose: more talkative for debugging purposes
+    * **-X/--request HTTP verb:** GET, POST PUT, DELETE
+    * **-H/--header: header** e.g. `-H “keyId: YTphB”`
+    * **-u/--user  `<user:password>`**: send user and password over HTTP Basic
+    * **-d/--data: payload**. Prefix by @ to load a file. Use `--data-binary` if required
+    * **-k/--insecure**:  validates any HTTPS certificate
+    * **-v/-- verbose**: used for debugging purposes
 
 * See man curl for more info
 
