@@ -60,30 +60,30 @@ The API Gateway has an API to test the connection to an API Gateway instance cal
 * Type `man curl` in the terminal for more info
 
 **Task**: Test the healthcheck API with a CURL command and the following parameters
-* **Method:** GET
-* **Security:** HTTP
-* **Host:** api-env
-* **Port:** 8080
-* **Path:** healthcheck
+* **Method:** `GET`
+* **Security:** `HTTP`
+* **Host:** `api-env`
+* **Port:** `8080`
+* **Path:** `healthcheck`
 
 
 **Task**: Test the Stockquote API with a CURL command and the following parameters
-* **Method:** GET
-* **Security:** HTTPS
-* **Host:** api-env
-* **Port:** 8065
-* **Path:** /stockquote/rest
-* **Parameter:** symbol=GOOG
-* **KeyId:** get the apikey from an application in API Portal or API Manager
+* **Method:** `GET`
+* **Security:** `HTTPS`
+* **Host:** `api-env`
+* **Port:** `8065`
+* **Path:** `/stockquote/rest`
+* **Parameter:** `symbol=GOOG`
+* **KeyId:** `<get the apikey from an application in API Portal or API>`Manager
 
 **Task**: Test the Stockpurchase API with a CURL command and the following parameters
-* **Method:** POST
-* **Security:** HTTP
-* **Host:** api-env
-* **Port:** 5080
-* **Path:** /mockup/stockpurchase/rest
-* **Parameter:** symbol=GOOG
-* **Data to provide in the request body:**  {“buyStockSymbol” : ”1”}
+* **Method:** `POST`
+* **Security:** `HTTP`
+* **Host:** `api-env`
+* **Port:** `5080`
+* **Path:** `/mockup/stockpurchase/rest`
+* **Parameter:** `symbol=GOOG`
+* **Data to provide in the request body:**  `{“buyStockSymbol” : ”1”}`
 
 
 ## Activity troubleshooting 
