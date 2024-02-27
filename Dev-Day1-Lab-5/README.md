@@ -3,6 +3,10 @@
 
 In this lab, you will perform some tasks that will help you to get familiar with API testing using API Manager and API Portal. You will also be introduced to some other common and basic ways to test the API.
 
+## 1. Learning Objectives
+
+At the end of this lab, you will be able to 
+* Provide a bulleted list of learning objectives. Try to adhere to Bloom's taxonomy.
 
 ## Test from API Management interfaces
 
