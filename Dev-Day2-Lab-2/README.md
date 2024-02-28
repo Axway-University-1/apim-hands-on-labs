@@ -83,7 +83,155 @@ Before looking at solution in next section, try to think about what is required 
 
 * Test the new service with a curl or a web browser
 
+### Expected result
+
+* A simple service with a predefined response
+
+![Alt text](images/image35.png)
 
 ## Solution
+
+### Open QuickStart project
+
+* Open Policy Studio
+    * Double click the Policy Studio icon on the desktop
+* Open the **QuickStart** project
+    * Under **Recent Projects**, click on the **QuickStart** project
+    * Click **OK** on the **Passphrase** popup box, leaving the Passphrase blank.
+
+![Alt text](images/image36.png)
+![Alt text](images/image37.png)
+
+### Create containers and policies
+
+* Create container named **Training**
+    * Right-click on **Policies**
+    * Select **Add container** and name it **Training**
+
+* Create sub-container named **Shipping**
+    * Right-click on the new **Training** container
+    * Select **Add container** and name it **Shipping**
+
+* Create policy **ShippingMockup**
+    * Right-click on new container
+    * Select **Add policy** and name it **ShippingMockup**
+    * Leave the category and description as is
+
+![Alt text](images/image38.png)
+
+
+### Create filters
+
+* Open policy by double-clicking
+* Type `set` to search for filter `Set Message`
+* Click on **Set Message** and drag in center of policy
+* Drop it on the policy canvas
+
+![Alt text](images/image39.png)
+
+### Set message
+
+* Type content type `application/json`
+
+* Copy paste the JSON message below in **Message Body**
+```json 
+{
+ "status":"OK,
+ "deliveryDate":"Jan 1, 2021 0:00:01 AM"
+}
+```
+
+* Click on **Finish**
+
+![Alt text](images/image40.png)
+
+### Reflect message
+
+* Type **refl** to search for filter **Reflect Message**
+* Click on **Reflect Message** and drag and drop on top of filter **Set Message**
+* Drop it on top of the **Set Message** filter to link it automatically
+
+![Alt text](images/image41.png)
+
+* Set response code to `200`
+
+* Click on **Finish**
+
+![Alt text](images/image42.png)
+
+### Set as start
+
+* Select **Set Message** filter and right-click
+
+* Execute **Set as Start**
+
+![Alt text](images/image43.png)
+
+
+### Expose the service
+
+* Expose service by clicking on **Add relative path**
+
+* On new panel use the path `/supplier/delivery`
+
+* Uncheck Global policies links
+
+* Click **OK**
+
+![Alt text](images/image44.png)
+
+![Alt text](images/image45.png)
+
+### Deploy the configuration
+
+* Deploy either by
+    * Clicking on deploy button, or
+    * Using F6 shortcut
+
+![Alt text](images/image46.png)
+
+* Add default username and password: `admin/changeme`
+* Click **Next**
+
+![Alt text](images/image47.png)
+
+* Click **Next** to deploy on default group (QuickStart)
+
+![Alt text](images/image48.png)
+
+* After successful deployment, click on **Finish**
+
+![Alt text](images/image49.png)
+
+
+### Testing
+
+From your favorite browser, call the newly created API with a URL similar to the following:
+
+`http://api-env:8080/supplier/delivery?id=123123`
+
+
+
+![Alt text](images/image50.png)
+
+## Conclusion
+
+* This is a perfectly valid mockup…
+
+* … but not a good API
+    * No business logic; content is static
+    * It accepts parameters but does not check it or use it
+    * No concern about identity or protection
+    * No documentation
+
+* Keep mockup simple: main purpose is for testing
+
+* Policy Studio allows to create simple services with preconfigured filters
+You created a mockup service with just 2 filters!
+
+
+
+
+
 
 
