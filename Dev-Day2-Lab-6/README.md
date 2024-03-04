@@ -197,3 +197,8 @@ Try yourself before looking at the solution!
     * Here using path manipulation
     * And all mediation topics in general
 
+
+
+> Lab last updated: March, 2024  
+Lab last tested: March, 2024
+
