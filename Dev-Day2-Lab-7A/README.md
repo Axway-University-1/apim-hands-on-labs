@@ -102,6 +102,73 @@ This is the policy that you are going to implement:
 If you respect the quota, you will see the message `Access to service authorized`.   
 You will receive an error message, `Access to service denied`, if you are exceeding your quota.
 
+In the tree view on the left of the screen
+* Expand **Policies**
+* Right-click on the **TechLabs** container (*if it doesn’t exists Add Container “TechLabs” before adding the policy*)
+* Select **Add Policy**
+
+![Alt text](images/image013.png)
+
+In the window that appears,
+* For the **Name** field, enter `Quota System`
+* Click **OK**.
+
+![Alt text](images/image014.png)
+
+To implement quota checks, you will use a filter which reacts based on a limit of use per unit of time: **Throttling**.
+
+In the search zone, located at the right top, start entering **thro**
+
+The **Throttling** filter appears in the **Content Filtering** section
+
+* Drag and drop this filter on the main canvas
+
+![Alt text](images/image015.png)
+
+The default configuration for this filter authorizes processing one message every second.
+
+We will configure the filter to accept the processing of one message every 5 seconds.
+* Choose **Floating Time Window** as the **Rate Limit Algorithm**
+* Replace the value `1` in the **every** zone with the value `5`
+
+![Alt text](images/image016.png)
+
+* Click **Finish**.
+
+* To specify that this stage is the first in the sequence, right-click on the **Throttling** filter and select **Set as Start**
+
+![Alt text](images/image017.png)
+
+You have the following:
+
+![Alt text](images/image018.png)
+
+Now that the "Throttling" filter is in place, we will set the result of the request based on the current quota. 
+
+To do this, we will use the **Set Message** and **Reflect Message** filters.
+* The **Set Message** filter is used to initialize the format and the content of a message.
+* The **Reflect Message** filter is used to return the message of the request. 
+
+We will now set the content of the message in the eventuality that the quota is not reached
+* Start entering **Set Message** in the search bar at the top-right hand corner.
+* Select the **Set Message** filter 
+* Drag and drop this filter on the **Throttling** filter.
+
+![Alt text](images/image019.png)
+
+In the "Configure a new 'Set Message' filter" window,
+* For the "Name" field, enter "Set Message OK"
+* For the "Content-Type" field, enter "text/html"
+* For the "Message Body" field, enter 
+<html>
+	<body>
+		Access to service authorized
+	</body>
+</html>
+* Click on the "Finish" button
+
+
+
 
 
 
