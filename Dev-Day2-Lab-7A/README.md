@@ -1,5 +1,10 @@
 # Policy Studio Lab - Quota System
 
+| Average time required to complete this lab | 60 minutes |
+| ---- | ---- |
+| Lab last updated | March 2024 |
+| Lab last tested | March 2024 |
+
 In this lab, 
 
 ## Learning objectives
@@ -228,6 +233,234 @@ The **Set Response Status** filter is used to explicitly add a message in the Mo
 If this policy proceeds correctly, it will by default be considered positive (whether or not the quota is reached).
 
 However, if the quota is reached, the result of the policy must be an error situation in order to be highlighted in the Monitoring displays (logical and non-technical error). 
+
+We will therefore use the **Set Response Status** filter, to raise this error result, when the **Throttling** filter detects that the quota has been reached.
+* Start entering the policy name **Set Response Status** in the search zone in the top-right.
+* Select the **Set Response Status** filter 
+* Drag and drop this filter on top of the **Reflect Message 500** filter.
+
+![Alt text](images/image027.png)
+
+* In the **Configure a new 'Set Response Status' filter** window, 
+* For the **Name** field, enter `Set Response Status fail`
+* For the **Response Status** field, select the `Fail` radio button
+* Click on the **Finish** button
+
+![Alt text](images/image028.png)
+
+You obtain the following result:
+
+![Alt text](images/image029.png)
+
+
+For the service to be operational, the listener of the service must be defined.
+
+There is a shortcut to expose a policy to **Default Services** (an HTTP listener).
+
+Click the **Add relative path** icon at bottom of the screen:
+
+![Alt text](images/image030.png)
+
+* For the **When a request arrives that matches the path** field, enter `/TechLabs/quota`
+* Uncheck the Global policy options
+* Then click **OK**
+
+![Alt text](images/image031.png)
+
+*Note:* the created relative path can be seen in the **Default Services** listener. Path resolvers are managed from this menu.
+
+![Alt text](images/image032.png)
+
+The environment is now ready to be deployed.  
+To do this, you have two possibilities:
+* Press **F6**.
+or
+* Click on the deployment icon in the top menu  
+
+The window **Deploy** appears. You connect to the system by identifying yourself: 
+* Enter `changeme` in the field **Password**
+* Click **Next**
+
+![Alt text](images/image033.png)
+
+* In the field **Group**, select `QuickStart Group`
+* Click **Next**
+
+![Alt text](images/image034.png)
+
+* Once the configuration has been deployed, click **Finish**
+
+![Alt text](images/image035.png)
+
+#### Test the quota system
+
+* To proceed with the tests, use your Firefox browser. 
+* In the browser, enter the URL: `http://localhost:8080/TechLabs/quota`
+
+![Alt text](images/image036.png)
+
+![Alt text](images/image037.png)
+
+* Click several times on the refresh button to simulate successive requests.
+
+![Alt text](images/image038.png)
+
+**Expected result:**
+
+On the first request, the service returns a positive response. The request submitted has been accepted by the **Throttling** filter.
+
+If the number of requests is less than one every 5 seconds, the responses returned will be `Access to service authorized`.
+
+If the number of requests is greater than one every 5 seconds, the responses will be negative: `Access to service denied`.
+
+![Alt text](images/image039.png)
+
+The API Gateway Manager is the web console for the administration of the API Gateway server. It is a monitoring tool and helps API developers:
+* Open a new tab by clicking **+**, then click **API Gateway Manager** shortcut.
+
+![Alt text](images/image040.png)
+
+* If authentication is prompted,  
+Enter `admin` in the field **Username**   
+Enter `changeme` in the field **Password**
+
+![Alt text](images/image041.png)
+
+The **Dashboard** tab displays:
+* The statistics for traffic on the platform.
+* The deployment topology for nodes, instances and their associated states.
+* The top 5 most-used services on the server.
+
+The **Dashboard** tab displays the total number of messages processed by the API Gateway platform. This corresponds to the total number of clicks made to simulate calls to the **Quota System** policy.
+
+![Alt text](images/image042.png)
+
+The positive responses are listed in **Messages passed** and the negative ones listed in **Messages Failed**.
+
+The **Monitoring** tab offers:
+* A real-time view of the statistics of the API Gateway server activity.
+* These statistics are grouped into categories: System / API Services / API Methods/ Clients / Remote Hosts.
+
+![Alt text](images/image043.png)
+
+
+The **Traffic** tab is an interface dedicated to developers and administrators in order to view the details of a specific request. 
+
+In the **Traffic** tab, it is possible to identify the requests which have been accepted (`Status: 200 OK`) and those which have been rejected (`Status: 500 Internal Server Error`)
+
+![Alt text](images/image044.png)
+
+
+### Task 2: Quota system based on user authentication
+
+In this scenario, we will modify the behavior of the previously created policy.
+* If the user is not recognized by the API Gateway platform, the quotas rule is applied automatically.
+* Otherwise, the quotas rule is not applied.
+This is how the policy will look like when implemented.
+
+![Alt text](images/image045.png)
+
+#### Create a new **Authentication** policy
+
+We are going to isolate the identification part in an independent Policy. At the same time, you will test the reuse of policies.
+
+We are therefore going to create a new policy named **Authentication**. This policy will authenticate the user using basic authentication (use of an identifier / password pair) when logging in.
+* Return to the **Policy Studio** interface 
+
+* Right click on the **TechLabs" container in the Axway Policy Studio explorer, on the left-hand section of the interface.
+
+* Click on the **Add Policy**
+
+![Alt text](images/image047.png)
+
+In the window which appears, 
+* For the **Name** field, enter `Authentication`
+* Click on **OK**
+
+![Alt text](images/image048.png)
+
+The **HTTP Basic** filter is used to manage the basic user authentication.
+* In the search zone, located at the top of the right-hand column, enter **http**
+* Select the **HTTP Basic** filter
+* Drag and drop this filter on the main canvas
+
+![Alt text](images/image049.png)
+
+Using this filter, the user authentication will be performed against a user store located on the API Gateway.
+
+In the **Configure 'http Basic'** window, 
+* Select the following in the respective fields:  
+`Credential Format:` `User Name`
+`Repository Name:` `Local User Store`
+* Leave the **Allow client challenge** option checked
+* Click **Finish**
+
+![Alt text](images/image050.png)
+
+* To define the start of the Policy, right-click on the **HTTP Basic** filter and select **Set as Start**.
+
+![Alt text](images/image051.png)
+
+You obtain the following policy, which will succeed or fail depending on whether or not the identifiers provided are valid.
+
+![Alt text](images/image052.png)
+
+We are now going to return to the **Quota System** policy and use the **Authentication** policy which has just been created.
+* Click on the **Quota System** tab
+
+![Alt text](images/image053.png)
+
+* Select the **Authentication** policy in the explorer on the left.
+* Drag and drop the **Authentication** policy to the canvas.
+
+![Alt text](images/image054.png)
+
+* In the **Configure a new 'Policy Shortcut' filter** window which appears, check that the **Authentication** policy is selected.
+* Leave the default values and click **Finish**
+
+![Alt text](images/image055.png)
+
+We are now going to define the **Call 'Authentication'** filter as the start filter.
+
+* Right-click on the **Call 'Authentication'** filter and select **Set as Start** in the pop-up menu. 
+
+![Alt text](images/image056.png)
+
+* If the authentication succeeds, there are no limits to apply, and we therefore pass directly to the positive processing of the message. In the right-hand column, select the green **Success Path** arrow, corresponding to the correct execution of the filter 
+* Click on the **Call 'Authentication'** filter to position the start of the arrow, then click on the **Set message OK** filter to indicate the end of the arrow.
+
+![Alt text](images/image057.png)
+
+* In the right-hand column, select the red **Failure Path** arrow
+
+* Connect the **Call 'Authentication'** filter to the **Throttling** filter in the same way.
+
+
+![Alt text](images/image058.png)
+
+The final policy diagram should look similar to the following picture.
+
+![Alt text](images/image059.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
