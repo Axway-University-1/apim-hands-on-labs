@@ -156,16 +156,84 @@ We will now set the content of the message in the eventuality that the quota is 
 
 ![Alt text](images/image019.png)
 
-In the "Configure a new 'Set Message' filter" window,
-* For the "Name" field, enter "Set Message OK"
-* For the "Content-Type" field, enter "text/html"
-* For the "Message Body" field, enter 
+In the **Configure a new 'Set Message' filter** window,
+* For the **Name** field, enter `Set Message OK`
+* For the **Content-Type** field, enter `text/html`
+* For the **Message Body** field, enter 
+```
 <html>
 	<body>
 		Access to service authorized
 	</body>
 </html>
-* Click on the "Finish" button
+```
+* Click on the **Finish** button
+
+
+![Alt text](images/image020.png)
+
+* Start entering **Reflect Message** in the search bar in the top-right.
+    * Select the **Reflect Message** filter 
+* Drag and drop this filter on the **Set Message OK** filter.
+
+![Alt text](images/image021.png)
+
+In the **Configure a new 'Reflect Message' filter** window, 
+* For the **Name** field, add `Reflect Message 200`
+* For the **HTTP response code status** field, enter `200`
+* Click on the **Finish** button
+
+![Alt text](images/image022.png)
+
+We will now put in place the processing of an error message informing that the quota has been reached.
+* Start entering **Set Message** in the search zone in the top-right.
+* Select the **Set Message** filter 
+* Drag and drop this filter on top of the **Throttling** filter.
+
+As the **Throttling** filter already has a success path (green arrow), adding another filter will create a failure path (a red arrow).
+
+![Alt text](images/image023.png)
+
+In the **Configure a new 'Set Message' filter** window,
+* For the **Name** field, enter `Set Message KO`
+* For the **Content-Type** field, enter `text/html`
+* For the **Message Body** field, enter 
+    ```
+    <html>
+	    <body>
+		    Access to service denied
+	    </body>
+    </html>
+    ```
+* Click on the **Finish** button
+
+
+![Alt text](images/image024.png)
+
+* Start entering **Reflect Message** in the search zone in the top-right.
+* Select the **Reflect Message** filter
+* Drag and drop this filter on top of the **Set Message KO** filter.
+
+![Alt text](images/image025.png)
+
+* In the **Configure a new 'Reflect Message' filter** window, 
+* In the **Name** field, enter `Reflect Message 500`
+* In the **HTTP response code status** field, enter `500` 
+* Click on the **Finish** button
+
+![Alt text](images/image026.png)
+
+The **Set Response Status** filter is used to explicitly add a message in the Monitoring displays. 
+
+If this policy proceeds correctly, it will by default be considered positive (whether or not the quota is reached).
+
+However, if the quota is reached, the result of the policy must be an error situation in order to be highlighted in the Monitoring displays (logical and non-technical error). 
+
+
+
+
+
+
 
 
 
