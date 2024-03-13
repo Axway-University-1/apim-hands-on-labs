@@ -442,6 +442,327 @@ The final policy diagram should look similar to the following picture.
 
 ![Alt text](images/image059.png)
 
+The second version of the policy is now ready to be deployed
+* Deploy the new configuration using the **F6** key on the keyboard.
+* Use `password: changeme`
+
+#### Test the policy
+
+* In the Internet browser, enter the URL: `http://localhost:8080/TechLabs/quota`
+
+On the first request, the service returns an authentication request.
+ 
+In the "Authentication Required" window,
+* For the **User Name** field, enter `user1`
+* For the **Password** field, enter `axway`
+* Click **OK**
+
+![Alt text](images/image060.png)
+
+* Click several times on the "Firefox" refresh button to simulate successive requests.
+
+![Alt text](images/image061.png)
+
+*Expected result:*  
+As the **user1** user is included in the list of users recognized by API Gateway, the **Throttling** filter does not apply to this user. Therefore, whatever the frequency of the requests, the acknowledgements returned will always be positive.
+
+Test with an unrecognized user: test
+* Close the browser and open it again to start a new session. Alternatively, open a private window
+* In the Firefox browser, enter the URL: `http://localhost:8080/TechLabs/quota`
+* In the **Authentication Required** window, enter the following in the respective fields:  
+`User Name`: `test`
+`Password`: `test`
+* Click **OK**
+
+![Alt text](images/image062.png)
+
+* Click several times on the "Firefox" refresh button to simulate successive requests.
+
+*Expected result:*  
+As the **test** user is not included in the list of users recognized by API Gateway, the **Throttling** filter therefore applies to this user in the same way as in the previous exercise. The service returns one positive response per 5 second period, successive requests during this period will be rejected.
+
+#### Monitoring
+
+* If necessary, run the **Firefox** browser and open the **API Gateway Manager** by clicking on the corresponding link:
+* If authentication is requested, enter:  
+User Name: `admin`  
+Password: `changeme`
+* Click **OK** 
+
+![Alt text](images/image063.png)
+
+We obtain three types of messages:
+* Messages that passed
+* Messages that failed
+* Messages that caused an exception
+
+* Click on the **Traffic** tab. The activity of the server is displayed.
+
+![Alt text](images/image064.png)
+
+* Select a line for which the **status** of the request is **500 Internal Server Error**, by clicking on it.
+It is possible to consult the progress of the policy which has been implemented:
+    1.	Authentication with the **test** user - failed
+    2.	Application of the **Throttling** filter - quota exceeded
+    3.	Result of the request: Access to service denied.
+* In the lower part of the page, you can find the HTTP request and response information and the messages from a trace file that correspond to the failed request. Your screen should look similar to the following.
+
+![Alt text](images/image065.png)
+
+* Click on **Back** to return to the list of traffic
+
+* Click a line with the **status** of the request equal to **401 Authentication Required**.
+
+
+![Alt text](images/image066.png)
+
+This result corresponds to the messages for which the request has generated a **Messages caused an exception** exception. 
+
+An exception has been raised since the request sent by the browser to API Gateway did not have the username / password identification elements.
+
+This behavior is identified: during the first request, the **Quota System** policy is run twice:
+1.	FireFox requests the `api-env:8080/TechLabs/quota` service. The **HTTP Basic** filter reports the need for a login and a password. The policy ends by raising an exception.
+2.	The **Allow client challenge** option, checked by default in the **HTTP Basic** filter, authorizes FireFox to offer the default connection window. Once you have entered the login and the password, the policy is run a second time with the identification data.
+
+
+### Task 3: Quota restriction based on the membership of a group
+
+The objective is to develop the policy to take into account three levels of authorization for access to the services:
+* `Gold` level: Unlimited access;
+* `Silver` level: Access limited to 5 requests every 5 seconds;
+* `Bronze` level: 1 request every 5 seconds, default right for an unrecognized user.
+
+Close Firefox if it has not already been closed, and return to the **Policy Studio**, to the **Quota System** policy.
+
+For the requirements of the exercise, the `Gold` and `Silver` groups have been created.
+
+Here are the new elements of the policy (on the light background) that you are going to implement.
+
+![Alt text](images/image067.png)
+
+Following authentication, once the user is identified, their group must be determined. The **Check Group Membership** filter is used to check whether a user belongs to a certain group.
+* In the search zone, located at the top of the right-hand column, enter **check**.
+* Click on the **Check Group Membership** filter
+* Then click on the green arrow connecting the **Call 'Authentication'** filter to the **Set Message OK** filter
+* The **Check Group Membership** filter will then be inserted on the selected arrow.
+
+![Alt text](images/image068.png)
+
+In the **Configure a new 'Check Group Membership' filter** window, 
+* For the `Name` field, enter `Check Group Membership Gold`
+* For the `User` field, leave the pre-configured value.
+* For the `Group` field, enter `Gold`
+* Click `Finish`
+
+![Alt text](images/image069.png)
+
+
+* Select the **Check Group Membership** filter  
+Drag and drop this filter on the **Check Group Membership Gold** filter created previously. This will create an error management branch (red arrow).
+
+![Alt text](images/image070.png)
+
+In the **Configure a new 'Check Group Membership' filter** window, 
+* For the **Name** field, enter `Check Group Membership Silver`
+* For the **User** field, leave the pre-configured value.
+* For the **Group** field, enter `Silver`
+* Click **Finish**
+
+![Alt text](images/image071.png)
+
+* In the search zone, located at the top of the right-hand column, enter **set**.  
+Select the **Set Attribute Filter** filter  
+Drag and drop this filter to the **Check Group Membership Silver** filter.
+
+![Alt text](images/image072.png)
+
+The **Set Attribute Filter** filter is used to assign a value to a variable. Here we will allocate the value corresponding to the maximum number of transactions authorized per unit of time. In the **Configure a new 'Set Attribute Filter' filter** window:
+* For the **Name** field, enter `Set Attribute Limit (5)`
+* For the **Attribute Name** field, enter `Limit` (be sure to respect upper/lower case)
+* For the **Attribute Value** field, enter `5`
+* Click on **Finish**
+
+![Alt text](images/image073.png)
+
+* Select the **Set Attribute Filter** filter  
+Drag and drop this filter on the **Check Group Membership Silver** filter. This will create an error management branch (red arrow). If the requester identified does not belong to the Silver group, they form part of the Bronze group and are entitled to one request every 5 seconds.
+
+![Alt text](images/image074.png)
+
+In the **Configure a new 'Set Attribute Filter' filter** window, 
+* For the **Name** field, enter `Set Attribute Limit (1)`
+* For the **Attribute Name** field, enter `Limit` (be sure to respect upper/lower case)
+* For the **Attribute Value** field, enter `1`
+* Click **Finish**
+
+![Alt text](images/image075.png)
+
+* Select the green **Success Path** arrow.  
+Connect the **Set Attribute Filter (1)** filter to the **Throttling** filter
+
+![Alt text](images/image076.png)
+
+* Select the green **Success Path** arrow.  
+Connect the **Set Attribute Filter Limit (5)** filter to the **Throttling** filter
+
+![Alt text](images/image077.png)
+
+* Click at the top of the right-hand column on **Select** to be able to select filters on the main frame.
+* Double-click on the **Throttling** filter to open its properties window.
+* In the **Configure "Throttling"** window, change the value of the **Allow** field to `${Limit}` (be sure to respect upper/lower case).
+* Click **Finish**
+
+![Alt text](images/image078.png)
+
+
+You will move the red **Failure Path** arrow, which starts from the **Call 'Authentication'** filter, to connect it to the **Set Attribute Filter (1)** filter
+To do this:
+* Click on the red arrow connecting **Call 'Authentication'** and **Throttling** filter.  
+
+Its two ends show small black squares.
+* Select the end with the arrow, and move it to the **Set Attribute Limit (1)** filter
+* Your policy should look like the following.
+
+
+![Alt text](images/image079.png)
+
+The policy is now ready to be deployed.
+* Press the **F6** key (`password`: `changeme`).
+* Click on the **Finish** button once the deployment is completed.
+
+#### Testing
+
+For the test requirements of this exercise, we have pre-configured in our virtual machine: 
+* The following list of users
+
+![Alt text](images/image080.png)
+
+* And, the following groups
+
+![Alt text](images/image081.png)
+
+* The following users are part of the **Gold** group:
+
+![Alt text](images/image082.png)
+
+* The following users are part of the **Silver** group:
+
+![Alt text](images/image083.png)
+
+* To proceed with the tests, run a new session of the Web browser. Remember to close the previous session if it is still open, in order to reset the cache of the browser. Or, use a private window.
+* Enter the URL: `http://localhost:8080/TechLabs/quota`
+* On the first request, the service returns an authentication request.
+* In the **Authentication Required** window, enter the following in the respective fields:  
+**User Name:** `Garry` (with two “r”s)  
+**Password:** `axway`
+
+![Alt text](images/image084.png)
+
+* Click **OK**
+* Press the **F5** button several times to send successive requests.
+
+*Expected result:* 
+As the user **Garry** belongs to the **Gold** group, the **Throttling** filter does not apply. Therefore, whatever the frequency with which requests are sent, positive responses will always be returned.
+
+* Exit the browser to reset the cache, and open a new session.
+* In the browser, enter the URL: `http://localhost:8080/TechLabs/quota`
+* In the **Authentication Required** window, enter the following in the respective fields:  
+**User Name:** `Sarah`  
+**Password:** `axway`
+* Press the **F5** button several times to send successive requests.
+
+*Expected result:* 
+As the user **Sarah** belongs to the **Silver** group, the **Throttling** filter applies with the limit of 5 requests authorized per 5 second period. Therefore, if requests are sent more frequently than this, the responses returned will be negative.
+
+* Exit the browser to reset the cache, and open a new session.
+* In the **Authentication Required** window, enter the following in the respective fields:  
+**User Name:** `user1`  
+**Password:** `axway`
+* Click **OK**
+
+*Expected result:*
+The **user1** user does not belong to the groups with privileges. They are only entitled to one request per 5 second period.
+
+#### Monitoring
+
+* Run the **Firefox** browser and open the **API Gateway Manager** by clicking on the corresponding link:
+* If authentication is requested, enter:  
+**User Name:** `admin`  
+**Password:** `changeme`
+
+![Alt text](images/image085.png)
+
+* Click on the green graph, for **Passed** transactions.  
+Select a transaction in the list with subject **Garry**, for the user Garry. He is a **Gold** subscriber.  All responses are positive.
+
+
+![Alt text](images/image086.png)
+
+Delete the filter **Transaction status** to see all transactions. 
+
+Select a transaction in the list with subject **Sarah**, for the user Sarah. She is a **Silver** subscriber. Response is negative when more than 5 requests have been submitted in the authorized time period.
+
+![Alt text](images/image087.png)
+
+Select a transaction in the list with subject **user1**, for the user1. He is not a subscriber. Response is negative when more than 1 request has been submitted in the authorized time period.
+
+![Alt text](images/image088.png)
+
+Select a transaction in the list with subject **test**, for the user test. He is an unknown user. Response is negative when more than 1 request has been submitted in the authorized time period.
+
+![Alt text](images/image089.png)
+
+
+Go to the **Traffic** tab.  
+Select an element corresponding to a test with the **user1** user and for which the result has raised an exception.
+
+![Alt text](images/image090.png)
+
+It is possible to consult the progress of the application of the policy which has been implemented:
+* 1- The result of the **Check Group Membership Gold** filter --> failed
+* 2- The result of the **Check Group Membership Silver** filter --> failed
+* 3- Application of the **Throttling** filter --> quota exceeded
+* 4- Result of the request: Access to service denied.
+
+![Alt text](images/image091.png)
+
+* You can also take a look at the corresponding traces:
+
+![Alt text](images/image092.png)
+
+* Go to the **Events** tab  
+The **Transaction** tab lists the filters for which the result has led to an exception. The **Check Group Membership** and **Throttling** exceptions following the tests with the **user1** user are clearly visible:
+
+
+![Alt text](images/image093.png)
+
+## Conclusion
+
+Congratulations! In just a few minutes, using the API Gateway, you have been able to restrict access to your resources in a simple, customized, and dynamic way, reusing elements of your existing solution.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
