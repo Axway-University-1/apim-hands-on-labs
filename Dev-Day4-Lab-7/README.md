@@ -63,9 +63,6 @@ Expected output:
 
 
 
-
-
-
 ## Conclusion
 
 * Demo of HTTPS Listener
