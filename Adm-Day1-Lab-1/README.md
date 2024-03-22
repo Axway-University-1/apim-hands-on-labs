@@ -186,16 +186,189 @@ setup-apimanager --username admin --password changeme --adminName apiadmin --adm
 
 ### Basic operations
 
+What are basic operations here?
+* Start
+* Stop
+* Status
+
+What are components that are in scope of this installation?
+* Admin Node Manager (ANM)
+* API Gateway Instance
+* Cassandra
+
+How to achieve it? 
+* Command line (for all)
+* With API Gateway Manager 
+    * Start/stop/status of instances with UI
+    * And a UI feature means presence of an API
+
+    ![Alt text](images/image23.png)
+
+#### Admin Node Manager (ANM)
+
+Context
+* ANM embeds API Gateway Manager
+* There is one Node Manager (NM) per installation
+    * And at least one NM is ANM
+* ANM is able to manage instances and groups
+
+Command line
+
+* Executable  
+`apigateway/posix/bin/nodemanager`
+
+* Start  
+`nodemanager -d`
+
+* Stop  
+`nodemanager -k`
+
+* Status  
+`ps -eaf | grep -i "Node Manager“`  
+`netstat -an | grep 8090`
+
+#### API Gateway Instance, from ANM
+
+*Requires ANM to be started*
+
+URL: `https://myhost:8090`
+Default login: `admin/changeme`
+
+![Alt text](images/image24.png)
+
+API (call to ANM)
+* See ......[need a working link here]()  
+This is not working  
+http://apidocs.axway.com/swagger-ui/index.html?productname=apigateway&productversion=7.7.0&filename=api-gateway-swagger.json
+
+
+#### API Gateway Instance
+
+Context
+
+* An Instance belongs to a Group
+
+* Names are important
+    * Instance logical: `QuickStart Server`
+    * Instance internal: `instance-1`
+    * Group logical: `QuickStart Group`
+    * Group internal: `group-2`
+
+* Command line requires logical name
+
+* Internal names can appear in logs
+
+Command line
+
+* Executable  
+`apigateway/posix/bin/startinstance`
+
+* Start  
+`startinstance -n "QuickStart Server" -g "QuickStart Group" -d`
+
+* Stop  
+`startinstance -n "QuickStart Server" -g "QuickStart Group" -k`
+
+* Status  
+`ps -eaf | grep -i "QuickStart Server"`  
+`netstat -an | grep 8080`
+
+#### Cassandra
+
+Context
+* API Manager repository
+* And could be used as KPS
+* Cassandra is supported by Axway as part of the solution
+* See docs.axway.com here for management documentation  
+Need a working link.....This is not working: https://docs.axway.com/bundle/axway-open-docs/page/docs/cass_admin/cassandra_manage/index.html
+
+Command line
+
+* Executable  
+`cassandra/bin/cassandra`
+
+* Start  
+`cassandra -f`
+
+* Stop (cf documentation)  
+`kill <<pid>>`
+
+* Status  
+`netstat -an | grep 9042`
+
+#### Dependencies
+
+Rules
+
+* ANM and Instances can be run separately
+    * No ANM implies no visibility, no deployment
+
+* API Manager requires Cassandra
+    * But instance can start without Cassandra
+
+Recommended run order
+
+1. Cassandra
+2. ANM
+3. Instances
+
+
+
+
+
 
 
 ### Post installation steps
 
+#### Refer to docs.axway.com
+
+[Refer to this link](https://docs.axway.com/bundle/axway-open-docs/page/docs/apim_installation/apigtw_install/post_overview/index.html)
+
+![Alt text](images/image26.png)
+
+*Important points*
+
+* Link to start all tools
+* Initial configuration, eg create domain
+    * No need only with QuickStart
+* Run as services
+* Run with standard port (80, 443, ...) as non-root user
+* Security guidelines
+
 
 ### Installation validation
+
+* Check Cassandra, ANM, Instances are started
+    * Or start these in this order
+
+* Connect to API Gateway Manager
+    * `https://myhost:8090`
+    * Default login: `admin/changeme`
+
+* Connect to API Manager
+    * `https://myhost:8075`
+    * Default login: `apiadmin/changeme`
+
+* Call healthcheck API
+    * `curl http://myhost:8080/healthcheck`  
 
 
 ### Containerized installation
 
+* Installation resources publicly available from:  
+[https://github.com/Axway/Cloud-Automation](https://github.com/Axway/Cloud-Automation)
+    * Documentation
+
+    * Helm charts (AWS, Azure, Google, Openshift, minikube,…)
+
+* Official documentation  
+https://docs.axway.com/bundle/axway-open-docs/page/docs/apim_installation/apigw_containers/index.html
+
 
 ## Conclusion
 
+* Installation requires good preparation and always ends with validation
+
+* Dev environment can be quickly setup with **QuickStart**
+
+* **API Gateway** installation can be done attended with command line or UI, or unattended, very useful for automation
