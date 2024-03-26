@@ -109,9 +109,10 @@ Test the Stockpurchase API with a CURL command and the following parameters
 
 ![Alt text](images/image23.png)
 
-
+![Alt text](images/image24.png)
 
 ## Solutions
+
 
 
 
