@@ -113,7 +113,114 @@ Test the Stockpurchase API with a CURL command and the following parameters
 
 ## Solutions
 
+### Test from API Management interfaces - API Portal
+
+* Connect to **API Portal** with `anna/anna`:   
+`https://api-env.demo.axway.com/`
+
+* In **Applications** tab, create an application to define rights for API Stockquote called **Stockquote app**
+
+* Select **Stockquote API** and click **Next**
+
+* Click **Save**
+
+![Alt text](images/image25.png)
+
+![Alt text](images/image26.png)
+
+* Open and edit the application you just created
+
+* In the authentication tab, generate an API Key
+
+* Go to the API tab. From the **API Catalog**, test the API
+
+![Alt text](images/image27.png)
+
+![Alt text](images/image28.png)
+
+* Add the query parameter `GOOG` for the `symbol` and execute the Get method 
+
+![Alt text](images/image30.png)
+
+
+* See the 200 OK result, and the response headers and body. 
+
+*If the result is not 200 OK, check that backend services are started*
+
+![Alt text](images/image31.png)
+
+![Alt text](images/image32.png)
+
+### Test from API Management interfaces - API Manager
+
+* Connect to **API Manager** with `anna/anna`:  
+`https://api-env.demo.axway.com:8075/`
+
+* Go to **Clients --> Applications** and create a new application called **Stockquote application**
+
+* Add API access for `Stockquote`
+
+* Click **Create** to save the application
+
+![Alt text](images/image33.png)
+
+* Go to the **Authentication** tab
+
+* Click on **New API Key**
+
+* Add `*` for javascript origins
+
+![Alt text](images/image34.png)
+
+* Go to **API --> API Catalog** and click on **Stockquote**
+
+* Click **Try it** for API method `GetQuote`
+
+![Alt text](images/image35.png)
+
+* Select the application and **keyId** you have just created
+
+* Add `GOOG` for the symbol
+
+* Click **Try method**
+
+![Alt text](images/image36.png)
+
+### Test from your browser
+
+* Type `http://api-env:8080/healthcheck` in a browser
+
+
+![Alt text](images/image39.png)
+
+
+### Test using Curl from command line
+
+#### Healthcheck
+```
+curl http://api-env:8080/healthcheck
+```
+
+Result:
+```
+<status>ok</status>
+```
+
+#### Stockquote
+
+```
+curl -k -H "KeyId:e315a8b5-45f6-4f96-b20a-0b586a2a96c6" https://api-env.demo.axway.com:8065/stockquote/rest?symbol=GOOG
+```
+
+Result:
+![Alt text](images/image40.png)
 
 
 
 ## Conclusion
+
+We used the following to test APIs:
+    * CURL commands for unit testing or automation
+    * **API Portal** and **API Manager** with interfaces to try APIs
+
+**API Gateway Manager** offers monitoring dashboards and precious troubleshooting information
