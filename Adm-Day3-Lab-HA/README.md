@@ -95,9 +95,9 @@ For now, let’s focus on our 5 servers installation!
 
 ### Checklist
 
-- [x]  Login for all servers, with right credentials
-- [x]  Port listed and opened
-In and out
+[x]  Login for all servers, with right credentials
+:heavy_check_mark: Port listed and opened
+:heavy_check_mark: In and out
 Load-balancer configured
 Licenses reviewed and uploaded to API Gateway servers
 Installer downloaded from support site and uploaded to all required servers
