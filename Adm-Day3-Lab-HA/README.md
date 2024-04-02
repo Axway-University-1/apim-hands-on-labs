@@ -95,13 +95,69 @@ For now, let’s focus on our 5 servers installation!
 
 ### Checklist
 
-[x]  Login for all servers, with right credentials
-:heavy_check_mark: Port listed and opened
-:heavy_check_mark: In and out
-Load-balancer configured
-Licenses reviewed and uploaded to API Gateway servers
-Installer downloaded from support site and uploaded to all required servers
-Check patches, select which to install (by default the latest) and upload to all required servers 
+* Login for all servers, with right credentials  
+* Port listed and opened  
+    * In and out  
+* Load-balancer configured
+* Licenses reviewed and uploaded to API Gateway servers
+* Installer downloaded from support site and uploaded to all required servers
+* Check patches, select which to install (by default the latest) and upload to all required servers 
 
 
 ## Installation
+
+### Installation setup
+
+![Alt text](images/image05.png)
+
+### Installation instructions for high availability on a single server
+
+Of course, it is not HA! But lets review why this exercise is still relevant.
+
+#### What is different from multi-server installation?
+
+* Only one user/login
+    * No relog
+* Different folders
+    * Same function = same folder
+* Different ports
+    * Same function = same port
+* Same processes on same machine
+* Resources consumption
+* No firewall activated
+
+
+
+#### What is same in both?
+
+* Everything else!
+* Particularly, configuration set in products for network is the same (hosts file)
+
+
+<table>
+    <caption>Of course, it is not HA! But lets review why this is still relevant.
+</caption>
+    <thead>
+        <tr>
+            <th>What is different from multi-server installation? </th>
+            <th>What is same in both? </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+               - Only one user/login
+No relog
+            </td>
+            <td>
+            
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+
+
+
+
+
