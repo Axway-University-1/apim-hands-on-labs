@@ -5,12 +5,32 @@
 | Lab last updated | March 2024 |
 | Lab last tested | March 2024 |
 
-In this lab, 
+In this lab, we will navigate the roles of key components such as the Resource Server (API Manager), Authorization Server (API Gateway), and Client Application (API Portal). By immersing ourselves in a hypothetical scenario of a company providing an API to external developers, we will unravel the steps involved in virtualizing APIs and configuring OAuth authentication settings. Get ready to embark on a journey that will equip you with the skills and knowledge to effectively implement OAuth authentication within API Management environments.
 
 ## Learning objectives
 
-At the end of this lab, you will be able to 
-* Use **OAuth** authentication with API Management products.
+
+1. **Remembering:**
+   - Recall the fundamental components of OAuth authentication within API Management solutions, including the Resource Server, Authorization Server, and Client Application.
+   - Identify the steps involved in configuring OAuth authentication settings, such as virtualizing APIs and granting access rights to external developers.
+
+2. **Understanding:**
+   - Explain the concept of OAuth authentication and its significance in securing API access for external developers.
+   - Interpret the relationship between API Gateway, API Manager, and API Portal in the context of OAuth authentication.
+
+3. **Applying:**
+   - Utilize the provided guidelines to configure OAuth authentication settings within API Manager and API Gateway.
+   - Demonstrate the ability to connect to API Portal as a Client Application and consume APIs using OAuth authentication.
+
+4. **Analyzing:**
+   - Evaluate different scenarios where OAuth authentication may be preferable over other authentication methods within API Management solutions.
+   - Assess the implications of OAuth authentication settings on the security and accessibility of APIs for external developers.
+
+5. **Creating:**
+   - Design a customized OAuth authentication strategy tailored to specific organizational requirements within an API Management environment.
+   - Develop a comprehensive documentation or guide outlining best practices for implementing OAuth authentication within API Management solutions.
+
+These learning objectives encompass a range of cognitive levels, from basic recall to higher-order thinking skills, providing you with a holistic understanding of OAuth authentication in API Management.
 
 ## Introduction
 

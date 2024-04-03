@@ -134,28 +134,7 @@ Of course, it is not HA! But lets review why this exercise is still relevant.
 * Particularly, configuration set in products for network is the same (hosts file)
 
 
-<table>
-    <caption>Of course, it is not HA! But lets review why this is still relevant.
-</caption>
-    <thead>
-        <tr>
-            <th>What is different from multi-server installation? </th>
-            <th>What is same in both? </th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>
-               - Only one user/login
-No relog
-            </td>
-            <td>
-            
-            </td>
-        </tr>
-    </tbody>
-</table>
-
+### How we are trying to simulate this 
 
 
 
