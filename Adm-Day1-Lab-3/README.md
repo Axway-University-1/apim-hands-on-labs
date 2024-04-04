@@ -5,12 +5,30 @@
 | Lab last updated | March 2024 |
 | Lab last tested | March 2024 |
 
-In this lab, you have been provided with the docker images of the **Gateway** and **Cassandra**. You have been asked to install the Axway **api gateway**, **api manager** and **cassandra**. 
+Welcome to the API Gateway Docker Installation Lab! In this session, we will explore the process of installing the Axway API Gateway, API Manager, and Cassandra in a containerized environment. Throughout this lab, you will be provided with step-by-step instructions to install and configure these components using Docker images, offering you a hands-on experience in setting up an API Management solution in a virtualized environment.
+
+By the end of this lab, you will have the skills to install the API Gateway in a containerized environment, gaining practical insights into deploying API Management solutions using modern containerization technology. Whether you're a beginner exploring containerization or seeking to enhance your deployment capabilities, this lab will equip you with the necessary knowledge to deploy and manage Axway API Management components effectively. Let's dive in and get started with the exciting world of containerized API Gateway installations!
 
 ## Learning objectives
 
-At the end of this lab, you will be able to 
-* Install the API Gateway in a containerized environment.
+**Remembering:**
+   - Identify the commands used to view the Docker images present in the local repository, such as "docker image ls".
+
+**Understanding:**
+   - Explain the significance of using Docker containers for installing and managing API Gateway, API Manager, and Cassandra.
+   - Interpret the purpose of each command used in the Docker installation process, including their parameters and functionalities.
+
+**Applying:**
+   - Utilize the provided commands to start Cassandra and Admin Node Manager containers within the Docker environment.
+   - Demonstrate the ability to run API Gateway container with specified ports and network settings using Docker commands.
+
+**Analyzing:**
+   - Evaluate the implications of containerization on the deployment and scalability of API Management solutions.
+   - Assess the advantages and disadvantages of using Docker containers for installing and managing API Gateway, API Manager, and Cassandra.
+
+**Creating:**
+   - Design a customized Docker deployment strategy for API Management tailored to specific organizational requirements, considering factors like resource allocation and isolation.
+   - Develop a comprehensive documentation or guide outlining best practices for deploying and managing API Management components using Docker containers.
 
 ## Virtual machine environment
 

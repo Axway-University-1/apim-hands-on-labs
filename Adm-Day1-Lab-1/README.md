@@ -5,15 +5,31 @@
 | Lab last updated | March 2024 |
 | Lab last tested | March 2024 |
 
-In this lab, 
+Welcome to the APIM Installation Lab! In this hands-on session, we'll delve into the installation process of the Axway API Management (APIM) solution. By the end of this lab, you'll gain the essential skills to install APIM using the QuickStart method and understand its implications. Whether you're a beginner exploring APIM or aiming to automate installations, this lab provides a foundational understanding that sets the stage for your journey with APIM.
+
+
 
 ## Learning objectives
 
-At the end of this lab, you will be able to 
-* Install APIM solution with **QuickStart** and understand what it implies
-* Use some basic commands like start, stop, status
+**Understanding:**
+   - Explain the installation modes available for Axway API Management (APIM), distinguishing between Attended and Unattended modes.
+   - Interpret the significance of prerequisites such as user credentials, installation kit, and necessary components in the APIM installation process.
+
+**Applying:**
+   - Utilize the provided instructions to execute the installation process of APIM using the QuickStart method, either through a graphical user interface or command line interface.
+   - Demonstrate proficiency in selecting components and configuring settings during the APIM installation process.
+
+**Analyzing:**
+   - Evaluate the suitability of QuickStart for APIM installation in different environments, considering factors such as development versus production setups.
+   - Analyze the implications of using QuickStart for APIM installation on post-installation steps and overall system stability.
+
+**Creating:**
+   - Design a customized installation strategy for APIM tailored to specific organizational requirements, considering scalability, security, and automation.
+   - Develop a comprehensive documentation or guide outlining best practices for APIM installation, including pre-requisites, installation steps, and post-installation checks.
 
 ## Introduction
+
+Throughout this session, we'll focus on setting up APIM in a development environment on Linux, emphasizing simplicity and ease of installation. You'll learn how to execute basic commands like start, stop, and check status, crucial for managing APIM components such as Admin Node Manager, API Gateway Instance, and Cassandra. Let's dive in and get started with the installation process, laying the groundwork for your exploration into the world of API Management.
 
 ### Installation mode
 

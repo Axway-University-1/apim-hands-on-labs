@@ -5,15 +5,38 @@
 | Lab last updated | March 2024 |
 | Lab last tested | March 2024 |
 
-In this lab, you will learn how to exercise routine administration operations on the platform.
+Welcome to the API Gateway and API Manager Upkeep Lab! In this session, you'll delve into the essential maintenance tasks necessary for keeping your API Management platform running smoothly. Through hands-on exercises, you'll learn how to perform routine administration operations such as backup, recovery, file archiving, and API Gateway audit. These tasks are crucial for ensuring the reliability and resilience of your API infrastructure.
 
+Throughout this lab, you'll have the opportunity to simulate various scenarios, including backing up a Quickstart KPS table, simulating a disaster by deleting the table, and then restoring the data. Additionally, you'll explore Cassandra upkeep, understanding its data directory structure, identifying API Management keyspaces, and performing snapshots. By mastering these maintenance tasks, you'll be equipped with the skills to effectively manage and optimize your API Gateway and API Manager environments. Let's dive in and explore the fundamental aspects of API upkeep together!
 
 
 
 ## Learning objectives
 
-At the end of this lab, you will be able to 
-* Execute some of the maintenance tasks related to backup, recovery, file archiving, and API Gateway audit.
+**Remembering:**
+   - Recall the steps involved in performing maintenance tasks related to backup, recovery, file archiving, and API Gateway audit.
+   - Remember the commands and procedures for backing up and restoring a Quickstart KPS table using the kpsadmin tool.
+   - Recall the steps for performing maintenance tasks related to Cassandra, including understanding its data directory structure and identifying API Management keyspaces.
+
+**Understanding:**
+   - Explain the importance of routine administration operations in maintaining the health and reliability of an API Management platform.
+   - Understand the significance of backing up and restoring data in ensuring data integrity and continuity of operations.
+   - Interpret the purpose and functionality of Cassandra in the context of API Management and its role in data storage and management.
+
+**Applying:**
+   - Utilize the kpsadmin tool to perform backup and restore operations on a Quickstart KPS table.
+   - Apply the knowledge of Cassandra maintenance tasks to perform snapshots of Cassandra keyspaces.
+   - Demonstrate the ability to execute routine administration operations effectively within the API Gateway and API Manager environments.
+
+**Analyzing:**
+   - Analyze the potential consequences of not performing regular maintenance tasks on an API Management platform.
+   - Evaluate different scenarios where data loss or corruption could occur and assess the impact on API availability and performance.
+   - Compare and contrast different approaches to maintenance and identify best practices for ensuring the stability and reliability of the platform.
+
+**Creating:**
+   - Design a comprehensive upkeep plan for an API Management installation, including scheduling regular backups and snapshots.
+   - Develop documentation outlining step-by-step procedures for performing maintenance tasks and troubleshooting common issues.
+   - Create a customized maintenance strategy tailored to specific organizational requirements and infrastructure configurations within an API Management environment.
 
 
 ## Tasks

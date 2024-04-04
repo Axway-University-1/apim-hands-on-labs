@@ -1,19 +1,35 @@
-# Testing and Troubleshooting Lab 
+# Deployment Lab 
 
 | Average time required to complete this lab | 60 minutes |
 | ---- | ---- |
 | Lab last updated | March 2024 |
 | Lab last tested | March 2024 |
 
-In this lab, 
+In this lab, we'll delve into essential processes and tools vital for understanding and enhancing your DevOps practices within the APIM environment. By the end of this session, you'll gain valuable insights into project build processes, environmentalization techniques, deployment procedures, and API promotion strategies using command-line tools provided by Axway.
+
+Throughout this hands-on experience, we'll explore two key scenarios. Firstly, we'll focus on packaging and deploying Policy Studio projects, emphasizing the importance of externalizing parameters and variables for dynamic adjustments across various environments. Secondly, we'll delve into the usage of the apimanager-promote tool to seamlessly promote API collections to target environments, demonstrating the integration of DevOps principles into the APIM workflow. Through practical exercises and guided instructions, you'll acquire the skills necessary to automate build, deployment, and promotion processes effectively, ensuring streamlined operations within your API management ecosystem. Let's embark on this journey to optimize your deployment processes and leverage the power of automation in APIM!
 
 ## Learning objectives
 
-At the end of this lab, you will be able to 
-* Understand a project build process using the `projpack` tool
-* Explore Environmentalization techniques
-* Understand the deployment process using the `projdeploy` tool
-* Understand the API promotion process using the `apimanager-promote` tool
+**Remembering:**
+   - Recall the steps involved in packaging and deploying Policy Studio projects using command-line tools like projpack and projdeploy.
+   - Identify the environmentalization techniques used in APIM, such as externalizing parameters and variables for dynamic configuration changes.
+
+**Understanding:**
+   - Explain the significance of environmentalization techniques in DevOps practices within API Management solutions.
+   - Interpret the relationship between Policy Studio projects, API Manager scripts, and deployment processes in the context of automation and streamlining operations.
+
+**Applying:**
+   - Utilize projpack and projdeploy commands to package and deploy Policy Studio projects to target environments effectively.
+   - Demonstrate the application of environmentalization techniques to dynamically adjust deployment parameters for different environments.
+
+**Analyzing:**
+   - Evaluate the advantages of using command-line tools for packaging and deploying Policy Studio projects compared to manual processes.
+   - Assess the implications of environmentalization techniques on the scalability and efficiency of deployment processes within API Management solutions.
+
+**Creating:**
+   - Design a customized deployment strategy tailored to specific organizational requirements, incorporating environmentalization techniques and command-line tools.
+   - Develop a comprehensive documentation or guide outlining best practices for packaging, deploying, and promoting Policy Studio projects within API Management environments, emphasizing the importance of automation and efficiency.
 
 
 

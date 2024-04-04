@@ -5,12 +5,31 @@
 | Lab last updated | March 2024 |
 | Lab last tested | March 2024 |
 
-In this lab, 
+Welcome to the Testing and Troubleshooting Lab! In this session, we'll delve into the critical aspects of testing and debugging APIs within the Axway API Management ecosystem. Throughout this lab, you'll gain hands-on experience in conducting various types of tests and troubleshooting techniques to ensure the reliability and functionality of APIs.
+
+Through interactive exercises and real-world scenarios, you'll explore how to test and receive responses from different services, including StockQuote APIs, using both API Portal and API Manager interfaces. Additionally, you'll master the art of testing APIs directly from a browser and through command-line tools like Curl, equipping you with valuable skills for both manual and automated testing practices. Let's dive in and uncover the essential strategies for ensuring the seamless performance of APIs within your API Management environment!
 
 ## Learning objectives
 
-At the end of this lab, you will be able to 
-* Test and get response from any service
+**Remembering:**
+   - Recall the steps involved in testing APIs, including accessing API Management interfaces and using CURL commands.
+   - Remember the parameters required for testing APIs, such as HTTP method, security settings, host, port, and path.
+
+**Understanding:**
+   - Explain the significance of testing APIs for ensuring their functionality and reliability within an API Management ecosystem.
+   - Understand the differences between testing APIs from API Portal and API Manager interfaces and through command-line tools like Curl.
+
+**Applying:**
+   - Apply the provided guidelines to test the Stockquote API using both API Portal and API Manager interfaces.
+   - Demonstrate the ability to conduct API testing from a browser and through Curl commands, applying the appropriate parameters.
+
+**Analyzing:**
+   - Evaluate the results of API testing to identify potential issues or discrepancies in API performance.
+   - Analyze the transaction details in API Gateway Manager to troubleshoot and resolve API-related issues effectively.
+
+**Creating:**
+   - Design a comprehensive API testing strategy tailored to specific organizational requirements, considering factors such as security, performance, and scalability.
+   - Develop documentation outlining best practices for API testing and troubleshooting within an API Management environment.
 
 ## Exercise
 
