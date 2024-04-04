@@ -1,12 +1,31 @@
 # API Testing
 
 
-In this lab, you will perform some tasks that will help you to get familiar with API testing using API Manager and API Portal. You will also be introduced to some other common and basic ways to test the API.
+Welcome to the API Testing lab! In this session, we will delve into the essential aspects of API testing using API Manager and API Portal. This hands-on experience will equip you with the knowledge and skills necessary to effectively test APIs, a crucial aspect of modern software development. Throughout this lab, you will not only learn how to test APIs using API Management interfaces but also explore other common methods such as browser testing, and command-line testing.
+
+By the end of this session, you will have a solid understanding of how to test APIs from various platforms and interfaces. Whether you're testing from the API Portal, API Manager, your browser, or the command line, you will gain valuable insights into each method's advantages and limitations. Additionally, you will discover how API Gateway Manager can be utilized to monitor transactions and troubleshoot any issues that may arise during API testing. Get ready to dive into the world of API testing and enhance your skills as a developer!
 
 ## 1. Learning Objectives
 
-At the end of this lab, you will be able to 
-* Provide a bulleted list of learning objectives. Try to adhere to Bloom's taxonomy.
+**Remembering:**
+   - Recall the steps involved in testing APIs from various platforms and interfaces, including API Portal, API Manager, browser, and command line.
+   - Remember the syntax and options for using CURL commands to test APIs, including HTTP verbs, headers, data payloads, and security options.
+
+**Understanding:**
+   - Explain the significance of API testing in the software development lifecycle and its role in ensuring the reliability and functionality of APIs.
+   - Understand the purpose and function of API Gateway Manager in monitoring transactions and troubleshooting issues related to API testing.
+
+**Applying:**
+   - Utilize the provided guidelines to create applications and define rights for API testing within API Portal and API Manager interfaces.
+   - Apply the knowledge gained to connect to API Portal and API Manager as a user and perform API testing tasks, such as testing the Stockquote API.
+
+**Analyzing:**
+   - Evaluate the effectiveness of different API testing methods, including their advantages and limitations, in ensuring the quality and performance of APIs.
+   - Analyze transaction data in API Gateway Manager to identify patterns, trends, and potential issues in API usage and performance.
+
+**Creating:**
+   - Design a comprehensive API testing strategy tailored to specific project requirements and constraints, considering factors such as resource availability, time constraints, and project scope.
+
 
 ## Test from API Management interfaces
 

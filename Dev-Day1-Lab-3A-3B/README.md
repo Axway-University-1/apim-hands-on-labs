@@ -1,17 +1,33 @@
 # API Management using API Manager and API Portal
 
 
-In this lab, you will perform some tasks that will help you to get yourself familiar with some of the important features of API Manager and API Portal.
+In this lab, we'll dive into the fundamentals of API virtualization, publication, and consumption using Axway's API Manager. We'll walk through the process of defining APIs, testing them, and making them available to developers securely and efficiently. By the end of this session, you'll have a solid understanding of how to manage APIs effectively within your organization's ecosystem.
+
+Through hands-on exercises, we'll explore how to publish APIs, configure authentication mechanisms, and set up quotas to regulate API usage. You'll also learn how to manage organizations, roles, and permissions to facilitate collaboration between internal teams and external partners. 
 
 
 
 ## 1. Learning Objectives
 
-At the end of this lab, you will be able to 
-* Provide a bulleted list of learning objectives. Try to adhere to Bloom's taxonomy.
-* Expose and publish an API from API Manager
-* Manage a community of users with API Manager
-* Consume an API as an Application Developer from the API Portal
+**Remembering:**
+   - Recall the steps involved in configuring APIs in Axway API Manager, including selecting backend APIs, defining inbound security, and saving configurations.
+   - Identify the options available for inbound security when setting up APIs, such as Pass Through and API Key.
+
+**Understanding:**
+   - Explain the significance of virtualizing APIs and testing them before publishing to ensure functionality and reliability.
+   - Interpret the role of authentication mechanisms, such as API Key and Pass Through, in controlling access to APIs and protecting backend servers.
+
+**Applying:**
+   - Utilize the provided instructions to configure API authentication settings within Axway API Manager, including selecting security options and saving configurations.
+   - Demonstrate the ability to test APIs using Firefox and verify their functionality by consuming resources and receiving responses.
+
+**Analyzing:**
+   - Evaluate the advantages and disadvantages of different authentication mechanisms, such as Pass Through and API Key, in terms of security and ease of use.
+   - Assess the impact of API authentication settings on the overall performance and accessibility of APIs for application developers and partners.
+
+**Creating:**
+   - Design a customized API authentication strategy tailored to specific organizational requirements, considering factors such as security policies and user experience.
+   - Develop a comprehensive documentation or guide outlining best practices for configuring API authentication settings within Axway API Manager, including step-by-step instructions and troubleshooting tips.
 
 ## 2. Scenario
 

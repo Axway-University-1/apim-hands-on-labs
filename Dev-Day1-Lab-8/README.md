@@ -1,11 +1,30 @@
 # API lifecycle management using API Manager
 
-In this lab, 
+Welcome, learners, to today's lab session focused on API lifecycle management using API Manager. In this lab, we will delve into the intricate process of managing the lifecycle of an API, a crucial aspect of modern software development and integration. Throughout this session, you will gain hands-on experience in maneuvering through the stages of API development, testing, publication, deprecation, and retirement.
 
-## 1. Learning objectives
+As technology evolves rapidly, organizations must adapt by efficiently managing their APIs to meet consumer demands and industry standards. Through this lab, you will navigate real-world scenarios where a company aims to enhance its existing API, Stockquote, to cater to consumer requirements for retrieving historical stock quotes. By understanding the API lifecycle management process, you will be equipped with the skills necessary to orchestrate seamless transitions between API versions and ensure continued accessibility and functionality for end-users. Let's embark on this journey to master API lifecycle management and elevate your proficiency in API development and governance.
 
-At the end of this lab, you will be able to 
-* Manage the lifecycle of an API in API Manager
+## Learning objectives
+
+**Remembering:**
+   - Recall the steps involved in managing the lifecycle of an API in API Manager.
+   - List the different states an API can be in during its lifecycle, such as Develop/Configure/Test, Published, Deprecated, and Retired.
+
+**Understanding:**
+   - Explain the significance of API lifecycle management in the context of software development and integration.
+   - Interpret the differences between unpublished and published APIs and understand the implications of deprecating and retiring APIs.
+
+**Applying:**
+   - Utilize API Manager to test APIs with specific users and validate their access rights.
+   - Demonstrate the process of creating a new version of an API and providing access rights to internal and external users.
+
+**Analyzing:**
+   - Evaluate the access rights of different users to APIs based on their organizational roles.
+   - Assess the impact of upgrading access to newer API versions on user permissions and testing capabilities.
+
+**Creating:**
+   - Design a comprehensive API lifecycle management strategy tailored to the organizational requirements of a given scenario.
+   - Develop a documentation outlining best practices for API versioning, access management, and lifecycle transitions within API Manager.
 
 
 ## Scenario introduction
@@ -13,10 +32,25 @@ At the end of this lab, you will be able to
 A company is exposing an API, `Stockquote v1`. The API returns the quote of a given company on the market.
 
 API consumers would like to get the quote for a given date in addition to a given company. The company has created a new version  `Stockquote v2` and wants to expose it, with a new parameter: the quote date
-| Anna | Dave |
-| ------ | ------ |
-|  **Anna** is an internal developer, and is part of the **API Developer** Organization | **Dave** is an external application developer, and is part of the **Partner** Organization |
-| ![Alt text](images/image23.png) | ![Alt text](images/image24.png) |
+<table>
+    <thead>
+        <tr>
+            <th>Anna</th>
+            <th>Dave</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><b>Anna</b> is an internal developer, and is part of the **API Developer** Organization </td>
+            <td>**Dave** is an external application developer, and is part of the **Partner** Organization</td>
+        </tr>
+        <tr>
+            <td><img src="images/image23.png" style="text-align:center"></td>
+            <td><img src="images/image24.png" style="text-align:center"> </td>
+        </tr>
+    </tbody>
+</table>
+
 
 * Both Anna and Dave have access to `Stockquote v1`, and they are both interested in using `Stockquote v2`
 
