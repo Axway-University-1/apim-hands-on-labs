@@ -1,11 +1,30 @@
 # Policy Studio Lab - Virtualization with policies
 
-In this lab, 
+Welcome to the Policy Studio Lab on virtualization with policies! In this session, we will delve into the intricacies of virtualizing SOAP web services using Policy Studio. By the end of this lab, you will gain a comprehensive understanding of how to effectively virtualize SOAP web services and seamlessly integrate them into your development environment. 
+
+Virtualizing SOAP web services is a crucial aspect of modern API management, allowing developers to simulate backend behaviors without impacting existing systems. Throughout this session, we will explore step-by-step instructions to virtualize a SOAP web service using Policy Studio, providing you with hands-on experience and valuable insights into the virtualization process. Let's dive in and uncover the power of Policy Studio in simplifying the virtualization of SOAP web services!
 
 ## Learning objectives
 
-At the end of this lab, you will be able to 
-* Virtualize a SOAP web service using Policy Studio
+**Remembering:**
+   - Recall the purpose of SOAP web services and their role in modern application development.
+   - Identify the steps involved in virtualizing a SOAP web service using Policy Studio.
+   
+**Understanding:**
+   - Explain the significance of virtualizing SOAP web services in development and testing environments.
+   - Interpret the advantages of using Policy Studio for virtualization over other methods like API Manager.
+   
+**Applying:**
+   - Utilize Policy Studio to virtualize a SOAP web service by following step-by-step instructions.
+   - Demonstrate the ability to test the virtualized SOAP web service using tools like SoapUI.
+   
+**Analyzing:**
+   - Evaluate the differences between virtualizing SOAP web services using API Manager and Policy Studio.
+   - Assess the impact of virtualizing SOAP web services on development workflows and project timelines.
+   
+**Creating:**
+   - Design a comprehensive virtualization strategy tailored to specific project requirements using Policy Studio.
+
 
 
 ## Billing Soap WS virtualization

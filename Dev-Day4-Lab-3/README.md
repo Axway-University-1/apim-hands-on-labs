@@ -5,13 +5,33 @@
 | Lab last updated | March 2024 |
 | Lab last tested | March 2024 |
 
-In this lab, 
+Welcome to the Authentication Lab, where you'll dive into the world of securing APIs using Axway's API Manager. In this session, we'll explore the essential concepts and hands-on techniques for implementing authentication policies within your API management infrastructure. As organizations increasingly rely on APIs to power their digital ecosystems, ensuring secure access to these resources becomes paramount, making authentication a crucial aspect of API management.
+
+Throughout this lab, we'll focus on integrating authentication mechanisms, specifically API Key and HTTP Basic, into API Manager. By the end of this session, you'll gain the skills to protect your APIs effectively and understand the importance of identity management in ensuring secure API access. Let's embark on this journey together to unlock the potential of API authentication within Axway's API Management solution.
 
 ## Learning objectives
 
-At the end of this lab, you will be able to 
-* Integrate an authentication Policy to API Manager
-* Implement a simple example of Identity Management policy
+**Remembering:**
+   - Recall the purpose of API authentication within the context of API Manager.
+   - Recognize the two authentication mechanisms covered in the lab: API Key and HTTP Basic.
+   - List the steps involved in creating and configuring authentication policies in Policy Studio.
+
+**Understanding:**
+   - Explain the significance of implementing authentication policies in API Manager for securing APIs.
+   - Describe the difference between API Key and HTTP Basic authentication methods.
+   - Interpret the implications of using HTTP Basic authentication with LDAP repository integration.
+
+**Applying:**
+   - Utilize Policy Studio to create and configure authentication policies for protecting APIs.
+   - Implement the provided guidelines to set up HTTP Basic authentication with LDAP repository integration.
+   - Demonstrate the ability to test authentication policies using CURL commands.
+
+**Analyzing:**
+   - Evaluate the effectiveness of API Key and HTTP Basic authentication methods in different scenarios.
+   - Analyze the advantages and disadvantages of using LDAP repository integration for authentication.
+   - Assess the potential security risks associated with each authentication method and propose mitigation strategies.
+
+
 
 ## Introduction
 

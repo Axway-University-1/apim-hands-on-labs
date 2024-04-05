@@ -1,13 +1,30 @@
 # Policy Studio Lab - My first mockup
 
-In this lab, 
+Welcome to the Policy Studio Lab - My First Mockup! In this lab, we'll delve into the intricacies of Policy Studio, exploring various filters and learning how to craft policies from scratch. But first, let's demystify the concept of a mockup. In the world of design and development, a mockup serves as a prototype, aiding in teaching, evaluation, and demonstration. Within the API realm, a mockup simulates a server's backend behavior, invaluable during the development phase to mitigate technical and organizational impacts. Today, we'll embark on a journey to create a mockup service, tackling the challenge of improving Company orders' tracking system by harnessing the power of Policy Studio.
+
+As we delve deeper into this lab, we'll unravel the essence of creating a mockup service using Policy Studio. Our goal is to simulate a shipping partner's response to order statuses via API, crucial for seamless development without imposing test impacts. Together, we'll navigate through the steps of building an API that encapsulates specific logic, crafting policies within Policy Studio, and ultimately fashioning a mockup service. Through hands-on exercises, you'll gain firsthand experience in setting up policy studio containers, designing policies, and deploying configurations, all essential skills for crafting robust API solutions. So, let's dive in and unlock the potential of Policy Studio to revolutionize API development!
 
 ## 1. Learning objectives
 
-At the end of this lab, you will be able to 
-* Use Policy Studio interface and explore the various filters
-* Create policies using Policy Studio
-* Create a mockup service
+**Remembering:**
+   - Recall the purpose and utility of mockups in the context of API development.
+   - Recognize the significance of using mockups to simulate server behavior during the development phase.
+   
+**Understanding:**
+   - Explain the concept of a mockup and its role in API development, including its applications in teaching, demonstration, and design evaluation.
+   - Interpret the scenario presented where a mockup is used to simulate a shipping partner's response to order statuses via API.
+   
+**Applying:**
+   - Utilize Policy Studio interface to create and configure mockup services effectively.
+   - Demonstrate the ability to design and deploy mockup services using Policy Studio to simulate specific backend behaviors.
+   
+**Analyzing:**
+   - Evaluate the advantages of using mockups in API development to avoid technical and organizational impacts.
+   - Assess the implications of mockup services on the testing process and the overall efficiency of API development workflows.
+   
+**Creating:**
+   - Design customized mockup services tailored to specific organizational requirements and development scenarios.
+
 
 ## Introduction
 ### What is a mockup?

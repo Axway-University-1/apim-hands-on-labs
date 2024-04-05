@@ -5,11 +5,29 @@
 | Lab last updated | March 2024 |
 | Lab last tested | March 2024 |
 
-In this lab, 
+In this lab session, we delve into the intricacies of API management by exploring the concept of mashups, also known as Web Service Composition. A mashup involves blending various existing web services to create a new service that offers added value. This practice lies at the heart of Service-Oriented Architecture (SOA) and Digitalization, offering innovative ways to combine functionalities from disparate services.
+
+Today's focus is on enhancing an Order Management System (OMS) to provide real-time updates to users. The existing OMS version lacks optimization, as its status updates are batched nightly, leaving users seeking immediate information about their orders' payment status, stock availability, and shipment updates. Through this lab, we aim to design and create a new API version, OMS v2, by integrating and optimizing various backend services to deliver instant follow-up capabilities, all accessible through API Portal with OAuth authentication.
 
 ## Learning objectives
 
-At the end of this lab, you will be able to design and create an API based on the mashup of many services.
+**Remembering:**
+   - Recall the key concepts of mashups (Web Service Composition) in Service-Oriented Architecture (SOA) and Digitalization.
+   - List the main components involved in creating a mashup, such as combining existing web services to create a new service with added value.
+
+**Understanding:**
+   - Explain the significance of optimizing an Order Management System (OMS) to provide real-time updates to users.
+   - Interpret the task of creating a new version of the OMS API (OMS v2) to include functionalities like validating customer purchases, indicating stock availability, and showing delivery status.
+
+**Applying:**
+   - Utilize the provided instructions to create a new version of the OMS API (OMS v2) that integrates various backend services and provides instant follow-up capabilities.
+   - Demonstrate the ability to deploy and test the OMS v2 service, ensuring it functions as expected and provides real-time updates to users.
+
+**Analyzing:**
+   - Evaluate the effectiveness of using a mashup approach to enhance the OMS, considering factors such as real-time data availability and user satisfaction.
+   - Assess the implications of error management strategies and authentication mechanisms on the reliability and security of the OMS v2 API.
+
+
 
 
 ## Introduction

@@ -5,11 +5,31 @@
 | Lab last updated | March 2024 |
 | Lab last tested | March 2024 |
 
-In this lab, 
+Welcome to the Policy Studio Lab on Error Management! In this session, we'll delve into handling error scenarios using Policy Studio within the context of APIM (Axway API Management). Picture a scenario where the 'restifed' service for billing operates seamlessly under normal conditions. But what if there are glitches, such as incorrect input parameters? This lab equips you with the skills to add basic error management functionalities to such services, ensuring smoother operations even when things go awry.
+
+Throughout this session, we'll explore various facets of error management within Policy Studio. From defining default error attributes to handling validation and connection errors, you'll gain practical insights into configuring error management components effectively. By the end of this lab, you'll be proficient in setting up fault handlers, designing error messages, and deploying error management policies, all crucial aspects for maintaining robust and resilient API services. Let's dive in and master the art of error management within APIM's Policy Studio!
 
 ## Learning objectives
 
-At the end of this lab, you will be able to handle error management using Policy Studio.
+**Remembering:**
+   - Recall the steps involved in handling error management using Policy Studio within APIM.
+   - Recognize the default error attributes required for error management configurations in APIM.
+
+**Understanding:**
+   - Explain the importance of error management in maintaining smooth operations within API services.
+   - Interpret the significance of fault handlers, error messages, and transaction audit filters in Policy Studio.
+
+**Applying:**
+   - Utilize Policy Studio to configure error management policies within APIM.
+   - Apply fault handlers and error message configurations to handle validation and connection errors effectively.
+
+**Analyzing:**
+   - Evaluate different types of errors and their impact on API services.
+   - Assess the effectiveness of error management configurations in mitigating potential disruptions in API operations.
+
+**Creating:**
+   - Design customized error management strategies tailored to specific API service requirements.
+
 
 
 ## Introduction

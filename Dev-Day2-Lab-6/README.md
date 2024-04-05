@@ -1,11 +1,28 @@
 # Policy Studio Lab - Mediation
 
-In this lab, 
+In this lab, we'll delve into the world of API mediation using Policy Studio. The focus of this session is on restifying a SOAP Web Service, a crucial skill in modern API management. 
+
+As organizations increasingly move towards RESTful architectures for enhanced integration and scalability, the ability to transform existing SOAP services into RESTful ones becomes invaluable. In this lab, we'll learn how to virtualize a SOAP service and provide a REST interface using Policy Studio, empowering you to adapt legacy systems to meet modern integration requirements. Let's dive in and explore the exciting world of API mediation together!
 
 ## Learning objectives
 
-At the end of this lab, you will be able to 
-* Restify a SOAP Web Service with Policy Studio
+**Remembering:**
+   - Recall the steps involved in restifying a SOAP Web Service using Policy Studio.
+
+**Understanding:**
+   - Explain the concept of API mediation and its role in modern API management.
+   - Describe the significance of restifying SOAP services in facilitating integration and scalability within organizations.
+
+**Applying:**
+   - Demonstrate the ability to configure Policy Studio filters to transform SOAP requests into RESTful API calls.
+
+**Analyzing:**
+   - Evaluate the advantages and challenges of restifying SOAP services compared to maintaining them in their original form.
+   - Assess the impact of API mediation on the overall architecture and performance of an API ecosystem.
+
+**Creating:**
+   - Design a customized mediation strategy tailored to specific organizational requirements for restifying SOAP services.
+
 
 ## Introduction
 

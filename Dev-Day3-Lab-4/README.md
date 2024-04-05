@@ -5,11 +5,35 @@
 | Lab last updated | March 2024 |
 | Lab last tested | March 2024 |
 
-In this lab, 
+Welcome to the Policy Studio Lab - From Policy to API! In this lab, we'll embark on an exciting journey to explore the process of exposing a policy as an API using Axway's API Management solution. Our main objective is to integrate Billing services seamlessly into API Manager, enhancing management simplicity and efficiency. Whether you're familiar with SOAP or REST, this lab has two versions tailored to your needs, ensuring a comprehensive learning experience.
+
+Through hands-on exercises, you'll gain practical insights into defining REST business services, configuring API methods, and testing service functionality within Policy Studio. Additionally, we'll delve into the API Manager interface, where you'll learn to import business services, create frontends from backends, and set inbound security measures. By the end of this lab, you'll understand the seamless integration between Policy Studio and API Manager, empowering you to virtualize services with flexibility and ease. Let's dive in and explore the transformative capabilities of Axway's API Management solution together!
 
 ## Learning objectives
 
-At the end of this lab, you will be able to expose a policy on API Manager using REST Business Services
+**Remembering:**
+   - Recall the steps involved in defining a REST business service within Policy Studio.
+   - Remember the process of configuring API methods and parameters for a REST API using Policy Studio.
+   - Recall the steps required to import a business service into API Manager from Policy Studio.
+
+**Understanding:**
+   - Explain the significance of integrating Billing services into API Manager for management simplicity.
+   - Understand the relationship between Policy Studio and API Manager in the context of virtualizing services.
+   - Interpret the implications of exposing policies as APIs for seamless integration and enhanced management capabilities.
+
+**Applying:**
+   - Utilize Policy Studio to define and configure a REST business service for Billing.
+   - Apply the provided guidelines to expose the Billing business service in API Manager.
+   - Demonstrate the ability to test the functionality of the exposed service within API Manager.
+
+**Analyzing:**
+   - Evaluate different versions of the exercise (SOAP and REST) and compare the process of creating business services.
+   - Analyze the advantages of virtualizing services from both Policy Studio and API Manager perspectives.
+   - Assess the implications of virtualizing services on the overall management efficiency and flexibility.
+
+**Creating:**
+   - Design a customized approach to virtualizing services tailored to specific organizational requirements.
+
 
 
 

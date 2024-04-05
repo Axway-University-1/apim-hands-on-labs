@@ -1,6 +1,29 @@
 # API Testing using API Portal
 
-In this lab, you will explore some of the basic features of API Portal in detail. 
+Welcome to the API Testing lab using API Portal! In this session, we'll delve into the intricacies of API Portal, exploring its fundamental features through hands-on exercises. Our primary focus will be on testing the Stockquote v2 API, where you'll gain practical experience in navigating API Portal and conducting API tests.
+
+Throughout this lab, you'll have the opportunity to modify an existing application, Gabriel’s shop, to incorporate the Stockquote v2 API. By doing so, you'll learn how to integrate APIs into applications effectively. Additionally, we'll explore HTTP error responses and analyze CURL examples to deepen your understanding of API testing nuances. So, let's dive in and embark on this journey of discovering API Portal's capabilities together!
+
+## Learning objectives
+
+**Remembering:**
+   - Remember the process of modifying an existing application
+
+**Understanding:**
+   - Explain the significance of HTTP error responses in the context of API testing and troubleshooting.
+   - Understand the basics of CURL commands and their application in testing APIs.
+
+**Applying:**
+   - Utilize API Portal to test the Stockquote v2 API with specific parameters, such as "symbol=GOOG" and "date=01/01/2018".
+   - Apply modifications to an application within API Portal to integrate the Stockquote v2 API effectively.
+
+**Analyzing:**
+   - Analyze the HTTP responses received during API testing and interpret their implications on the functionality of the API.
+   - Evaluate the effectiveness of API testing methods and identify areas for improvement in the testing process.
+
+**Creating:**
+   - Design a comprehensive API testing strategy tailored to the specific requirements of an organization, considering factors such as security, reliability, and scalability.
+
 
 **Task**:  
 Test API `Stockquote v2`` with API Portal and user gabriel

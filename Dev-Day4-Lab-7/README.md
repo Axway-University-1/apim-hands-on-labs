@@ -5,12 +5,31 @@
 | Lab last updated | March 2024 |
 | Lab last tested | March 2024 |
 
-In this lab, 
+Welcome to the TLS Lab! In this session, we will dive into the intricacies of Transport Layer Security (TLS) within the context of API Gateway configuration. TLS plays a critical role in securing communications over the internet, and understanding how to implement it effectively is paramount for any API management professional. Throughout this lab, we will explore the process of creating a TLS HTTPS listener on the API Gateway, setting up ports, and configuring certificates to ensure secure data transmission.
+
+As organizations increasingly prioritize data security, the ability to configure TLS effectively has become a sought-after skill in the realm of API management. This lab offers a hands-on opportunity to gain practical experience in setting up TLS listeners and navigating through various configurations. By the end of this session, you will not only be equipped with the technical know-how to create TLS listeners but also gain insights into testing methodologies and understanding the implications of different TLS versions. So, let's embark on this journey to enhance our understanding of TLS and fortify our API infrastructure against potential security threats.
 
 ## Learning objectives
 
-At the end of this lab, you will be able to 
-* Create HTTPS TLS on API Gateway Listener
+**Remembering:**
+- Recall the steps involved in creating a TLS HTTPS listener on API Gateway.
+- Identify the port settings required for configuring a TLS listener.
+
+**Understanding:**
+- Explain the significance of Transport Layer Security (TLS) in securing data transmission over the internet.
+- Interpret the purpose of configuring X.509 certificates for TLS listeners.
+
+**Applying:**
+- Utilize the API Gateway interface to create a TLS HTTPS listener and configure port settings.
+- Demonstrate the ability to select and apply X.509 certificates for TLS configurations.
+
+**Analyzing:**
+- Evaluate the implications of disabling certificate verification in a TLS setup.
+- Assess the impact of different TLS versions on security and performance.
+
+**Creating:**
+- Design a customized TLS listener configuration tailored to specific organizational security requirements.
+
 
 ## Learn by doing
 

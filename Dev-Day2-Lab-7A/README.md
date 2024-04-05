@@ -5,11 +5,31 @@
 | Lab last updated | March 2024 |
 | Lab last tested | March 2024 |
 
-In this lab, 
+Welcome to today's session on API Gateway management! In this hands-on lab, we'll delve into the dynamic world of API access control and resource restriction using Axway's API Gateway. Throughout this session, you'll learn how to design and implement policies that authenticate users, enforce access quotas based on user groups, and monitor traffic effectively. By the end of this session, you'll have gained valuable insights into managing API access securely and efficiently.
+
+In this lab, we'll start by configuring authentication policies to verify user identities using HTTP Basic filters. Next, we'll explore how to set up quota systems to limit access based on user groups, such as Gold, Silver, and Bronze. Through a series of practical exercises, you'll deploy policies that dynamically adjust access restrictions, ensuring seamless user experiences while maintaining security. Get ready to unlock the power of API Gateway management and take control of your API resources like never before!
 
 ## Learning objectives
 
-At the end of this lab, you will be able to 
+**Remembering:**
+   - Recall the steps involved in configuring authentication policies, such as HTTP Basic filters, within API Gateway.
+   - Recognize the significance of setting authentication policies as the initial step in controlling API access and ensuring security.
+
+**Understanding:**
+   - Explain the concept of authentication policies and their role in verifying user identities before granting access to API resources.
+   - Interpret the relationship between authentication policies and access control mechanisms, such as quotas, in maintaining API security and integrity.
+
+**Applying:**
+   - Utilize the provided instructions to configure authentication policies, including HTTP Basic filters, within API Gateway.
+   - Demonstrate the application of authentication policies in restricting access to API resources based on user credentials and group memberships.
+
+**Analyzing:**
+   - Evaluate different scenarios where authentication policies are essential for enforcing access control and preventing unauthorized access to APIs.
+   - Assess the impact of authentication policies on API performance, scalability, and overall security posture within an API management environment.
+
+**Creating:**
+   - Design a customized authentication strategy tailored to specific organizational requirements, considering factors such as user authentication methods and access control mechanisms.
+
 
 
 ## Introduction
