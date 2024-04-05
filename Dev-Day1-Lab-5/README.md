@@ -27,26 +27,26 @@ By the end of this session, you will have a solid understanding of how to test A
    - Design a comprehensive API testing strategy tailored to specific project requirements and constraints, considering factors such as resource availability, time constraints, and project scope.
 
 
-## Test from API Management interfaces
+## 2. Test from API Management interfaces
 
-### Try-out API method - from API Portal and API Manager
+### 2.1. Try-out API method - from API Portal and API Manager
 
 StockQuote is a trading API providing the value of a company stock
 
 **Task**: Test the GET method of Stockquote, for the company Google, meaning with parameter `symbol = GOOG`. Get a positive response
 * Note : Stockquote is running on the Backend Server, backend services must be started
 
-#### With API Portal
+#### 2.1.1 With API Portal
 
 * Connect with `anna/anna` to API Portal and test Stockquote API
 
-#### With API Manager
+#### 2.1.2. With API Manager
 
 * If API Portal is not present, you have to know how to use API Manager
 * It works exactly like API Portal
 * Connect with `anna/anna` to API Manager and test Stockquote API
 
-## Test from Postman
+## 3. Test from Postman
 
 **Task**: Test the Stockquote API with Postman.
 
@@ -58,7 +58,7 @@ StockQuote is a trading API providing the value of a company stock
 
 ![Alt text](images/image23.png)
 
-## Test from your browser
+## 4. Test from your browser
 
 The API Gateway has an API to test the connection to an API Gateway instance called healthcheck.
 
@@ -69,7 +69,7 @@ The API Gateway has an API to test the connection to an API Gateway instance cal
 * **Port:** `8080`
 * **Path:** `healthcheck`
 
-## Test from the command line
+## 5. Test from the command line
 
 * Syntax : `curl [options] url`
 * Options :
@@ -109,7 +109,7 @@ The API Gateway has an API to test the connection to an API Gateway instance cal
 * **Data to provide in the request body:**  `{“buyStockSymbol” : ”1”}`
 
 
-## Activity troubleshooting 
+## 6. Activity troubleshooting 
 
 * Connect to API Gateway Manager to follow transactions  
     `https://api-env.demo.axway.com:8090/` with user/password : `admin/changeme`
@@ -121,9 +121,9 @@ The API Gateway has an API to test the connection to an API Gateway instance cal
 
 ![Alt text](images/image25.png)
 
-## Solutions
+## 7. Solutions
 
-## Test from API Management interfaces - API Portal
+### 7.1. Test from API Management interfaces - API Portal
 
 * Connect to API Portal with `anna/anna`: `https://api-env.demo.axway.com/`
 * In Applications tab, create an application to define rights for API Stockquote called `Stockquote app`
@@ -157,7 +157,7 @@ If the result is not 200 OK, check that backend services have been started.
 
 ![Alt text](images/image32.png)
 
-## Test from API Management interfaces - API Manager
+### 7.2. Test from API Management interfaces - API Manager
 
 * Connect to API Manager with `anna/anna`: `https://api-env.demo.axway.com:8075/`
 
@@ -188,13 +188,13 @@ If the result is not 200 OK, check that backend services have been started.
 
 ![Alt text](images/image36.png)
 
-## Test from a browser
+### 7.3. Test from a browser
 
 * Type `http://api-env:8080/healthcheck` in a browser
 
 ![Alt text](images/image37.png)
 
-## Test from the command line
+### 7.4. Test from the command line
 
 * Type `curl http://api-env:8080/healthcheck` in the terminal
 
@@ -213,7 +213,7 @@ If the result is not 200 OK, check that backend services have been started.
   "Stock": “GOOG"}`
 
 
-## Conclusion
+## 8. Conclusion
 
 You now know how to test the APIs using API Portal and API Manager. You can also now use CURL commands for unit testing or automation of testing.
 

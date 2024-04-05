@@ -19,7 +19,7 @@ Through hands-on exercises, we'll explore how to publish APIs, configure authent
 
 **Applying:**
    - Utilize the provided instructions to configure API authentication settings within Axway API Manager, including selecting security options and saving configurations.
-   - Demonstrate the ability to test APIs using Firefox and verify their functionality by consuming resources and receiving responses.
+   - Demonstrate the ability to test APIs and verify their functionality by consuming resources and receiving responses.
 
 **Analyzing:**
    - Evaluate the advantages and disadvantages of different authentication mechanisms, such as Pass Through and API Key, in terms of security and ease of use.
@@ -41,11 +41,11 @@ You as a developer is tasked with the following goals
 
 In today’s world, companies publish APIs to increase their agility and as such the speed with which they develop new applications, thus responding to new demands of existing clients, partners and suppliers.
 
-Gerard Lambert is the architect, designer and responsible of security in the department of system integration of the Roboulot Group. In short, it’s the person to blame if something does not work as it is supposed to (you probably saw this before…).
+Gerard Lambert is the architect designer and responsible for security in the department of system integration of the Roboulot Group. In short, he is the person to blame if something does not work as intended (you probably experienced this before…).
 
 To optimize their business, the Roboulot Group has launched an ambitious program. The group wants to provide automated services through APIs to the partners and affiliates. The service would allow external parties:
 * To process orders more quickly 
-* To follow a manufacturing process using their applications
+* To follow-up on a manufacturing process using their applications
 
 Partners are encouraged to use these services to optimize their own processes. It’s a win-win situation that facilitates commercial relationships by improving margins. 
 
@@ -55,10 +55,25 @@ In his role of overseeing the “APIsation” program of the company, he should 
 
 Gerard Lambert needs your expert knowledge to put a Portal in place that allows to expose APIs to the external parties. Ideally, he needs a solution which allows to control the usage of these APIs depending on the type of applications that are using them.
 
-| Current situation without API Management solution | Target state using API Management with API Manager and API Portal|
-| ------ | ------ |
-| ![Current situation without APIM](images/WithoutAPIM.png) | ![Target state with APIM](images/WithAPIM.png) |
-| In the existing system, as shown in the diagram above, consumers directly access the order management system (OMS) backend system. The consumers also do not have any means to follow-up on the order once they have made the order. | Thanks to Axway's API Management solution, the company can now secure the access to the OMS backend system. The consumers will also be able to track their order from a branded API Portal. |
+<table>
+    <thead>
+        <tr>
+            <th><center>Current situation without API Management solution</center></th>
+            <th><center>Target state using API Management with API Manager and API Portal</center></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><img src="images/WithoutAPIM.png" style="text-align:center"></td>
+            <td><img src="images/WithAPIM.png" style="text-align:center"> </td>
+        </tr>
+        <tr>
+            <td>In the existing system, as shown in the diagram above, consumers directly access the order management system (OMS) backend system. The consumers also do not have any means to follow-up on the order once they have made the order. </td>
+            <td>Thanks to Axway's API Management solution, the company can now secure the access to the OMS backend system. The consumers will also be able to track their order from a branded API Portal.</td>
+        </tr>        
+    </tbody>
+</table>
+
 
 
 
@@ -93,15 +108,15 @@ If you are disconnected, click on the username “Axway”:
 
  ![Alt text](images/image005.png)
 
-Enter “axway” in the field “Password”.
-Click on the button “Unlock” 
+Enter `axway` in the field **Password**.
+Click on the button **Unlock** 
  
 ![Alt text](images/image006.png)
 
 #### 4.2. Start Server Components
 If products are not started (you can check with the command “statusAll” anywhere from a terminal), double click the following desktop shortcut:
-* “Start API Management”
-* “Start Backend Services”
+* Start API Management
+* Start Backend Services
 
 ![Alt text](images/image007.png)
 
@@ -110,21 +125,20 @@ If products are not started (you can check with the command “statusAll” anyw
 #### 4.3. API Manager access
 Connect to the API Manager:
 
-* Start “Firefox” by double-clicking the icon on the desktop:
+* Start **Firefox** by double-clicking the icon on the desktop:
 
 ![Alt text](images/image008.png)
 
-* Click on the shortcut “API Manager” which is available in Firefox (URL: “https://api-env.demo.axway.com:8075/”).
+* Click on the shortcut **API Manager** which is available in Firefox (URL: `https://api-env.demo.axway.com:8075/`).
  
 ![Alt text](images/image009.png)
 
 Login as administrator.
 Enter the following information in the login screen:
-* Enter “apiadmin” in the field “Username”
-* Enter “changeme” in the field “Password”
-* Click on “Login”.
-* Click on the tab “API”
-
+* Enter `apiadmin` in the field **Username**
+* Enter `changeme` in the field **Password**
+* Click on **Login**.
+* Click on the tab **API**
 
 
 
@@ -139,20 +153,20 @@ Enter the following information in the login screen:
 ### 5.1. API Virtualization
 
 The following points explain the virtualization process:
-* The “Consumer” (on the left) calls a service “Supplier” (on the right) through the “API Management” solution.
+* The **Consumer** (on the left) calls a service **Supplier** (on the right) through the **API Management** solution.
 * There are 2 connections to access the virtualized service / API
-    * From the consumer to the API Management solution: “Frontend API”
-    * From the API Management solution to the backend service: “Backend API”
+    * From the consumer to the API Management solution: **Frontend API**
+    * From the API Management solution to the backend service: **Backend API**
 
 ![Alt text](images/image013.png)
 
-The virtualization of a service with the API Manager consists of creating the Backend and Frontend APIs.
+The virtualization of a service with the **API Manager** consists of creating the Backend and Frontend APIs.
 
 #### 5.1.1. Creation of the Backend API
 
-The “Backend API” represents the API provided by the backend system in API Manager. This “Backend API” can be created manually or by importing a file that describes a service contract.  
+The **Backend API** represents the API provided by the backend system in API Manager. This **Backend API** can be created manually or by importing a file that describes a service contract.  
 
-In this example, we are going to import a file in “Swagger” format provided by the Order Management System and which describes the service.
+In this example, we are going to import a file in **Swagger** format provided by the Order Management System and which describes the service.
 
 * Click on the tab **API**, 
 * Select **Backend API** in the menu
@@ -169,9 +183,9 @@ In the window **Import from**,
 
 ![Alt text](images/image015.png)
 
-In the menu “File Upload” that opens:
-* Click the map **axway** -> **TechLab** -> **TechLabs Resources**  
-    Note : Depending on the screen, it is possible that you need to use the vertical scrollbar to show the map
+In the menu **File Upload** that opens:
+* Click the path **axway** -> **TechLab** -> **TechLabs Resources**  
+    Note : Depending on the screen, it is possible that you need to use the vertical scrollbar to show the entire path
 * In the right section, select the file **oms_v1.json** (this file describes the service)
 * Click **Open**
 
@@ -199,7 +213,7 @@ In the first tab **API**, you find all the general information like name, type (
 
 ![Alt text](images/image020.png)
 
-The second tab “API Methods” shows all the available API Methods belonging to the API:
+The second tab **API Methods** shows all the available API Methods belonging to the API:
 * Click **API Methods**. The OMS API provides two methods **read** and **submit**.
 
 ![Alt text](images/image021.png)
@@ -225,7 +239,7 @@ Open the administration console of the API Manager (if you are disconnected, che
 
 You will now see a form that allows you to create the public API.
 
-In the tab “Inbound”,
+In the tab **Inbound**,
 * Select **Pass Through** in the field **Inbound Security**. This allows you to verify if the API is working without having to manage access rights. We will change it later.
 
 ![Alt text](images/image024.png)
@@ -260,7 +274,7 @@ Some additional steps are required to allow this API to be shared with the appli
 * Share the API with the partners
 * Put quotas in place
 
-Let’s go back to the “Frontend API” to change the authentication mechanism:
+Let’s go back to the **Frontend API** to change the authentication mechanism:
 * Go back to the page **Axway API Manager**
 * Select **Frontend API** in the menu **API**
 * Type oms in filter API to find it easily
@@ -271,12 +285,12 @@ Let’s go back to the “Frontend API” to change the authentication mechanism
 
 ![Alt text](images/image029.png)
 
- In the “Inbound” tab,  
+ In the **Inbound** tab,  
  * Select **API Key** for the field **Inbound security**, to indicate that this resource requires an API key
 
  ![Alt text](images/image030.png)
 
- In a new window, “API Key Device” appears:
+ In a new window, **API Key Device** appears:
 
  ![Alt text](images/image031.png)
 
@@ -413,8 +427,8 @@ This configuration allows the API Manager to apply the following quota:
 Until now, the scenario has been realized with the “apiadmin” account that has all rights. We have virtualized an API and executed the necessary steps to make it accessible to external partners.
 
 Now, we will look at the management of roles with 2 different users:
-* In this chapter, Renée, responsible for client relations, would like to propose APIs to the partners
-* In the next chapter, we will continue with Gabriel, an external app developer, who is enrolled by Renée
+* In this lab, Renée, responsible for client relations, would like to propose APIs to the partners
+* In one of the next labs, we will continue with Gabriel, an external app developer, who is enrolled by Renée
 
 We will connect with the user **Renée**. She has the role of **Organization Manager** of the organization **Partners**. This role provides him the rights to enroll new developers and manage the APIs available to the Partners organization.
 
@@ -425,8 +439,8 @@ Log out as the **apiadmin** user:
 ![Alt text](images/image052.png)
 
 A sign-in window appears:
-* Enter **renee** as **Username** 
-* Enter **renee** in **Password**
+* Enter `renee` as **Username** 
+* Enter `renee` in **Password**
 * Click **Sign in**
 
 ![Alt text](images/image053.png)
@@ -436,11 +450,11 @@ A sign-in window appears:
 ![Alt text](images/image054.png)
 
 * Click **Application Developers**.  
-    * You can notice that Renée is member of the organization. She will provide a registration code to new developers so that they can enroll in the **Partners** organization. They will enroll using the subscription mechanism of the API Manager:
+    * You can notice that Renée is member of the organization. She will provide a registration code to new developers so that they can enroll in the **Partners** organization. They will enroll using the subscription mechanism of the API Manager.
 * Click **Organizations**
 * Click on the organization **Partners**
 
-Renée manages the organization, the APIs, the users and the applications that we will see in the following exercise.
+Renée manages the organization, the APIs, the users and the applications that we will use in a following lab.
 
 ![Alt text](images/image055.png)
 
@@ -462,7 +476,7 @@ This action creates an auto registration code, as it can be seen in the example 
 
 ![Alt text](images/image059.png)
 
-Click in the code box, select all, copy and paste your code somewhere. We will need it later.
+**Click in the code box, select all, copy and paste your code somewhere. We will need it later.**
 
 You can log out as Renee.
 
@@ -616,12 +630,6 @@ Gabriel can also check details on the consumption of his application with the em
 Gabriel can access all his applications and select search criteria: per application, API, time. For now, he is only testing his app, but in the future, he hopes to have a lot of users for his new application.
 
 ![Alt-text](images/image081.png)
-
-
-
-
-
-
 
 
 
