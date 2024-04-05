@@ -1,5 +1,9 @@
 # API Management using API Manager and API Portal
 
+| Average time required to complete this lab | 30 minutes |
+| ---- | ---- |
+| Lab last updated | March 2024 |
+| Lab last tested | March 2024 |
 
 In this lab, we'll dive into the fundamentals of API virtualization, publication, and consumption using Axway's API Manager. We'll walk through the process of defining APIs, testing them, and making them available to developers securely and efficiently. By the end of this session, you'll have a solid understanding of how to manage APIs effectively within your organization's ecosystem.
 

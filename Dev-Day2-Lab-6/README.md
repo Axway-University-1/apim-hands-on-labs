@@ -1,10 +1,15 @@
 # Policy Studio Lab - Mediation
 
+| Average time required to complete this lab | 30 minutes |
+| ---- | ---- |
+| Lab last updated | March 2024 |
+| Lab last tested | March 2024 |
+
 In this lab, we'll delve into the world of API mediation using Policy Studio. The focus of this session is on restifying a SOAP Web Service, a crucial skill in modern API management. 
 
 As organizations increasingly move towards RESTful architectures for enhanced integration and scalability, the ability to transform existing SOAP services into RESTful ones becomes invaluable. In this lab, we'll learn how to virtualize a SOAP service and provide a REST interface using Policy Studio, empowering you to adapt legacy systems to meet modern integration requirements. Let's dive in and explore the exciting world of API mediation together!
 
-## Learning objectives
+## 1. Learning objectives
 
 **Remembering:**
    - Recall the steps involved in restifying a SOAP Web Service using Policy Studio.
@@ -24,7 +29,7 @@ As organizations increasingly move towards RESTful architectures for enhanced in
    - Design a customized mediation strategy tailored to specific organizational requirements for restifying SOAP services.
 
 
-## Introduction
+## 2. Introduction
 
 MyCompany decided that having all services in REST would simplify integration in the future
 
@@ -36,7 +41,7 @@ Let’s restify **Billing** service
 ![Alt text](images/image01.png)
 
 
-## Task
+## 3. Task
 
 Virtualize Billing SOAP service and provide a REST interface
 
@@ -64,16 +69,16 @@ Try yourself before looking at the solution!
 
 
 
-## Solution 
+## 4. Solution 
 
-### Create a policy
+### 4.1. Create a policy
 
 * Create a new container called **Billing** under the **Training** container.
 * Create a policy **BillingRest** in container **Training/Billing**
 
 ![Alt text](images/image02.png)
 
-### Get parameters
+### 4.2. Get parameters
 
 * Validate/retrieve parameters with a **Validate REST filter**
 * Follow the screenshot to add **URI Template** and the **Request Parameter**
@@ -85,7 +90,7 @@ Try yourself before looking at the solution!
 
 ![Alt text](images/image41.png)
 
-### Set SOAP message
+### 4.3. Set SOAP message
 
 * On previous filter, drag and drop **Set Message** filter
 * Set content type to `application/xml` 
@@ -95,7 +100,7 @@ Try yourself before looking at the solution!
 
 ![Alt text](images/image43.png)
 
-### Add HTTP header
+### 4.4. Add HTTP header
 
 * On previous filter, drag and drop  **Add HTTP Header** filter 
 * Set HTTP Header Name to **SOAPAction**
@@ -104,7 +109,7 @@ Try yourself before looking at the solution!
 
 ![Alt text](images/image44.png)
 
-### Connect to URL
+### 4.5. Connect to URL
 
 * On previous filter, drag and drop **Connect to URL** filter
 * Set URL to `http://api-env:5080/BillingService`
@@ -113,7 +118,7 @@ Try yourself before looking at the solution!
 
 ![Alt text](images/image45.png)
 
-### Transformation policy
+### 4.6. Transformation policy
 
 * Create a policy called “Transformation” in container Training/Billing  
 *A policy dedicated for transformation will provide more flexibility*
@@ -131,7 +136,7 @@ Try yourself before looking at the solution!
 * Create an Xpath:
     * Click on “…” 
 
-### Save response message from **SoapUI**
+### 4.7. Save response message from **SoapUI**
 * In **SoapUI**, right click on the response message from the `getBillStatus` method.
 * Select the **Save As** option
 * Save **response.xml** to your VM desktop
@@ -140,7 +145,7 @@ Try yourself before looking at the solution!
 
 ![Alt text](images/image49.png)
 
-### Retrieve **status** from message
+### 4.8. Retrieve **status** from message
 * Right click on **Attribute Locations**
 * Click **Add** to open Xpath Expression
 * Add the name **status**
@@ -157,7 +162,7 @@ Try yourself before looking at the solution!
 
 ![Alt text](images/image03.png)
 
-### Retrieve **paymentDate** from message
+### 4.9. Retrieve **paymentDate** from message
 
 * On previous filter, drag and drop another **Retrieve from message** filter
 * Extract `paymentDate` node value
@@ -165,7 +170,7 @@ Try yourself before looking at the solution!
 
 ![Alt text](images/image53.png)
 
-### Set response message
+### 4.10. Set response message
 
 * On previous filter, drag and drop **Set Message** filter
 * Rename it **Set response**
@@ -178,7 +183,7 @@ Try yourself before looking at the solution!
 }
 ```
 
-### Check the policies
+### 4.11. Check the policies
 
 * Verify that your policies look like this
 * Set first filters as start
@@ -186,11 +191,11 @@ Try yourself before looking at the solution!
 
 ![Alt text](images/image04.png)
 
-### Deploy the configuration
+### 4.12. Deploy the configuration
 
 * Deploy configuration by clicking the icon at the top of **Policy Studio** or press **F6**
 
-### Test
+### 4.13. Test
 
 * Open your browser
 
@@ -206,7 +211,7 @@ Try yourself before looking at the solution!
 
 ![Alt text](images/image60.png)
 
-## Conclusion
+## 5. Conclusion
 
 * Restification is first about defining the API
     * Done as the target definition
@@ -216,6 +221,5 @@ Try yourself before looking at the solution!
 
 
 
-> Lab last updated: March, 2024  
-Lab last tested: March, 2024
+
 

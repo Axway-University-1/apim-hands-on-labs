@@ -1,10 +1,15 @@
 # Policy Studio Lab - Virtualization with policies
 
+| Average time required to complete this lab | 30 minutes |
+| ---- | ---- |
+| Lab last updated | March 2024 |
+| Lab last tested | March 2024 |
+
 Welcome to the Policy Studio Lab on virtualization with policies! In this session, we will delve into the intricacies of virtualizing SOAP web services using Policy Studio. By the end of this lab, you will gain a comprehensive understanding of how to effectively virtualize SOAP web services and seamlessly integrate them into your development environment. 
 
 Virtualizing SOAP web services is a crucial aspect of modern API management, allowing developers to simulate backend behaviors without impacting existing systems. Throughout this session, we will explore step-by-step instructions to virtualize a SOAP web service using Policy Studio, providing you with hands-on experience and valuable insights into the virtualization process. Let's dive in and uncover the power of Policy Studio in simplifying the virtualization of SOAP web services!
 
-## Learning objectives
+## 1. Learning objectives
 
 **Remembering:**
    - Recall the purpose of SOAP web services and their role in modern application development.
@@ -27,7 +32,7 @@ Virtualizing SOAP web services is a crucial aspect of modern API management, all
 
 
 
-## Billing Soap WS virtualization
+## 2. Billing Soap WS virtualization
 
 * Billing application is providing a SOAP Web Service
 
@@ -42,7 +47,7 @@ Virtualizing SOAP web services is a crucial aspect of modern API management, all
 ![Alt text](images/image01.png)
 
 
-## Task
+## 3. Task
 
 **Task** 
 * Virtualize SOAP Service with following service endpoint:  
@@ -57,7 +62,7 @@ Virtualizing SOAP web services is a crucial aspect of modern API management, all
 > Try by yourself before looking at the solution!
 
 
-## Solution
+## 4. Solution
 
 * Open a browser and type URL:  
 `http://api-env:5080/BillingService?wsdl`
@@ -137,7 +142,7 @@ Virtualizing SOAP web services is a crucial aspect of modern API management, all
 ![Alt text](images/image45.png)
 
 
-## Conclusion
+## 5. Conclusion
 
 * Policy Studio provides a wizard to easily virtualize SOAP Web Services
 * API Manager is meant to be used by default

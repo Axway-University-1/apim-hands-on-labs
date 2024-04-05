@@ -1,10 +1,15 @@
 # API lifecycle management using API Manager
 
+| Average time required to complete this lab | 30 minutes |
+| ---- | ---- |
+| Lab last updated | March 2024 |
+| Lab last tested | March 2024 |
+
 Welcome, learners, to today's lab session focused on API lifecycle management using API Manager. In this lab, we will delve into the intricate process of managing the lifecycle of an API, a crucial aspect of modern software development and integration. Throughout this session, you will gain hands-on experience in maneuvering through the stages of API development, testing, publication, deprecation, and retirement.
 
 As technology evolves rapidly, organizations must adapt by efficiently managing their APIs to meet consumer demands and industry standards. Through this lab, you will navigate real-world scenarios where a company aims to enhance its existing API, Stockquote, to cater to consumer requirements for retrieving historical stock quotes. By understanding the API lifecycle management process, you will be equipped with the skills necessary to orchestrate seamless transitions between API versions and ensure continued accessibility and functionality for end-users. Let's embark on this journey to master API lifecycle management and elevate your proficiency in API development and governance.
 
-## Learning objectives
+## 1. Learning objectives
 
 **Remembering:**
    - Recall the steps involved in managing the lifecycle of an API in API Manager.
@@ -27,7 +32,7 @@ As technology evolves rapidly, organizations must adapt by efficiently managing 
    - Develop a documentation outlining best practices for API versioning, access management, and lifecycle transitions within API Manager.
 
 
-## Scenario introduction
+## 2. Scenario introduction
 
 A company is exposing an API, `Stockquote v1`. The API returns the quote of a given company on the market.
 
@@ -57,9 +62,9 @@ API consumers would like to get the quote for a given date in addition to a give
 * Let’s see how to create a new version of Stockquote API and how to provide rights to `Stockquote v2`, to internal and external users
 
 
-## Creation of an API
+## 3. Creation of an API
 
-### API Lifecycle
+### 3.1. API Lifecycle
 
 ![Alt text](images/image01.png)
 <p style="text-align: center;">An unpublished API corresponds to the state Develop/Configure/Test</p>
@@ -84,7 +89,7 @@ API consumers would like to get the quote for a given date in addition to a give
     * `date=01/01/2018`
 * What happens? Why?
 
-### Live and scheduled end-of-life
+### 3.2. Live and scheduled end-of-life
 
 ![Alt text](images/image02.png)
 <p style="text-align: center;">A published API corresponds to a live API
@@ -104,7 +109,7 @@ API consumers would like to get the quote for a given date in addition to a give
     * `date=01/01/2018`
 * Is Dave now able to test the API? Why?
 
-## Solutions
+## 4. Solutions
 
 * Connect to API Manager with `apiadmin/changeme`
 
@@ -207,7 +212,7 @@ Let’s grant him access!
 ![Alt text](images/image34.png)
 
 
-## Conclusion
+## 5. Conclusion
 
 * API Manager allows to manage the full life cycle of APIs from creation - with multiple versions - to end of life
 * The available status are 

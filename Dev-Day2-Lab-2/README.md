@@ -1,5 +1,10 @@
 # Policy Studio Lab - My first mockup
 
+| Average time required to complete this lab | 30 minutes |
+| ---- | ---- |
+| Lab last updated | March 2024 |
+| Lab last tested | March 2024 |
+
 Welcome to the Policy Studio Lab - My First Mockup! In this lab, we'll delve into the intricacies of Policy Studio, exploring various filters and learning how to craft policies from scratch. But first, let's demystify the concept of a mockup. In the world of design and development, a mockup serves as a prototype, aiding in teaching, evaluation, and demonstration. Within the API realm, a mockup simulates a server's backend behavior, invaluable during the development phase to mitigate technical and organizational impacts. Today, we'll embark on a journey to create a mockup service, tackling the challenge of improving Company orders' tracking system by harnessing the power of Policy Studio.
 
 As we delve deeper into this lab, we'll unravel the essence of creating a mockup service using Policy Studio. Our goal is to simulate a shipping partner's response to order statuses via API, crucial for seamless development without imposing test impacts. Together, we'll navigate through the steps of building an API that encapsulates specific logic, crafting policies within Policy Studio, and ultimately fashioning a mockup service. Through hands-on exercises, you'll gain firsthand experience in setting up policy studio containers, designing policies, and deploying configurations, all essential skills for crafting robust API solutions. So, let's dive in and unlock the potential of Policy Studio to revolutionize API development!
@@ -26,7 +31,7 @@ As we delve deeper into this lab, we'll unravel the essence of creating a mockup
    - Design customized mockup services tailored to specific organizational requirements and development scenarios.
 
 
-## Introduction
+## 2. Introduction
 ### What is a mockup?
 
 * In manufacturing and design, a mockup is a model of a design or device, used for teaching, demonstration, design evaluation, promotion, etc.
@@ -35,7 +40,7 @@ As we delve deeper into this lab, we'll unravel the essence of creating a mockup
 
 * It is often used in development to avoid technical or organizational impacts
 
-### Scenario
+### 2.1. Scenario
 
 * The goal of the whole exercise suite is to improve the way Company orders are followed
 
@@ -43,18 +48,18 @@ As we delve deeper into this lab, we'll unravel the essence of creating a mockup
 
 * To avoid test impact during development phase, we will simulate the partner server response: by creating a mockup
 
-#### What the company is trying to achieve?
+#### 2.1.1. What the company is trying to achieve?
 
 ![Alt text](images/image01.png)
 
-#### How we are going to test partner services without impact?
+#### 2.1.2. How we are going to test partner services without impact?
 
 ![Alt text](images/image02.png)
 
 
-## Tasks
+## 3. Tasks
 
-### Instructions to develop an API
+### 3.1. Instructions to develop an API
 
 * Create an API (Policy) that implements a specific logic
 
@@ -62,7 +67,7 @@ As we delve deeper into this lab, we'll unravel the essence of creating a mockup
 
 * Deploy the configuration
 
-### Service definition - request/response
+### 3.2. Service definition - request/response
 
 * The mockup is hosted in API Management solution
     * In this case, in the same API Gateway instance
@@ -85,7 +90,7 @@ Before looking at solution in next section, try to think about what is required 
 
 *Hint:* The simplest mockup policy requires only 2 filters
 
-### Step-by-step instructions
+### 3.3. Step-by-step instructions
 
 * Create an API (Policy) that implements a specific logic
 * Create a container called **Training**
@@ -100,15 +105,15 @@ Before looking at solution in next section, try to think about what is required 
 
 * Test the new service with a curl or a web browser
 
-### Expected result
+### 3.4. Expected result
 
 * A simple service with a predefined response
 
 ![Alt text](images/image35.png)
 
-## Solution
+## 4. Solution
 
-### Open QuickStart project
+### 4.1. Open QuickStart project
 
 * Open Policy Studio
     * Double click the Policy Studio icon on the desktop
@@ -119,7 +124,7 @@ Before looking at solution in next section, try to think about what is required 
 ![Alt text](images/image36.png)
 ![Alt text](images/image37.png)
 
-### Create containers and policies
+### 4.2. Create containers and policies
 
 * Create container named **Training**
     * Right-click on **Policies**
@@ -137,7 +142,7 @@ Before looking at solution in next section, try to think about what is required 
 ![Alt text](images/image38.png)
 
 
-### Create filters
+### 4.3. Create filters
 
 * Open policy by double-clicking
 * Type `set` to search for filter `Set Message`
@@ -146,7 +151,7 @@ Before looking at solution in next section, try to think about what is required 
 
 ![Alt text](images/image39.png)
 
-### Set message
+### 4.4. Set message
 
 * Type content type `application/json`
 
@@ -162,7 +167,7 @@ Before looking at solution in next section, try to think about what is required 
 
 ![Alt text](images/image40.png)
 
-### Reflect message
+### 4.5. Reflect message
 
 * Type **refl** to search for filter **Reflect Message**
 * Click on **Reflect Message** and drag and drop on top of filter **Set Message**
@@ -176,7 +181,7 @@ Before looking at solution in next section, try to think about what is required 
 
 ![Alt text](images/image42.png)
 
-### Set as start
+### 4.6. Set as start
 
 * Select **Set Message** filter and right-click
 
@@ -185,7 +190,7 @@ Before looking at solution in next section, try to think about what is required 
 ![Alt text](images/image43.png)
 
 
-### Expose the service
+### 4.7. Expose the service
 
 * Expose service by clicking on **Add relative path**
 
@@ -199,7 +204,7 @@ Before looking at solution in next section, try to think about what is required 
 
 ![Alt text](images/image45.png)
 
-### Deploy the configuration
+### 4.8. Deploy the configuration
 
 * Deploy either by
     * Clicking on deploy button, or
@@ -221,7 +226,7 @@ Before looking at solution in next section, try to think about what is required 
 ![Alt text](images/image49.png)
 
 
-### Testing
+### 4.9. Testing
 
 From your favorite browser, call the newly created API with a URL similar to the following:
 
@@ -231,7 +236,7 @@ From your favorite browser, call the newly created API with a URL similar to the
 
 ![Alt text](images/image50.png)
 
-## Conclusion
+## 5. Conclusion
 
 * This is a perfectly valid mockup…
 
