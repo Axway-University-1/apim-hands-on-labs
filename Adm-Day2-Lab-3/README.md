@@ -9,7 +9,7 @@ Welcome to the Testing and Troubleshooting Lab! In this session, we'll delve int
 
 Through interactive exercises and real-world scenarios, you'll explore how to test and receive responses from different services, including StockQuote APIs, using both API Portal and API Manager interfaces. Additionally, you'll master the art of testing APIs directly from a browser and through command-line tools like Curl, equipping you with valuable skills for both manual and automated testing practices. Let's dive in and uncover the essential strategies for ensuring the seamless performance of APIs within your API Management environment!
 
-## Learning objectives
+## 1. Learning objectives
 
 **Remembering:**
    - Recall the steps involved in testing APIs, including accessing API Management interfaces and using CURL commands.
@@ -31,11 +31,11 @@ Through interactive exercises and real-world scenarios, you'll explore how to te
    - Design a comprehensive API testing strategy tailored to specific organizational requirements, considering factors such as security, performance, and scalability.
    - Develop documentation outlining best practices for API testing and troubleshooting within an API Management environment.
 
-## Exercise
+## 2. Exercise
 
-### API testing
+### 2.1. API testing
 
-#### Test from API Management interfaces
+#### 2.1.1. Test from API Management interfaces
 
 **StockQuote** is a trading API providing the value of a company stock
 
@@ -54,7 +54,7 @@ Test the `GET` method of **StockQuote**, for the company Google, meaning with pa
 * Connect with `anna/anna` to **API Manager** and test Stockquote API
 
 
-#### Test from a browser
+#### 2.1.2. Test from a browser
 
 The **API Gateway** has an API to test the connection to an API Gateway instance called `healthcheck`.
 
@@ -66,7 +66,7 @@ Test the `healthcheck` API with the following parameters
 * Path: `healthcheck`
 
 
-#### Test using Curl from command line
+#### 2.1.3. Test using Curl from command line
 
 Curl basics for HTTP
 
@@ -115,7 +115,7 @@ Test the Stockpurchase API with a CURL command and the following parameters
 
 
 
-### Activity troubleshooting
+### 2.2. Activity troubleshooting
 
 * Connect to **API Gateway Manager** to follow transactions
     * `https://api-env.demo.axway.com:8090/` with user/password: `admin/changeme` 
@@ -130,9 +130,9 @@ Test the Stockpurchase API with a CURL command and the following parameters
 
 ![Alt text](images/image24.png)
 
-## Solutions
+## 3. Solutions
 
-### Test from API Management interfaces - API Portal
+### 3.1. Test from API Management interfaces - API Portal
 
 * Connect to **API Portal** with `anna/anna`:   
 `https://api-env.demo.axway.com/`
@@ -170,7 +170,7 @@ Test the Stockpurchase API with a CURL command and the following parameters
 
 ![Alt text](images/image32.png)
 
-### Test from API Management interfaces - API Manager
+### 3.2. Test from API Management interfaces - API Manager
 
 * Connect to **API Manager** with `anna/anna`:  
 `https://api-env.demo.axway.com:8075/`
@@ -205,7 +205,7 @@ Test the Stockpurchase API with a CURL command and the following parameters
 
 ![Alt text](images/image36.png)
 
-### Test from your browser
+### 3.3. Test from your browser
 
 * Type `http://api-env:8080/healthcheck` in a browser
 
@@ -213,9 +213,9 @@ Test the Stockpurchase API with a CURL command and the following parameters
 ![Alt text](images/image39.png)
 
 
-### Test using Curl from command line
+### 3.4. Test using Curl from command line
 
-#### Healthcheck
+#### 3.4.1. Healthcheck
 ```
 curl http://api-env:8080/healthcheck
 ```
@@ -225,7 +225,7 @@ Result:
 <status>ok</status>
 ```
 
-#### Stockquote
+#### 3.4.2. Stockquote
 
 ```
 curl -k -H "KeyId:e315a8b5-45f6-4f96-b20a-0b586a2a96c6" https://api-env.demo.axway.com:8065/stockquote/rest?symbol=GOOG
@@ -236,7 +236,7 @@ Result:
 
 
 
-## Conclusion
+## 4. Conclusion
 
 We used the following to test APIs:
     * CURL commands for unit testing or automation

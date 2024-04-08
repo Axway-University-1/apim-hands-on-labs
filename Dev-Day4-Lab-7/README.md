@@ -9,7 +9,7 @@ Welcome to the TLS Lab! In this session, we will dive into the intricacies of Tr
 
 As organizations increasingly prioritize data security, the ability to configure TLS effectively has become a sought-after skill in the realm of API management. This lab offers a hands-on opportunity to gain practical experience in setting up TLS listeners and navigating through various configurations. By the end of this session, you will not only be equipped with the technical know-how to create TLS listeners but also gain insights into testing methodologies and understanding the implications of different TLS versions. So, let's embark on this journey to enhance our understanding of TLS and fortify our API infrastructure against potential security threats.
 
-## Learning objectives
+## 1. Learning objectives
 
 **Remembering:**
 - Recall the steps involved in creating a TLS HTTPS listener on API Gateway.
@@ -31,7 +31,7 @@ As organizations increasingly prioritize data security, the ability to configure
 - Design a customized TLS listener configuration tailored to specific organizational security requirements.
 
 
-## Learn by doing
+## 2. Learn by doing
 
 * Use the **QuickStart** project in the API Management Reference Environment
 
@@ -82,7 +82,7 @@ Expected output:
 
 
 
-## Conclusion
+## 3. Conclusion
 
 * Demo of HTTPS Listener
 * Showed positive and negative test cases when we tried different TLS versions

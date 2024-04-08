@@ -11,7 +11,7 @@ Throughout this lab, you'll have the opportunity to simulate various scenarios, 
 
 
 
-## Learning objectives
+## 1. Learning objectives
 
 **Remembering:**
    - Recall the steps involved in performing maintenance tasks related to backup, recovery, file archiving, and API Gateway audit.
@@ -39,9 +39,9 @@ Throughout this lab, you'll have the opportunity to simulate various scenarios, 
    - Create a customized maintenance strategy tailored to specific organizational requirements and infrastructure configurations within an API Management environment.
 
 
-## Tasks
+## 2. Tasks
 
-### KPS table upkeep
+### 2.1. KPS table upkeep
 
 In this task, you are required to
 * Perform a backup of a Quickstart KPS table (*HeroesCharactersRegistry* table)
@@ -49,7 +49,7 @@ In this task, you are required to
 * Check data is missing in API Gateway Manager
 * Restore data
 
-#### Using kpsadmin tool for backup
+#### 2.1.1. Using kpsadmin tool for backup
 
 * In a terminal window switch to:  
     ```
@@ -83,7 +83,7 @@ In this task, you are required to
 `/opt/Axway/APIM/apigateway/groups/group-2/instance-1/conf/kps/backup/`
 
 
-#### Using kpsadmin tool for restore
+#### 2.1.2. Using kpsadmin tool for restore
 
 * Run kpsadmin tool in interactive mode
 
@@ -101,14 +101,14 @@ In this task, you are required to
 ![Alt text](images/image15.png)
 
 
-### Cassandra upkeep
+### 2.2. Cassandra upkeep
 
 In this task, you will
 * Understand Cassandra data directory structure
 * Identify an API Management keyspace
 * Perform a snapshot of one Cassandra keyspace
 
-#### Understand Cassandra data directory structure
+#### 2.2.1. Understand Cassandra data directory structure
 
 * Cassandra data is segregated by keyspace
 
@@ -123,7 +123,7 @@ In this task, you will
 
 ![Alt text](images/image16.png)
 
-#### Identify an API Management keyspace
+#### 2.2.2. Identify an API Management keyspace
 
 * In a terminal window switch to  
     ```
@@ -142,7 +142,7 @@ In this task, you will
 ![Alt text](images/image18.png)
 
 
-#### Perform a snapshot of one Cassandra keyspace
+#### 2.2.3. Perform a snapshot of one Cassandra keyspace
 
 * Clear all previous snapshots  
     ```
@@ -169,7 +169,7 @@ In this task, you will
 ![Alt text](images/image22.png)
 
 
-## Conclusion
+## 3. Conclusion
 
 * Keeping your API Management healthy requires good planning
 

@@ -9,7 +9,7 @@ Welcome to the Policy Studio Lab on Error Management! In this session, we'll del
 
 Throughout this session, we'll explore various facets of error management within Policy Studio. From defining default error attributes to handling validation and connection errors, you'll gain practical insights into configuring error management components effectively. By the end of this lab, you'll be proficient in setting up fault handlers, designing error messages, and deploying error management policies, all crucial aspects for maintaining robust and resilient API services. Let's dive in and master the art of error management within APIM's Policy Studio!
 
-## Learning objectives
+## 1. Learning objectives
 
 **Remembering:**
    - Recall the steps involved in handling error management using Policy Studio within APIM.
@@ -32,9 +32,9 @@ Throughout this session, we'll explore various facets of error management within
 
 
 
-## Introduction
+## 2. Introduction
 
-### Billing REST error management
+### 2.1. Billing REST error management
 
 * The ‘restified’ service **Billing** works well when used correctly.
 
@@ -45,7 +45,7 @@ Throughout this session, we'll explore various facets of error management within
 ![Alt text](images/image01.png)
 
 
-#### Default error attributes
+#### 2.1.1. Default error attributes
 
 * Go to `BillingRest` policy 
 
@@ -62,7 +62,7 @@ See the following image for options
 
 ![Alt text](images/image32.png)
 
-#### Validation error attributes
+#### 2.1.2. Validation error attributes
 
 * Add another **Copy / Modify attributes** filter (or copy it)
 
@@ -76,7 +76,7 @@ See the following image for options
 
 ![Alt text](images/image33.png)
 
-#### Connection error attributes
+#### 2.1.3. Connection error attributes
 
 * Add another **Copy / Modify attributes** filter (or copy it)
 
@@ -90,7 +90,7 @@ See the following image for options
 
 ![Alt text](images/image34.png)
 
-#### False filter
+#### 2.1.4. False filter
 
 * Add a **False** filter
 
@@ -98,7 +98,7 @@ See the following image for options
 
 ![Alt text](images/image35.png)
 
-#### Set error message
+#### 2.1.5. Set error message
 
 * Create a new policy **BillingRestFaultHandler** in the same container
 
@@ -116,7 +116,7 @@ See the following image for options
 
 ![Alt text](images/image36.png)
 
-#### Fault handler
+#### 2.1.6. Fault handler
 
 * Add **BillingRestFaultHandler** in **BillingRest**
 
@@ -129,13 +129,13 @@ See the following image for options
 ![Alt text](images/image37.png)
 
 
-#### One sample test
+#### 2.1.7. One sample test
 
 ![Alt text](images/image38.png)
 
 Please test for other errors.
 
-## Some notes
+## 3. Some notes
 
 * Notice there are still some filters having **End** tag
     * So, default error notification will be triggered
@@ -144,7 +144,7 @@ Please test for other errors.
 
 * Adding accurate error management can be an important part of policy (like in any program)
 
-## Conclusion
+## 4. Conclusion
 
 * Implementation starts by getting something to work.
 * But there are often few correct paths, for many incorrect ones. Take care of this error management from the beginning.

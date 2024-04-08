@@ -9,7 +9,7 @@ In this lab, we'll delve into essential processes and tools vital for understand
 
 Throughout this hands-on experience, we'll explore two key scenarios. Firstly, we'll focus on packaging and deploying Policy Studio projects, emphasizing the importance of externalizing parameters and variables for dynamic adjustments across various environments. Secondly, we'll delve into the usage of the apimanager-promote tool to seamlessly promote API collections to target environments, demonstrating the integration of DevOps principles into the APIM workflow. Through practical exercises and guided instructions, you'll acquire the skills necessary to automate build, deployment, and promotion processes effectively, ensuring streamlined operations within your API management ecosystem. Let's embark on this journey to optimize your deployment processes and leverage the power of automation in APIM!
 
-## Learning objectives
+## 1. Learning objectives
 
 **Remembering:**
    - Recall the steps involved in packaging and deploying Policy Studio projects using command-line tools like projpack and projdeploy.
@@ -33,7 +33,7 @@ Throughout this hands-on experience, we'll explore two key scenarios. Firstly, w
 
 
 
-## Introduction
+## 2. Introduction
 
 The lab explores two scenarios:
 1. Package and deploy three Policy Studio projects
@@ -46,13 +46,13 @@ Both scenarios targets DevOps and how you can automate build and deployment step
 
 ![Alt text](images/image.png)
 
-### Scope of the lab
+### 2.1. Scope of the lab
 
 You work with:
 * Policy Studio to make your projects suitable for deploying to multiple environments
 * API Management scripts – projpack/projdeploy/apimanager-promote – to understand the build and deploy/promote processes
 
-### Accelerating your deployment process
+### 2.2. Accelerating your deployment process
 
 Sample scripts are in  
 `/opt/Axway/APIM/apigateway/samples/scripts/environmentalize/`
@@ -119,9 +119,9 @@ Here are some details about the *certs* scripts
 </table>
 
 
-### Virtual machine environment
+### 2.3. Virtual machine environment
 
-#### Login/password
+#### 2.3.1. Login/password
 
 ![Alt text](images/image005.png)
 
@@ -132,7 +132,7 @@ Here are some details about the *certs* scripts
 ![Alt text](images/image006.png)
 
 
-#### Start server components
+#### 2.3.2. Start server components
 
 If products are not started (you can check with the command `statusAll` anywhere from a terminal), double click the following desktop shortcut: 
 * Start API Management
@@ -141,7 +141,7 @@ If products are not started (you can check with the command `statusAll` anywhere
 ![Alt text](images/image007.png)
 
 
-#### API Manager access
+#### 2.3.3. API Manager access
 
 Connect to the API Manager:
 * Start **Firefox** by double-clicking the icon on the desktop.
@@ -165,7 +165,7 @@ Some APIs are already virtualized. The goal of this scenario is to virtualize th
 
 ![Alt text](images/image011.png)
 
-## Tasks and steps
+## 3. Tasks and steps
 
 We will use two scenarios:
 1.	Using the API Gateway and Manager to modify a couple of policies and deploy them to a target environment. 
@@ -190,14 +190,14 @@ In the following sections, you will understand
 * Package multiple Policy Studio projects into a deployable package
 * Deploy this package along with an API collection to a target environment
 
-### Optimizing the deployment process
+### 3.1. Optimizing the deployment process
 
 We will environmentalize a project made up of 3 policy projects:
 * apicommon
 * apiproject1
 * apiproject2
 
-#### Environmentalizing variables
+#### 3.1.1. Environmentalizing variables
 
 It is very important in a DevOps pipeline to be able to dynamically adjust your deployment parameters for each environment. In this section we will explore two techniques: 
 * with environment properties and 
@@ -305,7 +305,7 @@ We will show you later how these fields can be dynamically set for each target e
         ![Alt text](images/image025.png)  
 
 
-#### Setting environment variables in `envSettings.props`
+#### 3.1.2. Setting environment variables in `envSettings.props`
 
 The following instructions explain how to set and modify environment variables in the envSettings.props file:
 
@@ -338,11 +338,11 @@ Open the following file to see the current values for our target API Gateway:
 
 
 
-### Some administration tasks
+### 3.2. Some administration tasks
 
 The following tasks are performed by an administrator or a person responsible for a DevOps pipeline. 
 
-#### Building a deployable package
+#### 3.2.1. Building a deployable package
 
 Now that we’re done with development steps, we need to build a deployable package and test it on a target environment. Follow these steps:
 1.	Switch to the terminal window.
@@ -369,7 +369,7 @@ Run this command:
 
 6.	You should see the **deployment.pol** file in the Group1-package/ subdirectory. Errors in this output are somewhat misleading. They tell you that the listed variables are not set in the projects. But as we stated earlier, we set them in the *envSettings.props* file.  
 
-#### Using Configuration Studio to create an environment package
+#### 3.2.2. Using Configuration Studio to create an environment package
 
 Let’s see how a developer or a business person can set the environment specific values for those fields that have been externalized previously.
 
@@ -457,7 +457,7 @@ The second field is used to enter a location of the corresponding Environment Pa
 For example, in the next release, a developer adds one more global environment field. You will need to open the new *.pol file and the existing *.env file. Configuration Studio will show you what new/changed fields exist in the Policy Package. You set or change values in Configuration Studio and save them as a new version of Environment Package. Now, new Policy Package has a corresponding Environment Package. You use your versioning technique to match these two files.
 
 
-#### Deploying and testing your projects
+#### 3.2.3. Deploying and testing your projects
 
 Perform these steps:
 1.	In the terminal window switch to the following directory:
@@ -492,7 +492,7 @@ See newly created messages when calling curl commands:
 
 Not only have you updated the configuration, but you also have merged different projects so that all methods can work at the same time.
 
-### Promoting/deploying the APIs in API Manager
+### 3.3. Promoting/deploying the APIs in API Manager
 
 If you need to promote APIs between the environments, you can use two approaches. The product provides a GUI interface in API Manager, but it also includes a command line options called: apimanager-promote. This script can be used to deploy APIs for testing, or as an API promotion script for the upstream environments.
 For this part of the lab, you will work with a different configuration that contains an API called “oms”. It is a different project from the one you’ve used in the previous sections. Consider it as developed for another department within your organization.
@@ -605,7 +605,7 @@ Let’s understand how we can use this command line option:
 
 
 
-## Conclusion
+## 4. Conclusion
 
 * Well thought deployment process and tooling are critical to the overall success of DevOps
 

@@ -9,7 +9,7 @@ In this lab session, we delve into the intricacies of API management by explorin
 
 Today's focus is on enhancing an Order Management System (OMS) to provide real-time updates to users. The existing OMS version lacks optimization, as its status updates are batched nightly, leaving users seeking immediate information about their orders' payment status, stock availability, and shipment updates. Through this lab, we aim to design and create a new API version, OMS v2, by integrating and optimizing various backend services to deliver instant follow-up capabilities, all accessible through API Portal with OAuth authentication.
 
-## Learning objectives
+## 1. Learning objectives
 
 **Remembering:**
    - Recall the key concepts of mashups (Web Service Composition) in Service-Oriented Architecture (SOA) and Digitalization.
@@ -30,7 +30,7 @@ Today's focus is on enhancing an Order Management System (OMS) to provide real-t
 
 
 
-## Introduction
+## 2. Introduction
 
 A mashup (or Web Service Composition) is a combination of existing Web Services to create a new service with added value.
 
@@ -39,7 +39,7 @@ A mashup is a key concept in Service Oriented Architecture (SOA) and Digitalizat
 Today, Order Management System **OMS v1** provides a `follow order` method
 This service is not optimized. OMS status is updated by batch every night, but users need data in real time. They need more information about the order; has it been paid? is it in stock? and was it shipped?
 
-### Task
+### 2.1. Task
 
 * Create a new version of API **OMS v2**
 
@@ -53,7 +53,7 @@ Users will try the new service with **API Portal** and **OAuth** authentication
 
 ![Alt text](images/image01.png)
 
-### Instructions
+### 2.2. Instructions
 
 * Create a new version of OMS API to provide an instant follow order
 
@@ -68,7 +68,7 @@ Users will try the new service with **API Portal** and **OAuth** authentication
 7. If yes, report status OK, paymentDate, deliveryDate and message “Everything OK!”
 ```
 
-### Some advice
+### 2.3. Some advice
 
 This exercise uses many features we have seen, and some new features
 * Think about error management from the beginning.
@@ -77,7 +77,7 @@ This exercise uses many features we have seen, and some new features
 * Create a business service to import the new service into API Manager.
 * Protect OMS with OAuth and test service through **API Portal**.
 
-### Solution principles: sub-policies
+### 2.4. Solution principles: sub-policies
 
 There are 3 big steps to create the new service:
 1. Call Billing service : use service virtualized in API Manager, lab “Policy Studio - Lab - From policy to API”
@@ -96,7 +96,7 @@ Let’s create one policy for each step (even if there is only one filter for ea
 - It makes sense to prefix other policies 1, 2, 3... but only if these steps are clearly identified
 - Sub-policy defined at logical level will simplify maintenance later
 
-### Solution principles: attributes
+### 2.5. Solution principles: attributes
 
 According to specifications, the following variables are used during the process
 * `status`
@@ -114,7 +114,7 @@ Let’s create a variable for each one
 * List variables you are using when developing
 * If it is not a standard attribute, use a prefix to avoid collision
 
-### Solution principles: error management
+### 2.6. Solution principles: error management
 
 * Policy will be designed with attributes and sub-policies
 * If one sub-policy returns false, this must be sent as an error message
@@ -129,7 +129,7 @@ Let’s create a variable for each one
 * Think of error management from the beginning.
 * Sending too much information is a security risk. Providing transaction Id will simplify support, without giving information about the solution
 
-### Expected result
+### 2.7. Expected result
 
 * A main policy calling 3 policies
 
@@ -140,9 +140,9 @@ Let’s create a variable for each one
 
 ![Alt text](images/image34.png)
 
-## Solution
+## 3. Solution
 
-### Main policy
+### 3.1. Main policy
 
 * Create base frame by creating policies and putting them in main policy
     * 0 – InstantFollowOrder
@@ -164,7 +164,7 @@ Let’s create a variable for each one
 
 ![Alt text](images/image36.png)
 
-### Fault handler
+### 3.2. Fault handler
 
 * Define fault handler
 
@@ -179,7 +179,7 @@ Let’s create a variable for each one
 
 ![Alt text](images/image38.png)
 
-### Policy - Request Billing
+### 3.3. Policy - Request Billing
 
 * Find how to access **Billing** service
 * Already exposed through Business Service
@@ -273,7 +273,7 @@ Let’s create a variable for each one
 ![Alt text](images/image59.png)
 
 
-### Policy - Request OMS
+### 3.4. Policy - Request OMS
 
 * Use same technique as the one you used with **Request Billing** policy to create **Request OMS** policy 
 * Retrieve OMS backend URL
@@ -288,7 +288,7 @@ Let’s create a variable for each one
 
 *Note:* You can copy/paste **Request Billing** policy and then make the necessary changes
 
-### Policy - Request Partner
+### 3.5. Policy - Request Partner
 
 * Use the same technique to create **Request Partner** policy 
     * Retrieve partner mockup url
@@ -314,7 +314,7 @@ Let’s create a variable for each one
 ![Alt text](images/image64.png)
 
 
-### Main policy - Create answer
+### 3.6. Main policy - Create answer
 
 * Finish main policy by creating response and adding reflect message
 
@@ -330,7 +330,7 @@ Let’s create a variable for each one
 
 ![Alt text](images/image68.png)
 
-### Business service OMS
+### 3.7. Business service OMS
 
 * Create **OMS**, a new REST Business Service for the new version of API - **OMS v2**
 
@@ -362,7 +362,7 @@ Let’s create a variable for each one
 * Deploy configuration by clicking the deploy icon at the top of **Policy Studio** or press **F6**
 * Test it!
 
-### Import business service from Topology
+### 3.8. Import business service from Topology
 
 * In **API Manager**, go to **Backend API --> New API --> Import API from Topology**
 
@@ -393,7 +393,7 @@ A backend Service is created.
 
 ![Alt text](images/image81.png)
 
-### Test OMS v2 service
+### 3.9. Test OMS v2 service
 
 * Connect to API Portal with `anna/anna`  
 `https://api-env.demo.axway.com/`
@@ -444,7 +444,7 @@ A backend Service is created.
 
 ![Alt text](images/image90.png)
 
-### Traffic monitor
+### 3.10. Traffic monitor
 
 ![Alt text](images/image02.png)
 
@@ -455,7 +455,7 @@ A backend Service is created.
 ![Alt text](images/image92.png)
 
 
-## Conclusion
+## 4. Conclusion
 
 The Mashup is a complex exercise using many API Management concepts (Virtualization, Business Services, Error Management, Authentication, etc)
 * Remember to always test a complex policy step by step

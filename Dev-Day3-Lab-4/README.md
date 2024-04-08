@@ -9,7 +9,7 @@ Welcome to the Policy Studio Lab - From Policy to API! In this lab, we'll embark
 
 Through hands-on exercises, you'll gain practical insights into defining REST business services, configuring API methods, and testing service functionality within Policy Studio. Additionally, we'll delve into the API Manager interface, where you'll learn to import business services, create frontends from backends, and set inbound security measures. By the end of this lab, you'll understand the seamless integration between Policy Studio and API Manager, empowering you to virtualize services with flexibility and ease. Let's dive in and explore the transformative capabilities of Axway's API Management solution together!
 
-## Learning objectives
+## 1. Learning objectives
 
 **Remembering:**
    - Recall the steps involved in defining a REST business service within Policy Studio.
@@ -37,7 +37,7 @@ Through hands-on exercises, you'll gain practical insights into defining REST bu
 
 
 
-## Introduction
+## 2. Introduction
 
 We want to have same management simplicity as with **OMS** using **API Manager**
 * Solution is to integrate **Billing services** in **API Manager**
@@ -49,7 +49,7 @@ We want to have same management simplicity as with **OMS** using **API Manager**
 
 ![Alt text](images/image01.png)
 
-### Task instructions
+### 2.1. Task instructions
 
 1. First, define Billing REST Business Service in **Policy Studio**
     * Delete the existing execution path
@@ -62,7 +62,7 @@ We want to have same management simplicity as with **OMS** using **API Manager**
     * Import Business Service from Topology
     * Test the service
 
-### Expected result
+### 2.2. Expected result
 
 * A Business service for Billing in **Policy Studio**
 
@@ -72,11 +72,11 @@ We want to have same management simplicity as with **OMS** using **API Manager**
 
 ![Alt text](images/image34.png)
 
-## Solution
+## 3. Solution
 
-### Define REST business service
+### 3.1. Define REST business service
 
-#### Delete the existing execution path
+#### 3.1.1. Delete the existing execution path
 
 * First delete existing path
     * Go to **Default Services --> Paths**
@@ -84,7 +84,7 @@ We want to have same management simplicity as with **OMS** using **API Manager**
 
 ![Alt text](images/image36.png)
 
-#### Add a business service
+#### 3.1.2. Add a business service
 
 * Go to **APIs --> REST API Repository**
 * Click **Add**
@@ -105,7 +105,7 @@ We want to have same management simplicity as with **OMS** using **API Manager**
 
 ![Alt text](images/image38.png)
 
-#### Add a method
+#### 3.1.3. Add a method
 
 * On new Billing API, create a new method by right clicking
 
@@ -120,7 +120,7 @@ We want to have same management simplicity as with **OMS** using **API Manager**
 
 ![Alt text](images/image39.png)
 
-#### Add a parameter
+#### 3.1.4. Add a parameter
 
 * Keep HTTP Method as `GET` 
 * Using **path:** `/status`
@@ -132,7 +132,7 @@ We want to have same management simplicity as with **OMS** using **API Manager**
 
 ![Alt text](images/image42.png)
 
-#### Select the policy
+#### 3.1.5. Select the policy
 
 * Select `BillingRest` policy
     * Use the filter above and start typing to quickly find it
@@ -148,19 +148,19 @@ We want to have same management simplicity as with **OMS** using **API Manager**
 
 ![Alt text](images/image44.png)
 
-#### Deploy the configuration
+#### 3.1.6. Deploy the configuration
 
 * Deploy configuration by clicking the button at the top of **Policy Studio** or press **F6**
 
-#### Test the service
+#### 3.1.7. Test the service
 
 Test `http://api-env:8080/bill/status?order=123123`
 
 ![Alt text](images/image48.png)
 
-### Expose the business service
+### 3.2. Expose the business service
 
-#### Import business service from topology
+#### 3.2.1. Import business service from topology
 
 * Same operation can be done for **SOAP** and **REST**
     * Import **Billing** REST Service from topology
@@ -191,7 +191,7 @@ Test `http://api-env:8080/bill/status?order=123123`
 
 ![Alt text](images/image55.png)
 
-### Test the service
+### 3.3. Test the service
 
 * Test the newly virtualized API  
 `https://api-env.demo.axway.com:8065/bill/status?order=123123`
@@ -199,7 +199,7 @@ Test `http://api-env:8080/bill/status?order=123123`
 ![Alt text](images/image54.png)
 
 
-## Conclusion
+## 4. Conclusion
 
 * API Management solution allows to virtualize services
     * From **API Manager**, with a simple management interface

@@ -9,7 +9,7 @@ Welcome to the API Gateway Docker Installation Lab! In this session, we will exp
 
 By the end of this lab, you will have the skills to install the API Gateway in a containerized environment, gaining practical insights into deploying API Management solutions using modern containerization technology. Whether you're a beginner exploring containerization or seeking to enhance your deployment capabilities, this lab will equip you with the necessary knowledge to deploy and manage Axway API Management components effectively. Let's dive in and get started with the exciting world of containerized API Gateway installations!
 
-## Learning objectives
+## 1. Learning objectives
 
 **Remembering:**
    - Identify the commands used to view the Docker images present in the local repository, such as "docker image ls".
@@ -30,7 +30,7 @@ By the end of this lab, you will have the skills to install the API Gateway in a
    - Design a customized Docker deployment strategy for API Management tailored to specific organizational requirements, considering factors like resource allocation and isolation.
    - Develop a comprehensive documentation or guide outlining best practices for deploying and managing API Management components using Docker containers.
 
-## Virtual machine environment
+## 2. Virtual machine environment
 
 This section will show you how to access the virtual machine which is used for this lab.
 
@@ -48,9 +48,9 @@ Use the following credentials to access the VM:
 
 
 
-## Installation
+## 3. Installation
 
-### View the images in the environment
+### 3.1. View the images in the environment
 
 Double click the **Terminal** icon on the desktop. This will open a terminal session.
 
@@ -67,7 +67,7 @@ This command lists all the images that are in the local repository. Notice that 
 ![Alt text](images/image008.png)
 
 
-### Start Cassandra container
+### 3.2. Start Cassandra container
 
 Run the following command to start the cassandra container.
 
@@ -95,7 +95,7 @@ docker container ls
 docker container logs cassandra
 ```
 
-### Start the Admin Node Manager container
+### 3.3. Start the Admin Node Manager container
 
 Execute the following command.
 
@@ -123,7 +123,7 @@ docker container ls
 docker container logs anm
 ```
 
-### Run the API Gateway container
+### 3.4. Run the API Gateway container
 
 Execute the following command.
 
@@ -152,7 +152,7 @@ docker container logs gateway
 
 
 
-## Testing API Gateway and API Manager installation
+## 4. Testing API Gateway and API Manager installation
 
 **API Gateway**, **API Manager** and **Cassandra** installation is now complete. Now, it is time to test the installation. 
 
@@ -205,7 +205,7 @@ You must get an **ok** status similar to the screenshot below.
 
 
 
-### Cleanup and deletion
+### 4.1. Cleanup and deletion
 
 Execute the following command to stop the containers.
 
@@ -233,6 +233,6 @@ docker container rm cassandra anm gateway
 
 
 
-## Conclusion
+## 5. Conclusion
 
 Congratulations! You must now be able to install **API Gateway** in a container.

@@ -9,7 +9,7 @@ Welcome to today's session on API Gateway management! In this hands-on lab, we'l
 
 In this lab, we'll start by configuring authentication policies to verify user identities using HTTP Basic filters. Next, we'll explore how to set up quota systems to limit access based on user groups, such as Gold, Silver, and Bronze. Through a series of practical exercises, you'll deploy policies that dynamically adjust access restrictions, ensuring seamless user experiences while maintaining security. Get ready to unlock the power of API Gateway management and take control of your API resources like never before!
 
-## Learning objectives
+## 1. Learning objectives
 
 **Remembering:**
    - Recall the steps involved in configuring authentication policies, such as HTTP Basic filters, within API Gateway.
@@ -32,9 +32,9 @@ In this lab, we'll start by configuring authentication policies to verify user i
 
 
 
-## Introduction
+## 2. Introduction
 
-### Scenario
+### 2.1. Scenario
 
 Web Services and service-oriented architectures (SOA) form an integral part of business information systems. This is the case for the Roboulot Group, a group of businesses equipped to tackle the increasingly important question of globalization.
 
@@ -55,17 +55,17 @@ The challenges for Peter lie in the following points:
 
 Do you know how to use the API Gateway available to you to help Peter with his management, guaranteeing optimum operation, while at the same time preserving his budget.
 
-### Tasks
+### 2.2. Tasks
 
 We propose the "Quota System" policy. This production involves three stages, thus offering three variants on the policy.
 
-#### Task 1: Implementation of quotas
+#### 2.2.1. Task 1: Implementation of quotas
 This is the quota management policy in its basic state. We will produce the policy which restricts access to any service to one request every 5 seconds.
 
-#### Task 2: Quota policy based on authentication
+#### 2.2.2. Task 2: Quota policy based on authentication
 In this second version of the policy, we will add authentication. If the user is recognized by the platform, they can access the service as many times as they wish. However, if the user is not recognized, the quota policy is applied, based on the restrictions described below.
 
-#### Task 3: Quota policy based on membership of a group
+#### 2.2.3. Task 3: Quota policy based on membership of a group
 A user may belong to different groups. These groups may have limited access rights to certain services. 
 To simulate this partitioning, we will develop the policy to take into account three levels of authorization to access the services:
 * Gold level: Unlimited access;
@@ -73,9 +73,9 @@ To simulate this partitioning, we will develop the policy to take into account t
 * Bronze level: 1 request every 5 seconds that is the default policy for an unauthenticated user.
 
 
-## Solution
+## 3. Solution
 
-### Virtual machine environment
+### 3.1. Virtual machine environment
 
 * If you are disconnected, click on the username `Axway`
 
@@ -116,7 +116,7 @@ The **Policy Studio** shows the following screen
 
 
 
-### Task 1: Quota system
+### 3.2. Task 1: Quota system
 
 By the end of this section, you will have implemented restrictions on usage per unit of time: the quotas. The policy that you are going to create will limit the number of requests to the API Gateway to a single request every 5 seconds.
 
@@ -312,7 +312,7 @@ The window **Deploy** appears. You connect to the system by identifying yourself
 
 ![Alt text](images/image035.png)
 
-#### Test the quota system
+#### 3.2.1. Test the quota system
 
 * To proceed with the tests, use your Firefox browser. 
 * In the browser, enter the URL: `http://localhost:8080/TechLabs/quota`
@@ -371,7 +371,7 @@ In the **Traffic** tab, it is possible to identify the requests which have been 
 ![Alt text](images/image044.png)
 
 
-### Task 2: Quota system based on user authentication
+### 3.3. Task 2: Quota system based on user authentication
 
 In this scenario, we will modify the behavior of the previously created policy.
 * If the user is not recognized by the API Gateway platform, the quotas rule is applied automatically.
@@ -380,7 +380,7 @@ This is how the policy will look like when implemented.
 
 ![Alt text](images/image045.png)
 
-#### Create a new **Authentication** policy
+#### 3.3.1. Create a new **Authentication** policy
 
 We are going to isolate the identification part in an independent Policy. At the same time, you will test the reuse of policies.
 
@@ -466,7 +466,7 @@ The second version of the policy is now ready to be deployed
 * Deploy the new configuration using the **F6** key on the keyboard.
 * Use `password: changeme`
 
-#### Test the policy
+#### 3.3.2. Test the policy
 
 * In the Internet browser, enter the URL: `http://localhost:8080/TechLabs/quota`
 
@@ -501,7 +501,7 @@ Test with an unrecognized user: test
 *Expected result:*  
 As the **test** user is not included in the list of users recognized by API Gateway, the **Throttling** filter therefore applies to this user in the same way as in the previous exercise. The service returns one positive response per 5 second period, successive requests during this period will be rejected.
 
-#### Monitoring
+#### 3.3.3. Monitoring
 
 * If necessary, run the **Firefox** browser and open the **API Gateway Manager** by clicking on the corresponding link:
 * If authentication is requested, enter:  
@@ -545,7 +545,7 @@ This behavior is identified: during the first request, the **Quota System** poli
 2.	The **Allow client challenge** option, checked by default in the **HTTP Basic** filter, authorizes FireFox to offer the default connection window. Once you have entered the login and the password, the policy is run a second time with the identification data.
 
 
-### Task 3: Quota restriction based on the membership of a group
+### 3.4. Task 3: Quota restriction based on the membership of a group
 
 The objective is to develop the policy to take into account three levels of authorization for access to the services:
 * `Gold` level: Unlimited access;
@@ -650,7 +650,7 @@ The policy is now ready to be deployed.
 * Press the **F6** key (`password`: `changeme`).
 * Click on the **Finish** button once the deployment is completed.
 
-#### Testing
+#### 3.4.1. Testing
 
 For the test requirements of this exercise, we have pre-configured in our virtual machine: 
 * The following list of users
@@ -703,7 +703,7 @@ As the user **Sarah** belongs to the **Silver** group, the **Throttling** filter
 *Expected result:*
 The **user1** user does not belong to the groups with privileges. They are only entitled to one request per 5 second period.
 
-#### Monitoring
+#### 3.4.2. Monitoring
 
 * Run the **Firefox** browser and open the **API Gateway Manager** by clicking on the corresponding link:
 * If authentication is requested, enter:  
@@ -756,7 +756,7 @@ The **Transaction** tab lists the filters for which the result has led to an exc
 
 ![Alt text](images/image093.png)
 
-## Conclusion
+## 4. Conclusion
 
 Congratulations! In just a few minutes, using the API Gateway, you have been able to restrict access to your resources in a simple, customized, and dynamic way, reusing elements of your existing solution.
 

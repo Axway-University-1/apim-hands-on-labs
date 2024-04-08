@@ -7,7 +7,7 @@
 
 In this lab, we will navigate the roles of key components such as the Resource Server (API Manager), Authorization Server (API Gateway), and Client Application (API Portal). By immersing ourselves in a hypothetical scenario of a company providing an API to external developers, we will unravel the steps involved in virtualizing APIs and configuring OAuth authentication settings. Get ready to embark on a journey that will equip you with the skills and knowledge to effectively implement OAuth authentication within API Management environments.
 
-## Learning objectives
+## 1. Learning objectives
 
 
 1. **Remembering:**
@@ -32,7 +32,7 @@ In this lab, we will navigate the roles of key components such as the Resource S
 
 These learning objectives encompass a range of cognitive levels, from basic recall to higher-order thinking skills, providing you with a holistic understanding of OAuth authentication in API Management.
 
-## Introduction
+## 2. Introduction
 
 Let's look at a high-level example of how OAuth works with API Management solution.
 
@@ -52,7 +52,7 @@ Let's look at a high-level example of how OAuth works with API Management soluti
 
 
 
-## Exercise
+## 3. Exercise
 
 A company wants to provide an API (called OMS) to external app developers with OAuth authentication
 
@@ -73,9 +73,9 @@ It is easy. Try it before looking at the solution!
 
 
 
-## Solution
+## 4. Solution
 
-### API Manager – Inbound Authentication
+### 4.1. API Manager – Inbound Authentication
 
 * Connect to API Manager `https://api-env.demo.axway.com:8075/` as `apiadmin/changeme` 
 
@@ -86,17 +86,17 @@ You can get some help to virtualize an API thanks to Amplify API Management dem
 
 ![Alt text](images/image24.png)
 
-### API Manager - Outbound Authentication
+### 4.2. API Manager - Outbound Authentication
 
 * Configure the Frontend API, outbound tab, with no authentication, then save
 
 ![Alt text](images/image25.png)
 
-### API Manager - Publish the API
+### 4.3. API Manager - Publish the API
 
 ![Alt text](images/image26.png)
 
-### API Manager - Access Rights
+### 4.4. API Manager - Access Rights
 
 * Grant API access to the organization **Partners**
 
@@ -104,7 +104,7 @@ You can get some help to virtualize an API thanks to Amplify API Management dem
 
 ![Alt text](images/image28.png)
 
-### API Portal - Application creation
+### 4.5. API Portal - Application creation
 
 * Connect to API Portal `https://api-env.demo.axway.com` as `dave/dave` and create an application to access the API
 
@@ -130,9 +130,9 @@ You can get some help to virtualize an API thanks to Amplify API Management dem
 ![Alt text](images/image33.png)
 
 
-## Fine scope management (Optional exercise)
+## 5. Fine scope management (Optional exercise)
 
-### API Manager – Scope configuration (Read)
+### 5.1. API Manager – Scope configuration (Read)
 
 * Control the scope of authorized resources with Security Profiles.
 
@@ -140,12 +140,12 @@ You can get some help to virtualize an API thanks to Amplify API Management dem
 
 ![Alt text](images/image34.png)
 
-### API Manager – Scope configuration (Write)
+### 5.2. API Manager – Scope configuration (Write)
 
 ![Alt text](images/image35.png)
 
 
-### API Manager – Scope methods
+### 5.3. API Manager – Scope methods
 
 * In the **Inbound** tab, click on Advanced/Simple, and add two per-method overrides for read and submit
 
@@ -154,7 +154,7 @@ You can get some help to virtualize an API thanks to Amplify API Management dem
 ![Alt text](images/image36.png)
 
 
-### API Portal – Check application API rights
+### 5.4. API Portal – Check application API rights
 
 * Connect to the **API Portal** with `dave/dave`
 
@@ -164,7 +164,7 @@ You can get some help to virtualize an API thanks to Amplify API Management dem
 
 ![Alt text](images/image37.png)
 
-### API Portal – Scope testing
+### 5.5. API Portal – Scope testing
 
 * Test the API. If Dave authorizes READ resources, he will only have access to “read” method and will get a “401” “scope not valid” error for the “submit” method.
 
@@ -174,6 +174,6 @@ You can get some help to virtualize an API thanks to Amplify API Management dem
 
 
 
-## Conclusion
+## 6. Conclusion
 
 API Management solution allows  to easily use OAuth authentication, with API Gateway, API Manager and API Portal

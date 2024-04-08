@@ -9,7 +9,7 @@ Welcome to the Authentication Lab, where you'll dive into the world of securing 
 
 Throughout this lab, we'll focus on integrating authentication mechanisms, specifically API Key and HTTP Basic, into API Manager. By the end of this session, you'll gain the skills to protect your APIs effectively and understand the importance of identity management in ensuring secure API access. Let's embark on this journey together to unlock the potential of API authentication within Axway's API Management solution.
 
-## Learning objectives
+## 1. Learning objectives
 
 **Remembering:**
    - Recall the purpose of API authentication within the context of API Manager.
@@ -33,7 +33,7 @@ Throughout this lab, we'll focus on integrating authentication mechanisms, speci
 
 
 
-## Introduction
+## 2. Introduction
 
 A company uses API Manager for app authentication
 * There is no user authentication
@@ -44,7 +44,7 @@ The following are the goals to be achieved:
 * Have authentication with HTTP Basic on a LDAP repository
 
 
-## Instructions
+## 3. Instructions
 
 * Create a simple policy with two filters
     * **Authenticate API Key**
@@ -55,7 +55,7 @@ The following are the goals to be achieved:
 * Test it with **CURL** commands
 
 
-## Expected result
+## 4. Expected result
 
 * A simple authentication policy
 
@@ -67,7 +67,7 @@ The following are the goals to be achieved:
 
 
 
-## Solution
+## 5. Solution
 
 * Open **Policy Studio**
 
@@ -156,7 +156,7 @@ If the invoke policy does not appear, refresh the browser
 
 ![Alt text](images/image47.png)
 
-### Test it!
+### 5.1. Test it!
 
 * `curl -k  https://api-env.demo.axway.com:8065/mockup/oms/v1/oms/v1/order/123123`
 
@@ -171,13 +171,13 @@ If the invoke policy does not appear, refresh the browser
 
 ![Alt text](images/image49.png)
 
-### Troubleshooting
+### 5.2. Troubleshooting
 
 ![Alt text](images/image50.png)
 
 
 
-## Conclusion
+## 6. Conclusion
 
 * API Management solution allows to implement many authentication protocols with:
     * API Manager - a simple management interface

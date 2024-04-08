@@ -9,7 +9,7 @@ Welcome to the APIM Installation Lab! In this hands-on session, we'll delve into
 
 
 
-## Learning objectives
+## 1. Learning objectives
 
 **Understanding:**
    - Explain the installation modes available for Axway API Management (APIM), distinguishing between Attended and Unattended modes.
@@ -27,20 +27,20 @@ Welcome to the APIM Installation Lab! In this hands-on session, we'll delve into
    - Design a customized installation strategy for APIM tailored to specific organizational requirements, considering scalability, security, and automation.
    - Develop a comprehensive documentation or guide outlining best practices for APIM installation, including pre-requisites, installation steps, and post-installation checks.
 
-## Introduction
+## 2. Introduction
 
 Throughout this session, we'll focus on setting up APIM in a development environment on Linux, emphasizing simplicity and ease of installation. You'll learn how to execute basic commands like start, stop, and check status, crucial for managing APIM components such as Admin Node Manager, API Gateway Instance, and Cassandra. Let's dive in and get started with the installation process, laying the groundwork for your exploration into the world of API Management.
 
-### Installation mode
+### 2.1. Installation mode
 
-#### Attended
+#### 2.1.1. Attended
 
 With UI or command line
 
 ![Alt text](images/image16.png)
 
 
-#### Unattended
+#### 2.1.2. Unattended
 
 With command line, used for automation
 
@@ -56,7 +56,7 @@ With command line, used for automation
     * So, it is not production ready. We keep it simple for now.
     * See HA installation module at the end of this course 
 
-### Lab pre-requisites
+### 2.1.3. Lab pre-requisites
 
 * User:   
 `axway/axway`
@@ -81,7 +81,7 @@ With command line, used for automation
     * Policy Studio
     
 
-## Attended installation
+## 3. Attended installation
 
 * Execute installer: ``./APIGateway_7.X.Y_Install_linux-x86-64_ZZZ.run`
     * With UI: run it from VM Desktop
@@ -115,7 +115,7 @@ Launch it!
 ![Alt text](images/image16.png)
 
 
-## Unattended installation
+## 4. Unattended installation
 
 * Use “--help” to display all options
 
@@ -152,7 +152,7 @@ What you must see as a result of installation?
     * Instance
     * Cassandra
 
-### Wait, this is not production installation!
+### 4.1. Wait, this is not production installation!
 
 * QuickStart simplifies creation of development environment and should not be used for production
 
@@ -163,7 +163,7 @@ What you must see as a result of installation?
     * Deployment
     * Cassandra
 
-### How do I do API Manager installation without QuickStart? 
+### 4.2. How do I do API Manager installation without QuickStart? 
 
 * Cassandra (single or cluster) must be installed
 
@@ -187,7 +187,7 @@ setup-apimanager --username admin --password changeme --adminName apiadmin --adm
 
 ![Alt text](images/image20.png)
 
-### Patching
+### 4.3. Patching
 
 * Patches contain non-cumulative bugfixes 
 
@@ -200,7 +200,7 @@ setup-apimanager --username admin --password changeme --adminName apiadmin --adm
 ![Alt text](images/image22.png)
 
 
-### Basic operations
+### 4.4. Basic operations
 
 What are basic operations here?
 * Start
@@ -220,7 +220,7 @@ How to achieve it?
 
     ![Alt text](images/image23.png)
 
-#### Admin Node Manager (ANM)
+#### 4.4.1. Admin Node Manager (ANM)
 
 Context
 * ANM embeds API Gateway Manager
@@ -243,7 +243,7 @@ Command line
 `ps -eaf | grep -i "Node Manager“`  
 `netstat -an | grep 8090`
 
-#### API Gateway Instance, from ANM
+#### 4.4.2. API Gateway Instance, from ANM
 
 *Requires ANM to be started*
 
@@ -258,7 +258,7 @@ This is not working
 http://apidocs.axway.com/swagger-ui/index.html?productname=apigateway&productversion=7.7.0&filename=api-gateway-swagger.json
 
 
-#### API Gateway Instance
+#### 4.4.3. API Gateway Instance
 
 Context
 
@@ -289,7 +289,7 @@ Command line
 `ps -eaf | grep -i "QuickStart Server"`  
 `netstat -an | grep 8080`
 
-#### Cassandra
+#### 4.4.4. Cassandra
 
 Context
 * API Manager repository
@@ -312,7 +312,7 @@ Command line
 * Status  
 `netstat -an | grep 9042`
 
-#### Dependencies
+#### 4.4.5. Dependencies
 
 Rules
 
@@ -334,9 +334,9 @@ Recommended run order
 
 
 
-### Post installation steps
+### 4.5. Post installation steps
 
-#### Refer to docs.axway.com
+#### 4.5.1. Refer to docs.axway.com
 
 [Refer to this link](https://docs.axway.com/bundle/axway-open-docs/page/docs/apim_installation/apigtw_install/post_overview/index.html)
 
@@ -352,7 +352,7 @@ Recommended run order
 * Security guidelines
 
 
-### Installation validation
+### 4.6. Installation validation
 
 * Check Cassandra, ANM, Instances are started
     * Or start these in this order
@@ -369,7 +369,7 @@ Recommended run order
     * `curl http://myhost:8080/healthcheck`  
 
 
-### Containerized installation
+### 4.7. Containerized installation
 
 * Installation resources publicly available from:  
 [https://github.com/Axway/Cloud-Automation](https://github.com/Axway/Cloud-Automation)
@@ -381,7 +381,7 @@ Recommended run order
 https://docs.axway.com/bundle/axway-open-docs/page/docs/apim_installation/apigw_containers/index.html
 
 
-## Conclusion
+## 5. Conclusion
 
 * Installation requires good preparation and always ends with validation
 
