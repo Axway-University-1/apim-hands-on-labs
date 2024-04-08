@@ -86,6 +86,11 @@ Download the API Swagger definition
 ![Alt text](images/image29.png)
 
 
+## 4. Conclusion
+
+The API Portal is a customizable interface for API Developers
+* With API Portal, browse and test available APIs
+* Download swagger files from your Apps.
 
 
 

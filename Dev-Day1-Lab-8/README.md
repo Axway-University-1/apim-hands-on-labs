@@ -46,8 +46,8 @@ API consumers would like to get the quote for a given date in addition to a give
     </thead>
     <tbody>
         <tr>
-            <td><b>Anna</b> is an internal developer, and is part of the **API Developer** Organization </td>
-            <td>**Dave** is an external application developer, and is part of the **Partner** Organization</td>
+            <td><b>Anna</b> is an internal developer, and is part of the <b>API Developer</b> Organization </td>
+            <td><b>Dave</b> is an external application developer, and is part of the <b>Partner</b> Organization</td>
         </tr>
         <tr>
             <td><img src="images/image23.png" style="text-align:center"></td>
