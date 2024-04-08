@@ -93,7 +93,7 @@ Here are some details about the *environmentalize* scripts
 
 
 
-<hr style="background-color:blue;"></hr>
+<hr style="background-color:blue;">
 
 Here are some details about the *certs* scripts
 
