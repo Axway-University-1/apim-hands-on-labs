@@ -1,4 +1,4 @@
-# APIM Installation Lab  
+# APIM Installation Lab   
 
 | Average time required to complete this lab | 60 minutes |
 | ---- | ---- |
