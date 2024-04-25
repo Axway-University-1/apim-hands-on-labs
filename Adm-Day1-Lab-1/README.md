@@ -1,7 +1,7 @@
 <<<<<<< Updated upstream
 # APIM Installation Lab   
 =======
-# APIM Installation Lab
+# APIM Installation Lab     
 >>>>>>> Stashed changes
 
 | Average time required to complete this lab | 60 minutes |
