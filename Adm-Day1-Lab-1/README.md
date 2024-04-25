@@ -4,7 +4,7 @@
 # APIM Installation Lab     
 >>>>>>> Stashed changes
 
-| Average time required to complete this lab | 60 minutes |
+| Average time required to complete this lab | 60 minutes  |
 | ---- | ---- |
 | Lab last updated | March 2024 |
 | Lab last tested | March 2024 |
