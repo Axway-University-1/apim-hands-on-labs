@@ -1,10 +1,10 @@
 <<<<<<< Updated upstream
 # APIM Installation Lab   
-=======
-# APIM Installation Lab
+========
+# APIM Installation Lab     
 >>>>>>> Stashed changes
 
-| Average time required to complete this lab | 60 minutes |
+| Average time required to complete this lab | 60 minutes    |
 | ---- | ---- |
 | Lab last updated | March 2024 |
 | Lab last tested | March 2024 |
@@ -125,14 +125,14 @@ Launch it!
 
 
 * Copy, modify (marked parts) and execute:  
-```
-/home/axway/Desktop/APIGateway_7.7.<releasedate>_Install_linux-x86-64_BN<buildnumber>.run --mode unattended --enable-components nodemanager,cassandra,apigateway,qstart,apimgmt,policystudio,configurationstudio --disable-components packagedeploytools,analytics --setup_type advanced --licenseFilePath /home/axway/Desktop/ReadyTech/Inbox/API_7.7_Temp.lic --apimgmtLicenseFilePath /home/axway/Desktop/ReadyTech/Inbox/API_7.7_Temp.lic --prefix /home/axway/install/quickstart --cassandraInstalldir /home/axway/install/quickstart --cassandraJDK /home/axway/install/quickstart/apigateway/platform/jre --acceptGeneralConditions yes
-```
+
+> /home/axway/Desktop/APIGateway_7.7.<releasedate>_Install_linux-x86-64_BN<buildnumber>.run --mode unattended --enable-components nodemanager,cassandra,apigateway,qstart,apimgmt,policystudio,configurationstudio --disable-components packagedeploytools,analytics --setup_type advanced --licenseFilePath /home/axway/Desktop/ReadyTech/Inbox/API_7.7_Temp.lic --apimgmtLicenseFilePath /home/axway/Desktop/ReadyTech/Inbox/API_7.7_Temp.lic --prefix /home/axway/install/quickstart --cassandraInstalldir /home/axway/install/quickstart --cassandraJDK /home/axway/install/quickstart/apigateway/platform/jre --acceptGeneralConditions yes
+
 
 **Example with 7.7.20220228:**
-```
-/home/axway/Desktop/APIGateway_7.7.20220228_Install_linux-x86-64_BN02.run --mode unattended --enable-components nodemanager,cassandra,apigateway,qstart,apimgmt,policystudio,configurationstudio --disable-components packagedeploytools,analytics --setup_type advanced --licenseFilePath /usr/local/readytech/Inbox/API_7.7_Temp.lic --apimgmtLicenseFilePath /usr/local/readytech/Inbox/API_7.7_Temp.lic --prefix /home/axway/install/quickstart --cassandraInstalldir /home/axway/install/quickstart --cassandraJDK /home/axway/install/quickstart/apigateway/platform/jre --acceptGeneralConditions yes
-```
+
+> /home/axway/Desktop/APIGateway_7.7.20220228_Install_linux-x86-64_BN02.run --mode unattended --enable-components nodemanager,cassandra,apigateway,qstart,apimgmt,policystudio,configurationstudio --disable-components packagedeploytools,analytics --setup_type advanced --licenseFilePath /usr/local/readytech/Inbox/API_7.7_Temp.lic --apimgmtLicenseFilePath /usr/local/readytech/Inbox/API_7.7_Temp.lic --prefix /home/axway/install/quickstart --cassandraInstalldir /home/axway/install/quickstart --cassandraJDK /home/axway/install/quickstart/apigateway/platform/jre --acceptGeneralConditions yes
+
 
 *Important to remember*
 
