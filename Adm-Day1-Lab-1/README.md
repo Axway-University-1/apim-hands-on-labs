@@ -1,6 +1,6 @@
 <<<<<<< Updated upstream
 # APIM Installation Lab   
-=======
+========
 # APIM Installation Lab     
 >>>>>>> Stashed changes
 
