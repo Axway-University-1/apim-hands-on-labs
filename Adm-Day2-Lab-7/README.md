@@ -31,7 +31,7 @@ Throughout this hands-on experience, we'll explore two key scenarios. Firstly, w
    - Design a customized deployment strategy tailored to specific organizational requirements, incorporating environmentalization techniques and command-line tools.
    - Develop a comprehensive documentation or guide outlining best practices for packaging, deploying, and promoting Policy Studio projects within API Management environments, emphasizing the importance of automation and efficiency.
 
-
+ 
 
 ## 2. Introduction
 
