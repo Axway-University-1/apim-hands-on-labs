@@ -322,6 +322,7 @@ $APIGTW_INSTALL --debuglevel 0 --mode unattended  --setup_type advanced --enable
 * Whole API Gateway installation, but no license asked
 * Instance cannot be started though
 
+#### Initialize domain and start it
 * Initialize domain with external certificates, account.
 
 ```
@@ -343,13 +344,88 @@ netstat -anp | grep <PID>  (where PID is from ps command output)
 * Or HSM can be used
 
 
+#### Initialize first Cassandra node and start it
+
+Documentation reference:
+* [Reference](https://docs.axway.com/bundle/APIGateway_753_InstallationGuide_allOS_en_HTML5/page/Content/InstallGuideTopics/cassandra_setup_script.htm)
 
 
+* apigateway/posix/bin/setup-cassandra
+
+```
+$SERVER3/apigateway/posix/bin/setup-cassandra --seed --own-ip server3 --cassandra-config $SERVER3/cassandra/conf/cassandra.yaml --nodes=3 --enable-server-encryption --enable-client-encryption > $SERVER3/setup-cassandra-server3.out
+
+```
+
+* setup-cassandra
+    * Provide instructions for the next steps, redirected to `$SERVER3/setup-cassandra-server3.out`
+    * Modify `cassandra/conf/cassandra.yaml`
+    * Generate a `cqlshrc` file for client node communication
+
+*Note: Documentation asks to setup 1 node first, then all cluster, then secure it. For this practice, we will do all in one*
+
+**How to read setup-cassandra*.out?**
+
+![Alt text](images/image36.png)
+
+* According to the options, different commands are printed
+* Passwords are generated randomly 
+    * So each execution uses a different password
+
+* To simplify the lab, we will execute commands in following sections, not from `setup-cassandra*.out`
+
+**Fast pass: copy file**
+
+```
+cp $CONF_FOLDER/cassandra_secured_server3.yaml $SERVER3/cassandra/conf/cassandra.yaml
+cp $CONF_FOLDER/cassandra-env_server3.sh $SERVER3/cassandra/conf/cassandra-env.sh
+chmod 755 $SERVER3/cassandra/conf/cassandra-env.sh
+```
+
+* `setup-cassandra` did the configuration correctly, but
+    * `cassandra.yaml` changed to simplify keystore/trustore commands (password consistency)
+    * `cassandra-env.sh` changed for JMX port
 
 
+#### Install and configure ANM + Cassandra 2 and 3
+
+**server4 instructions**
+
+```
+$APIGTW_INSTALL --debuglevel 0 --mode unattended  --setup_type advanced --enable-components apigateway,cassandra --disable-components analytics,qstart,policystudio,configurationstudio,apitester,apimgmt,packagedeploytools --nmPort 48090 --firstInNewDomain 0 --prefix $SERVER4 --cassandraInstalldir $SERVER4 --cassandraJDK $SERVER4/apigateway/platform/jre  --changeCredentials 1 --username admin --adminpasswd Axway123
+```
+```
+$SERVER4/apigateway/posix/bin/managedomain --add  --anm_host server3 --anm_port 38090 --host server4 --port 48090 --nm_name ANM2 --is_admin --username admin --password Axway123 --sign_with_user_provided --ca $CERT_FOLDER/APIM_Domain_CA.p12 --sign_alg sha256 --domain_passphrase Axway123 --key_passphrase Axway123
+```
+```
+$SERVER4/apigateway/posix/bin/setup-cassandra --seed-ip server3 --own-ip server4 --cassandra-config $SERVER4/cassandra/conf/cassandra.yaml --nodes=3 --enable-server-encryption --enable-client-encryption > $SERVER4/setup-cassandra-server4.out
+```
+```
+cp $CONF_FOLDER/cassandra_secured_server4.yaml $SERVER4/cassandra/conf/cassandra.yaml
+cp $CONF_FOLDER/cassandra-env_server4.sh $SERVER4/cassandra/conf/cassandra-env.sh
+chmod 755 $SERVER4/cassandra/conf/cassandra-env.sh
+```
 
 
+**server5 instructions**
 
+```
+$APIGTW_INSTALL --debuglevel 0 --mode unattended  --setup_type advanced --enable-components apigateway,cassandra --disable-components analytics,qstart,policystudio,configurationstudio,apitester,apimgmt,packagedeploytools --nmPort 58090 --firstInNewDomain 0 --prefix $SERVER5 --cassandraInstalldir $SERVER5 --cassandraJDK $SERVER5/apigateway/platform/jre  --changeCredentials 1 --username admin --adminpasswd Axway123
+```
+```
+$SERVER5/apigateway/posix/bin/managedomain --add  --anm_host server3 --anm_port 38090 --host server5 --port 58090 --nm_name ANM3 --is_admin --username admin --password Axway123 --sign_with_user_provided --ca $CERT_FOLDER/APIM_Domain_CA.p12 --sign_alg sha256 --domain_passphrase Axway123 --key_passphrase Axway123
+```
+```
+$SERVER5/apigateway/posix/bin/setup-cassandra --seed-ip server3 --own-ip SERVER5 --cassandra-config $SERVER5/cassandra/conf/cassandra.yaml --nodes=3 --enable-server-encryption --enable-client-encryption > $SERVER5/setup-cassandra-server5.out
+```
+```
+cp $CONF_FOLDER/cassandra_secured_server5.yaml $SERVER5/cassandra/conf/cassandra.yaml
+cp $CONF_FOLDER/cassandra-env_server5.sh $SERVER5/cassandra/conf/cassandra-env.sh
+chmod 755 $SERVER5/cassandra/conf/cassandra-env.sh
+
+```
+
+#### Secure Cassandra installation
 
 
 
