@@ -1,6 +1,6 @@
 # Policy Studio Lab - From Policy to API
 
-| Average time required to complete this lab | 20 minutes |
+| Average time required to complete this lab | TBD minutes |
 | ---- | ---- |
 | Lab last updated | March 2024 |
 | Lab last tested | March 2024 |
