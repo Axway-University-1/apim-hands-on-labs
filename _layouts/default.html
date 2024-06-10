@@ -38,7 +38,11 @@
 
     <!-- Floating 'Go to top' button -->
     <button onclick="topFunction()" id="myBtn" title="Go to top">
-      &#9650;
+      <!-- SVG icon -->
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 2L12 22" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M5 9L12 2L19 9" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
     </button>
 
     <style>
@@ -56,14 +60,20 @@
         padding: 15px; /* Some padding */
         border-radius: 50%; /* Rounded corners */
         font-size: 24px; /* Increase font size */
-        line-height: 0; /* Ensure the arrow is centered */
         width: 50px; /* Set width */
         height: 50px; /* Set height */
-        text-align: center; /* Center the arrow */
+        text-align: center; /* Center the icon */
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     #myBtn:hover {
         background-color: #555; /* Add a dark-grey background on hover */
+    }
+
+    #myBtn svg {
+        fill: white; /* Color of the SVG icon */
     }
     </style>
 
