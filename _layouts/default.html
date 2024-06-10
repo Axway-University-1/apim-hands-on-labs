@@ -17,7 +17,7 @@
 
     <header class="page-header" role="banner">
       <h1 class="project-name">{{ site.title | default: site.github.repository_name }}</h1>
-      <h2 class="project-tagline">{{  site.description | default: site.github.project_tagline }}</h2>
+      <h2 class="project-tagline">{{ site.description | default: site.github.project_tagline }}</h2>
       
       {% if site.show_downloads %}
         <a href="{{ site.github.zip_url }}" class="btn">Download .zip</a>
@@ -37,7 +37,9 @@
     </main>
 
     <!-- Floating 'Go to top' button -->
-    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+    <button onclick="topFunction()" id="myBtn" title="Go to top">
+      &#9650;
+    </button>
 
     <style>
     #myBtn {
@@ -48,12 +50,16 @@
         z-index: 99; /* Make sure it does not overlap */
         border: none; /* Remove borders */
         outline: none; /* Remove outline */
-        background-color: red; /* Set a background color */
+        background-color: #006580; /* Set a background color */
         color: white; /* Text color */
         cursor: pointer; /* Add a mouse pointer on hover */
         padding: 15px; /* Some padding */
-        border-radius: 10px; /* Rounded corners */
-        font-size: 18px; /* Increase font size */
+        border-radius: 50%; /* Rounded corners */
+        font-size: 24px; /* Increase font size */
+        line-height: 0; /* Ensure the arrow is centered */
+        width: 50px; /* Set width */
+        height: 50px; /* Set height */
+        text-align: center; /* Center the arrow */
     }
 
     #myBtn:hover {
