@@ -8,7 +8,12 @@
 In this lab, you will learn how to exercise routine administration operations on the platform.
 
 
+## Index
 
+- [Learning objectives](#learning-objectives)
+- [Introduction](#introduction)
+- [Installation](#installation-preparation)
+    - [Checklist](#checklist)
 
 ## Learning objectives
 
