@@ -8,6 +8,14 @@
 
 Welcome to the APIM Installation Lab! In this hands-on session, we'll delve into the installation process of the Axway API Management (APIM) solution. By the end of this lab, you'll gain the essential skills to install APIM using the QuickStart method and understand its implications. Whether you're a beginner exploring APIM or aiming to automate installations, this lab provides a foundational understanding that sets the stage for your journey with APIM.
 
+## Index
+- [1. Learning Objectives](#1-learning-objectives)
+- [2. Introduction](#2-introduction)
+- [3. AttendedInstallation](#3-attended-installation)
+- [4. UnattendedInstallation](#4-unattended-installation)
+- [5. Conclusion](#5-conclusion)
+
+
 
 
 ## 1. Learning objectives
@@ -57,7 +65,7 @@ With command line, used for automation
     * So, it is not production ready. We keep it simple for now.
     * See HA installation module at the end of this course 
 
-### 2.1.3. Lab pre-requisites
+### 2.2. Lab pre-requisites
 
 * User:   
 `axway/axway`
