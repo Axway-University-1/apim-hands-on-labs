@@ -9,6 +9,13 @@ Welcome to the Testing and Troubleshooting Lab! In this session, we'll delve int
 
 Through interactive exercises and real-world scenarios, you'll explore how to test and receive responses from different services, including StockQuote APIs, using both API Portal and API Manager interfaces. Additionally, you'll master the art of testing APIs directly from a browser and through command-line tools like Curl, equipping you with valuable skills for both manual and automated testing practices. Let's dive in and uncover the essential strategies for ensuring the seamless performance of APIs within your API Management environment!
 
+## Index
+- [1. Learning Objectives](#1-learning-objectives)
+- [2. Exercise](#2-exercise)
+- [3. Solutions](#3-solutions)
+- [4. Conclusion](#4-conclusion)
+
+
 ## 1. Learning objectives
 
 **Remembering:**

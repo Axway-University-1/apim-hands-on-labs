@@ -9,6 +9,13 @@ In this lab, we'll delve into essential processes and tools vital for understand
 
 Throughout this hands-on experience, we'll explore two key scenarios. Firstly, we'll focus on packaging and deploying Policy Studio projects, emphasizing the importance of externalizing parameters and variables for dynamic adjustments across various environments. Secondly, we'll delve into the usage of the apimanager-promote tool to seamlessly promote API collections to target environments, demonstrating the integration of DevOps principles into the APIM workflow. Through practical exercises and guided instructions, you'll acquire the skills necessary to automate build, deployment, and promotion processes effectively, ensuring streamlined operations within your API management ecosystem. Let's embark on this journey to optimize your deployment processes and leverage the power of automation in APIM!
 
+## Index
+- [1. Learning Objectives](#1-learning-objectives)
+- [2. Introduction](#2-introduction)
+- [3. Tasks and Steps](#3-tasks-and-steps)
+- [4. Conclusion](#4-conclusion)
+
+
 ## 1. Learning objectives
 
 **Remembering:**

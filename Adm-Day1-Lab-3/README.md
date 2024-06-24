@@ -9,6 +9,14 @@ Welcome to the API Gateway Docker Installation Lab! In this session, we will exp
 
 By the end of this lab, you will have the skills to install the API Gateway in a containerized environment, gaining practical insights into deploying API Management solutions using modern containerization technology. Whether you're a beginner exploring containerization or seeking to enhance your deployment capabilities, this lab will equip you with the necessary knowledge to deploy and manage Axway API Management components effectively. Let's dive in and get started with the exciting world of containerized API Gateway installations!
 
+## Index
+- [1. Learning Objectives](#1-learning-objectives)
+- [2. Virtual Machine Environment](#2-virtual-machine-environment)
+- [3. Installation](#3-installation)
+- [4.Testing API Gateway and API Manager installation](#4-testing-api-gateway-and-api-manager-installation)
+- [5. Conclusion](#5-conclusion)
+
+
 ## 1. Learning objectives
 
 **Remembering:**

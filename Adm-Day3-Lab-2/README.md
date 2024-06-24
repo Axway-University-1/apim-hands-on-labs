@@ -9,7 +9,11 @@ Welcome to the API Gateway and API Manager Upkeep Lab! In this session, you'll d
 
 Throughout this lab, you'll have the opportunity to simulate various scenarios, including backing up a Quickstart KPS table, simulating a disaster by deleting the table, and then restoring the data. Additionally, you'll explore Cassandra upkeep, understanding its data directory structure, identifying API Management keyspaces, and performing snapshots. By mastering these maintenance tasks, you'll be equipped with the skills to effectively manage and optimize your API Gateway and API Manager environments. Let's dive in and explore the fundamental aspects of API upkeep together!
 
+## Index
 
+- [1. Learning Objectives](#1-learning-objectives)
+- [2. Tasks](#2-tasks)
+- [3. Conclusion](#3-conclusion)
 
 ## 1. Learning objectives
 
