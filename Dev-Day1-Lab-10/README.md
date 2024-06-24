@@ -9,6 +9,14 @@ Welcome to the API Testing lab using API Portal! In this session, we'll delve in
 
 Throughout this lab, you'll have the opportunity to modify an existing application, Gabriel’s shop, to incorporate the Stockquote v2 API. By doing so, you'll learn how to integrate APIs into applications effectively. Additionally, we'll explore HTTP error responses and analyze CURL examples to deepen your understanding of API testing nuances. So, let's dive in and embark on this journey of discovering API Portal's capabilities together!
 
+## Index
+
+- [1. LearningObjectives](#1-learning-objectives)
+- [2. Tasks](#2-tasks)
+- [3. Solutions](#3-solutions)
+- [4. Conclusion](#4-conclusion)
+
+
 ## 1. Learning objectives
 
 **Remembering:**

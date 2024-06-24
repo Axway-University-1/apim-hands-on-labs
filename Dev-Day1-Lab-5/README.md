@@ -9,6 +9,17 @@ Welcome to the API Testing lab! In this session, we will delve into the essentia
 
 By the end of this session, you will have a solid understanding of how to test APIs from various platforms and interfaces. Whether you're testing from the API Portal, API Manager, your browser, or the command line, you will gain valuable insights into each method's advantages and limitations. Additionally, you will discover how API Gateway Manager can be utilized to monitor transactions and troubleshoot any issues that may arise during API testing. Get ready to dive into the world of API testing and enhance your skills as a developer!
 
+## Index
+
+- [1. Learning Objectives](#1-learning-objectives)
+- [2. Test from API Management interfaces](#2-test-from-api-management-interfaces)
+- [3. Test from Postman](#3-test-from-postman)
+- [4. Test from your Browser](#4-test-from-your-browser)
+- [5. Test from the Command Line](#5-test-from-the-command-line)
+- [6. Activity Troubleshooting](#6-activity-troubleshooting)
+- [7. Solutions](#7-solutions)
+- [8. Conclusion](#8-conclusion)
+
 ## 1. Learning Objectives
 
 **Remembering:**

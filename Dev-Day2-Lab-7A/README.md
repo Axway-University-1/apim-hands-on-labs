@@ -9,6 +9,14 @@ Welcome to today's session on API Gateway management! In this hands-on lab, we'l
 
 In this lab, we'll start by configuring authentication policies to verify user identities using HTTP Basic filters. Next, we'll explore how to set up quota systems to limit access based on user groups, such as Gold, Silver, and Bronze. Through a series of practical exercises, you'll deploy policies that dynamically adjust access restrictions, ensuring seamless user experiences while maintaining security. Get ready to unlock the power of API Gateway management and take control of your API resources like never before!
 
+## Index
+
+- [1. Learning Objectives](#1-learning-objectives)
+- [2. Introduction](#2-introduction)
+- [3. Tasks](#22-tasks)
+- [4. Solution](#3-solution)
+- [5. Conclusion](#4-conclusion)
+
 ## 1. Learning objectives
 
 **Remembering:**

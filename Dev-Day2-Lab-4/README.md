@@ -9,6 +9,14 @@ Welcome to the Policy Studio Lab on virtualization with policies! In this sessio
 
 Virtualizing SOAP web services is a crucial aspect of modern API management, allowing developers to simulate backend behaviors without impacting existing systems. Throughout this session, we will explore step-by-step instructions to virtualize a SOAP web service using Policy Studio, providing you with hands-on experience and valuable insights into the virtualization process. Let's dive in and uncover the power of Policy Studio in simplifying the virtualization of SOAP web services!
 
+## Index
+
+- [1. Learning Objectives](#1-learning-objectives)
+- [2. Billing Soap WS Virtualization](#2-billing-soap-ws-virtualization)
+- [3.Task](#3-task)
+- [4. Solution](#4-solution)
+- [5. Conclusion](#5-conclusion)
+
 ## 1. Learning objectives
 
 **Remembering:**

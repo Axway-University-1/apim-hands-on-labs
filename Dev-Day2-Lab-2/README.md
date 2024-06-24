@@ -9,6 +9,14 @@ Welcome to the Policy Studio Lab - My First Mockup! In this lab, we'll delve int
 
 As we delve deeper into this lab, we'll unravel the essence of creating a mockup service using Policy Studio. Our goal is to simulate a shipping partner's response to order statuses via API, crucial for seamless development without imposing test impacts. Together, we'll navigate through the steps of building an API that encapsulates specific logic, crafting policies within Policy Studio, and ultimately fashioning a mockup service. Through hands-on exercises, you'll gain firsthand experience in setting up policy studio containers, designing policies, and deploying configurations, all essential skills for crafting robust API solutions. So, let's dive in and unlock the potential of Policy Studio to revolutionize API development!
 
+## Index
+
+- [1. Learning Objectives](#1-learning-objectives)
+- [2. Introduction](#2-introduction)
+- [3. Tasks](#3-tasks)
+- [4. Solution](#4-solution)
+- [5. Conclusion](#5-conclusion)
+
 ## 1. Learning objectives
 
 **Remembering:**

@@ -9,7 +9,13 @@ In this lab, we'll dive into the fundamentals of API virtualization, publication
 
 Through hands-on exercises, we'll explore how to publish APIs, configure authentication mechanisms, and set up quotas to regulate API usage. You'll also learn how to manage organizations, roles, and permissions to facilitate collaboration between internal teams and external partners. 
 
-
+## Index
+- [1. Learning Objectives](#1-learning-objectives)
+- [2. Scenario](#2-scenario)
+- [3.High level instructions to complete this lab](#3-high-level-instructions-for-completing-this-lab)
+- [4. Virtual Machine Environment](#4-virtual-machine-environment)
+- [5. Lab Solution Steps](#5-lab-solution-steps)
+- [6. Summary](#6-summary)
 
 ## 1. Learning Objectives
 

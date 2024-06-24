@@ -9,6 +9,14 @@ In this lab, we'll delve into the world of API mediation using Policy Studio. Th
 
 As organizations increasingly move towards RESTful architectures for enhanced integration and scalability, the ability to transform existing SOAP services into RESTful ones becomes invaluable. In this lab, we'll learn how to virtualize a SOAP service and provide a REST interface using Policy Studio, empowering you to adapt legacy systems to meet modern integration requirements. Let's dive in and explore the exciting world of API mediation together!
 
+## Index
+
+- [1. Learning Objectives](#1-learning-objectives)
+- [2. Introduction](#2-introduction)
+- [3. Task](#3-task)
+- [4. Solution](#4-solution)
+- [5. Conclusion](#5-conclusion)
+
 ## 1. Learning objectives
 
 **Remembering:**
