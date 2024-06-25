@@ -9,6 +9,13 @@ Welcome to the Policy Studio Lab on Error Management! In this session, we'll del
 
 Throughout this session, we'll explore various facets of error management within Policy Studio. From defining default error attributes to handling validation and connection errors, you'll gain practical insights into configuring error management components effectively. By the end of this lab, you'll be proficient in setting up fault handlers, designing error messages, and deploying error management policies, all crucial aspects for maintaining robust and resilient API services. Let's dive in and master the art of error management within APIM's Policy Studio!
 
+## Index
+
+- [1. Learning Objectives](#1-learning-objectives)
+- [2. Introduction](#2-introduction)
+- [3. Some Notes](#3-some-notes)
+- [4. Conclusion](#4-conclusion)
+
 ## 1. Learning objectives
 
 **Remembering:**

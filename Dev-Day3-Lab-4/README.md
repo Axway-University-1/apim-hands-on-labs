@@ -9,6 +9,14 @@ Welcome to the Policy Studio Lab - From Policy to API! In this lab, we'll embark
 
 Through hands-on exercises, you'll gain practical insights into defining REST business services, configuring API methods, and testing service functionality within Policy Studio. Additionally, we'll delve into the API Manager interface, where you'll learn to import business services, create frontends from backends, and set inbound security measures. By the end of this lab, you'll understand the seamless integration between Policy Studio and API Manager, empowering you to virtualize services with flexibility and ease. Let's dive in and explore the transformative capabilities of Axway's API Management solution together!
 
+## Index
+
+- [1. Learning Objectives](#1-learning-objectives)
+- [2. Introduction](#2-introduction)
+- [3. Solution](#3-solution)
+- [4. Conclusion](#4-conclusion)
+
+
 ## 1. Learning objectives
 
 **Remembering:**
