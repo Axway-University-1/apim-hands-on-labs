@@ -1,6 +1,6 @@
 # Policy Studio Lab - Quota System
 
-| Average time required to complete this lab | TBD minutes |
+| Average time required to complete this lab | 70 minutes |
 | ---- | ---- |
 | Lab last updated | March 2024 |
 | Lab last tested | March 2024 |

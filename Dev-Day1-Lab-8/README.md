@@ -1,6 +1,6 @@
 # API lifecycle management using API Manager
 
-| Average time required to complete this lab | TBD minutes |
+| Average time required to complete this lab | 20 minutes |
 | ---- | ---- |
 | Lab last updated | March 2024 |
 | Lab last tested | March 2024 |
@@ -8,6 +8,14 @@
 Welcome, learners, to today's lab session focused on API lifecycle management using API Manager. In this lab, we will delve into the intricate process of managing the lifecycle of an API, a crucial aspect of modern software development and integration. Throughout this session, you will gain hands-on experience in maneuvering through the stages of API development, testing, publication, deprecation, and retirement.
 
 As technology evolves rapidly, organizations must adapt by efficiently managing their APIs to meet consumer demands and industry standards. Through this lab, you will navigate real-world scenarios where a company aims to enhance its existing API, Stockquote, to cater to consumer requirements for retrieving historical stock quotes. By understanding the API lifecycle management process, you will be equipped with the skills necessary to orchestrate seamless transitions between API versions and ensure continued accessibility and functionality for end-users. Let's embark on this journey to master API lifecycle management and elevate your proficiency in API development and governance.
+
+## Index
+
+- [1. Learning Objectives](#1-learning-objectives)
+- [2. Scenario Introduction](#2-scenario-introduction)
+- [3. Creation of an API](#3-creation-of-an-api)
+- [4. Solutions](#4-solutions)
+- [5. Conclusion](#5-conclusion)
 
 ## 1. Learning objectives
 

@@ -1,6 +1,6 @@
 # Policy Studio Lab - Mediation
 
-| Average time required to complete this lab | TBD minutes |
+| Average time required to complete this lab | 45 minutes |
 | ---- | ---- |
 | Lab last updated | March 2024 |
 | Lab last tested | March 2024 |
