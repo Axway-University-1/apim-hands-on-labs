@@ -2,8 +2,8 @@
 
 | Average time required to complete this lab | 60 minutes |
 | ---- | ---- |
-| Lab last updated | March 2024 |
-| Lab last tested | March 2024 |
+| Lab last updated | December 2024 |
+| Lab last tested | December 2024 |
 
 In this lab, we'll dive into the fundamentals of API virtualization, publication, and consumption using Axway's API Manager. We'll walk through the process of defining APIs, testing them, and making them available to developers securely and efficiently. By the end of this session, you'll have a solid understanding of how to manage APIs effectively within your organization's ecosystem.
 
@@ -61,7 +61,7 @@ Partners are encouraged to use these services to optimize their own processes. I
 
 Gerard is entrusted with the mission to enable such services through APIs. The new APIs accelerate creation of the new applications within the ecosystem of the group and that of its partners (and of course this needs to be done yesterday!). These applications should be able to easily use functionality and services from other applications.
 
-In his role of overseeing the “APIsation” program of the company, he should make sure that the publication of the APIs is easy, and that the usage of these APIs is controlled and that their utilization does not harm the IT systems.
+In his role of overseeing the “APIfication” program of the company, he should make sure that the publication of the APIs is easy, and that the usage of these APIs is controlled and that their utilization does not harm the IT systems.
 
 Gerard Lambert needs your expert knowledge to put a Portal in place that allows to expose APIs to the external parties. Ideally, he needs a solution which allows to control the usage of these APIs depending on the type of applications that are using them.
 
@@ -135,12 +135,13 @@ If products are not started (you can check with the command “statusAll” anyw
 #### 4.3. API Manager access
 Connect to the API Manager:
 
-* Start **Firefox** by double-clicking the icon on the desktop:
+* Start **Firefox** by clicking the icon on the desktop:
 
 ![Alt text](images/image008.png)
 
-* Click on the shortcut **API Manager** which is available in Firefox (URL: `https://api-env.demo.axway.com:8075/`).
- 
+* Click on the shortcut **API Manager** available on the default Firefox page titled **Axway Demo Environment**(URL: `https://api-env.demo.axway.com:8075/`).
+
+
 ![Alt text](images/image009.png)
 
 Login as administrator.
