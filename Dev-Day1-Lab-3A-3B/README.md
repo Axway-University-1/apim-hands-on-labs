@@ -473,23 +473,30 @@ A sign-in window appears:
 
 * Click on the menu **Clients**
 
-![Alt text](images/image054.png)
+
 
 * Click **Application Developers**.  
     * You can notice that Renée is member of the organization. She will provide a registration code to new developers so that they can enroll in the **Partners** organization. They will enroll using the subscription mechanism of the API Manager.
+
+![Alt text](images/image054.png)
+
 * Click **Organizations**
 * Click on the organization **Partners**
 
 Renée manages the organization, the APIs, the users and the applications that we will use in a following lab.
 
+
 ![Alt text](images/image055.png)
 
-![Alt text](images/image056.png)
+
 
 The available APIs are listed for this organization. We can see the API “OMSv1.1”.  
 **Note:** You may need to scroll down to see the APIs.
 
-![Alt text](images/image057.png)
+![Alt text](images/image056.png)
+
+
+
 
 Now, we need to create the registration codes that allows application developers to enroll automatically.
 
