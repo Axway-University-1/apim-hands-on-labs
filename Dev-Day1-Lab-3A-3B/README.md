@@ -156,7 +156,7 @@ Enter the following information in the login screen:
  ![Alt text](images/image010.png)
 
  Some APIs are already virtualized. The goal of this scenario is to virtualize the Order Management System (OMS) of the company. 
-
+  
   ![Alt text](images/image011.png)
 
 ## 5 Lab solution steps
@@ -184,6 +184,7 @@ In this example, we are going to import a file in **Swagger** format provided by
 * Click **New API**
 * Select **Import Swagger API**
 
+
 ![Alt text](images/image014.png)
 
 You are currently in the menu which allows to create or reference an API that will be managed by the API Manager.  
@@ -197,8 +198,8 @@ In the window **Import from**,
 In the menu **File Upload** that opens:
 * Click the path **axway** -> **TechLab** -> **TechLabs Resources**  
     Note : Depending on the screen, it is possible that you need to use the vertical scrollbar to show the entire path
-* In the right section, select the file **oms_v1.json** (this file describes the service)
-* Click **Open**
+* Select the file **oms_v1.json** (this file describes the service) by double-clicking it.
+
 
 ![Alt text](images/image016.png)
 
@@ -225,21 +226,22 @@ In the first tab **API**, you find all the general information like name, type (
 ![Alt text](images/image020.png)
 
 The second tab **API Methods** shows all the available API Methods belonging to the API:
-* Click **API Methods**. The OMS API provides two methods **read** and **submit**.
+* Click **API Methods**. The OMS API provides two methods **get-oms-v1-order** and **post-oms-v1-order**.
 
 ![Alt text](images/image021.png)
 
-In the next steps, we will use the **read** method to get details of an order.
+In the next steps, we will use the **get-oms-v1-order** method to get details of an order.
 
 #### 5.1.2. Creation of a public _Frontend_ API
 
 The public API allows to define the way that the internal resource (“Backend” API) will be exposed so that it can be consumed.
 
-Open the administration console of the API Manager (if you are disconnected, check the instructions in section 3.3)
+Open the administration console of the API Manager (if you are disconnected, check the instructions in section 4.1)
 * Select the tab **API**
 * Select the sub-tab **Frontend API**
 * Click **New API**
 * Select **New API from backend API**
+
 
 ![Alt text](images/image022.png)
 
@@ -253,12 +255,13 @@ You will now see a form that allows you to create the public API.
 In the tab **Inbound**,
 * Select **Pass Through** in the field **Inbound Security**. This allows you to verify if the API is working without having to manage access rights. We will change it later.
 
-![Alt text](images/image024.png)
+
 
 A configuration window **Pass Through Device** appears.
 * Keep the default value and click **OK**
 
 ![Alt text](images/image025.png)
+![Alt text](images/image024.png)
 
 * Click **Save**
 
@@ -294,7 +297,7 @@ Let’s go back to the **Frontend API** to change the authentication mechanism:
 
 * Click **OMSv1.1**
 
-![Alt text](images/image029.png)
+
 
  In the **Inbound** tab,  
  * Select **API Key** for the field **Inbound security**, to indicate that this resource requires an API key
@@ -302,7 +305,7 @@ Let’s go back to the **Frontend API** to change the authentication mechanism:
  ![Alt text](images/image030.png)
 
  In a new window, **API Key Device** appears:
-
+ 
  ![Alt text](images/image031.png)
 
  * Click **OK** (Leave the default options, the API key is passed in an http header)
@@ -320,7 +323,8 @@ Now we will complete information related to this API.
 The menu **File Upload** opens:
 * Click **Axway -> TechLab -> TechLabs Resources**
 * Select **OMS.jpg**
-* Click **Open**
+* Click **Select**
+
 
 ![Alt text](images/image034.png)
 
@@ -348,10 +352,12 @@ The update of the **Frontend API** is now finished.
 The last step consists of publishing the API from **Manage frontend API**:
 * Check the box next to the **OMSv1.1** API
 
-![Alt text](images/image039.png)
+
 
 * In the top menu, click **Manage selected**
 * Select **Publish**
+![Alt text](images/image039.png)
+
 
 Leave the default values in the window **Publish API** that pops ups:
 * Click **OK**
@@ -362,21 +368,24 @@ The status of the API becomes **Published**. Your API is now published!
 
 ![Alt text](images/image041.png)
 
-Every API belongs to an organization. In the current example, **OMSv1** belongs to the organization **API Development**. This organization is only for internal developers.
+Every API belongs to an organization. In the current example, **OMSv1.1** belongs to the organization **API Development**. This organization is only for internal developers.
 
-To make the **OMSv1** API available in the **Partners** organization, we will grant access to it:
-* Select a check box next to the **OMSv1** API in the **Manage frontend API** screen
+To make the **OMSv1.1** API available in the **Partners** organization, we will grant access to it:
+* Select the check box next to the **OMSv1.1** API in the **Manage frontend API** screen
 * Click **Manage selected** in the top menu
 
-![Alt text](images/image042.png)
+
 
 * Select **Grant access**
+![Alt text](images/image042.png)
+
 
 A new window **Grant API access** appears:
 * Select **The following organizations** for the field **Grant API access to**
 * Click **“+”**
 * Select **Partners**
 * Click **OK**
+
 
 ![Alt text](images/image043.png)
 
@@ -386,11 +395,11 @@ A confirmation window “Grant access” appears:
 ![Alt text](images/image044.png)
 
 
-Now we will set quota to protect our backend servers and allocate resources between the applications. We will configure two types of quota:
+Now we will set quota to protect our backend servers and allocate resources among the applications. We will configure two types of quota:
 * A global system quota: API Manager calculates the total amount of transactions for all the applications.
 * A quota per “Application”: API Manager measures the number of transactions per application.
 
-To limit the number of transactions on a system level (100 transactions per second):
+To limit the number of transactions at the system level (100 transactions per second):
 * Select from the menu **Clients**
 * Click **Default Quotas**
 * Click **System**
@@ -400,12 +409,14 @@ To limit the number of transactions on a system level (100 transactions per seco
 * Click **Add API**
 * In the list, select **OMSv1.1** (you may start typing in the “Filter” text box for quick selection of an API)
 
+
 ![Alt text](images/image045.png)
 
 * Set the number of messages as **100**
 * Set the number of seconds as **1**
 
 Note: if these 2 values are not entered, the orange button indicates that there are still invalid fields present.
+
 
 ![Alt text](images/image047.png)
 
@@ -417,21 +428,24 @@ Note: if these 2 values are not entered, the orange button indicates that there 
 To limit the number of transactions per application (In our case, a transaction every 3 seconds):
 * Click **Application Default**
 
+
 ![Alt text](images/image049.png)
 
 * Click **Add API**
-* Select **OMSv1**
+* Select **OMSv1.1**
+
 
 ![Alt text](images/image050.png)
 
 * Set the number of messages as “1” and the number of seconds as “3”
 * Click outside the field and click **Save**
 
+
 ![Alt text](images/image051.png)
 
 This configuration allows the API Manager to apply the following quota:
-* The total amount of calls to the OMSv1 API, for all methods and all consumers, is limited to 100 messages per second. This prevents an overload of the backend system.
-* By default, an application can make 1 call every 3 seconds. This allows to allocate resources between all the applications. This is the default behavior and this behavior can be overwritten per application basis.
+* The total amount of calls to the OMSv1.1 API, for all methods and all consumers, is limited to 100 messages per second. This prevents an overload of the backend system.
+* By default, an application can make 1 call every 3 seconds. This allows to allocate resources among all the applications. This is the default behavior and this behavior can be overwritten per application basis.
 
 ### 5.3. Manage organizations
 
@@ -446,6 +460,7 @@ We will connect with the user **Renée**. She has the role of **Organization Man
 Log out as the **apiadmin** user:
 * Click on the menu at the top right (cog wheel)
 * Click **Sign Out**
+
 
 ![Alt text](images/image052.png)
 
