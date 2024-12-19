@@ -503,13 +503,15 @@ Now, we need to create the registration codes that allows application developers
 * Click **Generate code** in the menu **Registration Codes** with default values selected
 * In the window that opens, click **Generate**
 
+
 ![Alt text](images/image058.png)
 
-This action creates an auto registration code, as it can be seen in the example below. This code is valid for 10 user registrations over a period of one month (here by example the 29th of June 2019). Past this date, the code will no longer be valid.
+This action creates an auto registration code, as it can be seen in the example below. This code is valid for 10 user registrations over a period of one month (here by example the 17th of January 2025). Past this date, the code will no longer be valid.
+
 
 ![Alt text](images/image059.png)
 
-**Click in the code box, select all, copy and paste your code somewhere. We will need it later.**
+**Click in the code box, select all, copy and paste your code somewhere. We will need it later. The entire code is not visible in the UI. So, do not rely on your visual ability to note the code**
 
 You can log out as Renee.
 
@@ -532,9 +534,9 @@ The following screen opens:
 
 ![Alt text](images/image061.png)
 
-* Click **Sign In**
+* Click **Register**
 
-* Click **Sign up**
+
 
 In the registration screen of the API Portal:
 * Enter **Gabriel** in the field **Full name**
@@ -544,6 +546,7 @@ In the registration screen of the API Portal:
 * In the field **Organization Code (optional)**, use the registration code obtained previously in section 5.3.
 * Accept the Terms & Conditions and Privacy Policy by checking the boxes
 * Click **Sign up** to register
+
 
 ![Alt text](images/image063.png)
 You will see a message on the top.
@@ -558,6 +561,7 @@ You will use the Webmail interface to read the emails of Gabriel:
 * Enter **gabriel** in the field **Username**
 * Enter **gabriel** in the field **Password**
 * Click on the front arrow or press Enter 
+
 
 ![Alt text](images/image066.png)
 
@@ -611,12 +615,13 @@ The creation of an API key is done through the creation of an “Application”.
 * Click **Create application**
 * Enter **Gabriel’s shop** in the field **Application name** 
 * Check **Enable application** to activate the application
-* On the bottom, in the table **Select APIs**, check the box corresponding to **OMSv1.1**
+* At the bottom, in the table **Select APIs**, check the box corresponding to **OMSv1.1**
 * Click **Next**
 
 ![Alt text](images/image073.png)
 
 Now we will continue with the generation of authentication elements.
+
 
 ![Alt text](images/image074.png)
 
@@ -625,30 +630,36 @@ Now we will continue with the generation of authentication elements.
 
 An API Key is generated:
 
+
 ![Alt text](images/image075.png)
 
 Click on **Save**
 
+
 ![Alt text](images/image076.png)
 
 It is now time to test the API.
-* Click on the menu **APIs**
+* Click on the menu **APIs** and click on **Documentation** link under **OMSv1.1**
 * In the methods section for the **OMSv1.1** API, click the drop-down selection for **Security method** and select the **Gabriel’s shop** key.
+
 
 ![Alt text](images/image077.png)
 
-You can now test the GET method in of the OMSv1 API. 
+You can now test the GET method of the OMSv1 API. 
 * Click **Get order** 
 * Click on **Try it out**
+
 
 ![Alt text](images/image078.png)
 
 * Enter a random value (e.g.123123) in the `orderId` field
 * Click **Execute**
 
+
 ![Alt text](images/image079.png)
 
-It works, you have a successful response! 
+It works. You have a successful response! 
+
 
 ![Alt text](images/image080.png)
 
@@ -661,6 +672,7 @@ Gabriel can also check details on the consumption of his application with the em
 
 
 Gabriel can access all his applications and select search criteria: per application, API, time. For now, he is only testing his app, but in the future, he hopes to have a lot of users for his new application.
+
 
 ![Alt-text](images/image081.png)
 
