@@ -65,11 +65,14 @@ StockQuote is a trading API providing the value of a company stock
 
 **Task**: Test the Stockquote API with Postman.
 
-* Open Postman 
+* Open Postman from the Desktop shortcut
+    - You need not sign up. If you get a Sign up screen, you can just close it.   
 * Invoke `https://api-env.demo.axway.com:8065/stockquote/rest?symbol=GOOG`
-* Set the header `KeyId=<API key from API Manager or Portal>`
+* Set the header `KeyId=<API key from API Manager or Portal>`. Refer to 2.1.1 or 2.1.2 sections above to connect to API Manager or Portal.
+
 
 ![Alt text](images/image22.png)
+* You should get a 200 response
 
 ![Alt text](images/image23.png)
 
@@ -182,6 +185,7 @@ If the result is not 200 OK, check that backend services have been started.
 
 * Click **Create** to save the application
 
+
 ![Alt text](images/image33.png)
 
 * Go to the **Authentication** tab
@@ -190,10 +194,12 @@ If the result is not 200 OK, check that backend services have been started.
 * Add `*` for javascript origins
 * Click **Save**
 
+
 ![Alt text](images/image34.png)
 
 * Go to **API > API Catalog** and click on **Stockquote**
 * Click **Try it** for API method **GetQuote**
+
 
 ![Alt text](images/image35.png)
 
@@ -201,11 +207,16 @@ If the result is not 200 OK, check that backend services have been started.
 * Add **GOOG** for the symbol
 * Click **Try method**
 
+
 ![Alt text](images/image36.png)
+
+* You should see a 200 response
+![alt text](images/image39.png)
 
 ### 7.3. Test from a browser
 
 * Type `http://api-env:8080/healthcheck` in a browser
+
 
 ![Alt text](images/image37.png)
 
@@ -215,7 +226,7 @@ If the result is not 200 OK, check that backend services have been started.
 
     * You should see the result:  
     `<status>ok</status>`
-
+    ![alt text](images/image40.png)
 * Type `curl -k -H "KeyId:<API_Key>" https://api-env.demo.axway.com:8065/stockquote/rest?symbol=GOOG` in the terminal
 
     * You should see the result:
@@ -226,7 +237,7 @@ If the result is not 200 OK, check that backend services have been started.
     * You should see the result:  
     `{"OrderResult": "Stockquote purchased",
   "Stock": “GOOG"}`
-
+    ![alt text](images/image41.png)
 
 ## 8. Conclusion
 
