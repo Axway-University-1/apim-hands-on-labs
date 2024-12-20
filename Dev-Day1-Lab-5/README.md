@@ -2,8 +2,8 @@
 
 | Average time required to complete this lab | 20 minutes |
 | ---- | ---- |
-| Lab last updated | March 2024 |
-| Lab last tested | March 2024 |
+| Lab last updated | December 2024 |
+| Lab last tested | December 2024 |
 
 Welcome to the API Testing lab! In this session, we will delve into the essential aspects of API testing using API Manager and API Portal. This hands-on experience will equip you with the knowledge and skills necessary to effectively test APIs, a crucial aspect of modern software development. Throughout this lab, you will not only learn how to test APIs using API Management interfaces but also explore other common methods such as browser testing, and command-line testing.
 
