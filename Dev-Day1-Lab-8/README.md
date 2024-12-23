@@ -129,33 +129,38 @@ API consumers would like to get the quote for a given date in addition to a give
 
 
 ![Alt text](images/image25.png)
+* Rename **API Name** as **Stockquote v2** and click **Save**
 
 * Go to **API> Frontend API**
     * Select **New API > New API from backend API**
-    * Select **Stockquote v2**, click Ok
+    * Select **Stockquote v2 2.0**, click Ok
     * In the inbound tab
-        * Change `resource path` to `/stockquote/v2`
+        * Change `resource path` to `/mockup/stockquote/v2`
         * Select `Inbound security` as `Pass Through`
     * Click **Save**
 
 
 ![Alt text](images/image26.png)
 
-* Go to the API tab
-    * Change the API name to `Stockquote v2`
+* Go to the API tab 
+    
     * Click on **add image** and add the stockquote image from `Home > demo/data/images/Stockquote.jpg`
     * Click **Save**
 
 ![Alt text](images/image27.png)
 
-* Go to **API> API Catalog**
+* Go to **API > API Catalog**
     * Click on **Stockquote v2**
     * Try the method **GetQuote** with
         * `symbol=GOOG`
-        * `date=01/01/2018`
+        * `date=01/01/2025`
     * Click **Try method**
 
+
 ![Alt text](images/image28.png)
+
+Logout as `apiadmin` and login as `Anna`
+Repeat the testing of **Stockquote v2**
 
 The testing works with Anna, but not with Dave. Why?  
 * Because a user can consume any API of his or her Organization, without any granted access
