@@ -2,8 +2,8 @@
 
 | Average time required to complete this lab | 20 minutes |
 | ---- | ---- |
-| Lab last updated | March 2024 |
-| Lab last tested | March 2024 |
+| Lab last updated | December 2024 |
+| Lab last tested | December 2024 |
 
 Welcome to the Policy Studio Lab - My First Mockup! In this lab, we'll delve into the intricacies of Policy Studio, exploring various filters and learning how to craft policies from scratch. But first, let's demystify the concept of a mockup. In the world of design and development, a mockup serves as a prototype, aiding in teaching, evaluation, and demonstration. Within the API realm, a mockup simulates a server's backend behavior, invaluable during the development phase to mitigate technical and organizational impacts. Today, we'll embark on a journey to create a mockup service, tackling the challenge of improving Company orders' tracking system by harnessing the power of Policy Studio.
 
@@ -129,7 +129,9 @@ Before looking at solution in next section, try to think about what is required 
     * Under **Recent Projects**, click on the **QuickStart** project
     * Click **OK** on the **Passphrase** popup box, leaving the Passphrase blank.
 
+
 ![Alt text](images/image36.png)
+
 ![Alt text](images/image37.png)
 
 ### 4.2. Create containers and policies
@@ -152,10 +154,11 @@ Before looking at solution in next section, try to think about what is required 
 
 ### 4.3. Create filters
 
-* Open policy by double-clicking
+* Open policy by double-clicking, if it is not open.
 * Type `set` to search for filter `Set Message`
 * Click on **Set Message** and drag in center of policy
 * Drop it on the policy canvas
+
 
 ![Alt text](images/image39.png)
 
@@ -164,14 +167,15 @@ Before looking at solution in next section, try to think about what is required 
 * Type content type `application/json`
 
 * Copy paste the JSON message below in **Message Body**
-```json 
+```json
 {
- "status":"OK,
- "deliveryDate":"Jan 1, 2021 0:00:01 AM"
+ "status":"OK",
+ "deliveryDate":"Jan 1, 2025 0:00:01 AM"
 }
 ```
 
 * Click on **Finish**
+
 
 ![Alt text](images/image40.png)
 
@@ -181,11 +185,13 @@ Before looking at solution in next section, try to think about what is required 
 * Click on **Reflect Message** and drag and drop on top of filter **Set Message**
 * Drop it on top of the **Set Message** filter to link it automatically
 
+
 ![Alt text](images/image41.png)
 
 * Set response code to `200`
 
 * Click on **Finish**
+
 
 ![Alt text](images/image42.png)
 
@@ -194,6 +200,7 @@ Before looking at solution in next section, try to think about what is required 
 * Select **Set Message** filter and right-click
 
 * Execute **Set as Start**
+
 
 ![Alt text](images/image43.png)
 
@@ -208,6 +215,7 @@ Before looking at solution in next section, try to think about what is required 
 
 * Click **OK**
 
+
 ![Alt text](images/image44.png)
 
 ![Alt text](images/image45.png)
@@ -217,6 +225,7 @@ Before looking at solution in next section, try to think about what is required 
 * Deploy either by
     * Clicking on deploy button, or
     * Using F6 shortcut
+
 
 ![Alt text](images/image46.png)
 
@@ -256,7 +265,7 @@ From your favorite browser, call the newly created API with a URL similar to the
 
 * Keep mockup simple: main purpose is for testing
 
-* Policy Studio allows to create simple services with preconfigured filters
+* Policy Studio allows to create simple services with preconfigured filters.
 You created a mockup service with just 2 filters!
 
 

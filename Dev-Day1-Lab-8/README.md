@@ -119,6 +119,46 @@ API consumers would like to get the quote for a given date in addition to a give
 
 ## 4. Solutions
 
+* Connect to API Manager with `anna/anna`
+
+* Go to **API > API Catalog**
+    * Click on **Stockquote**
+    * Try the method **GetQuote** with
+        * `symbol=GOOG`
+    * You may have to choose an Application and corresponding KeyId
+    * Click **Try method**
+
+* Connect to API Manager with `dave/dave`
+
+* Go to **API > API Catalog**
+    * Do you see **Stockquote** api?
+        * No
+
+The testing works with Anna, but not with Dave. Why?  
+* Because a user can consume any API of his or her Organization, without any granted access
+
+Anna and Stockquote API belong to the same **API Development** Organization. So, it works for her.
+
+Dave belongs to the Organization **Partner**. So, he needs access to use an API of another Organization. 
+
+Let’s grant him access!
+
+Login into API manager with `apiadmin/changeme`
+* Select `Stockquote` from **Frontend API**
+* Click `Manage selected`
+* Select `Grant access`
+* Grant API access to `The following organizations`
+* Click on `+` to add Partners organization to which **Dave** belongs
+
+* Logout as **apiadmin**
+* Login as **Dave** and check that he now has access to **Stockquote**
+* You can try to test the api but you will need to create an application. We will do it later. So, skip this testing for now.
+
+
+
+
+**OLD**
+
 * Connect to API Manager with `apiadmin/changeme`
 
 * Go to **API > Backend API**
