@@ -2,8 +2,8 @@
 
 | Average time required to complete this lab | 30 minutes |
 | ---- | ---- |
-| Lab last updated | March 2024 |
-| Lab last tested | March 2024 |
+| Lab last updated | December 2024 |
+| Lab last tested | December 2024 |
 
 Welcome to the Policy Studio Lab on virtualization with policies! In this session, we will delve into the intricacies of virtualizing SOAP web services using Policy Studio. By the end of this lab, you will gain a comprehensive understanding of how to effectively virtualize SOAP web services and seamlessly integrate them into your development environment. 
 
@@ -75,45 +75,55 @@ Virtualizing SOAP web services is a crucial aspect of modern API management, all
 * Open a browser and type URL:  
 `http://api-env:5080/BillingService?wsdl`
 
+
 ![Alt text](images/image31.png)
 
 * Open **SoapUI** from the Desktop
+
 
 ![Alt text](images/image32.png)
 
 * Click on **SOAP**
 * Add **Project Name** as **BillingService**
 * Import WSDL from `http://api-env:5080/BillingService?wsdl`
+* Click **OK**
+
 
 ![Alt text](images/image33.png)
 
 * Expand `getBillStatus`
-* Click **Request 1**
+* Double Click **Request 1**
+
 
 ![Alt text](images/image34.png)
 
 * Set in XML request order number to `123123`
-* Send request by clicking on green arrow
-* Response will appear on right pane
+* Send request by clicking on green arrow on the top menu bar.
+* Response will appear on right pane. (You may see a raw response. Click on XML tab to see the XML formatting)
+
 
 ![Alt text](images/image35.png)
 
 * In Policy Studio, select under **APIs >  Web Service Repository > Web Services**
 * Click on **Register Web Service**
 
+
 ![Alt text](images/image36.png)
 
 * Select **WSDL URL** and use `http://api-env:5080/BillingService?wsdl`
 * Click **Next**
 
+
 ![Alt text](images/image37.png)
 
-* Provide a name and a comment (documentation fields)
+* Leave the name and comment as they are. Click **Next**
+
 
 ![Alt text](images/image38.png)
 
 * Select **ALL** operations by checking the topmost checkbox
 * Click on **Next**
+
 
 ![Alt text](images/image39.png)
 
@@ -126,10 +136,12 @@ Virtualizing SOAP web services is a crucial aspect of modern API management, all
     * Check **Default Services**
     * Click on **Finish**
 
+
 ![Alt text](images/image41.png)
 
 * To conclude, a popup appears with some options
 * Keep the default selections and click on **OK**
+
 
 ![Alt text](images/image42.png)
 
@@ -147,8 +159,9 @@ Virtualizing SOAP web services is a crucial aspect of modern API management, all
 
 * Verify on **API Gateway Manager** that a request went correctly through **API Gateway**
 
-![Alt text](images/image45.png)
 
+![Alt text](images/image45.png)
+![Alt text](images/image46.png)
 
 ## 5. Conclusion
 
