@@ -2,8 +2,8 @@
 
 | Average time required to complete this lab | 20 minutes |
 | ---- | ---- |
-| Lab last updated | March 2024 |
-| Lab last tested | March 2024 |
+| Lab last updated | December 2024 |
+| Lab last tested | December 2024 |
 
 Welcome, learners, to today's lab session focused on API lifecycle management using API Manager. In this lab, we will delve into the intricate process of managing the lifecycle of an API, a crucial aspect of modern software development and integration. Throughout this session, you will gain hands-on experience in maneuvering through the stages of API development, testing, publication, deprecation, and retirement.
 
@@ -162,17 +162,21 @@ API consumers would like to get the quote for a given date in addition to a give
 Logout as `apiadmin` and login as `Anna`
 Repeat the testing of **Stockquote v2**
 
+Logout as `Anna` and login as `Dave`
+Repeat the testing of **Stockquote v2**
+Do you see **Stockquote v2** API when logged in as Dave?
+
 The testing works with Anna, but not with Dave. Why?  
 * Because a user can consume any API of his or her Organization, without any granted access
 
 Anna and Stockquote APIs (v1 and v2) belong to the same **API Development** Organization, so it works
 
-Dave belongs to the Organization **Partner**. So, he needs a grant access to use an API of another Organization. 
+Dave belongs to the Organization **Partner**. So, he needs access to use an API of another Organization. 
 
 Let’s grant him access!
 
 * Login into API manager with `apiadmin/changeme`
-* Select `Stockquote v2`
+* Select `Stockquote v2` from **Frontend API**
 * Click `Manage selected`
 * Select `Grant access`
 * Grant API access to `The following organizations`
