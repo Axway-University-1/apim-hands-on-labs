@@ -2,8 +2,8 @@
 
 | Average time required to complete this lab | 45 minutes |
 | ---- | ---- |
-| Lab last updated | March 2024 |
-| Lab last tested | March 2024 |
+| Lab last updated | December 2024 |
+| Lab last tested | December 2024 |
 
 In this lab, we'll delve into the world of API mediation using Policy Studio. The focus of this session is on restifying a SOAP Web Service, a crucial skill in modern API management. 
 
@@ -56,13 +56,14 @@ Virtualize Billing SOAP service and provide a REST interface
 * Request: `GET /bill/status?order=${id}`
 
 * Response:  
-If id < 1000, then  
+If id < 1000, then
 ```json
 {
-“status”: “OK”, 
-“paymentDate”: “Jan 1, 2016 10:00:01 AM”
+	"status": "OK",
+	"paymentDate": "Aug 28, 2021 10:00:01 AM"
 }
 ```
+
 
 Try yourself before looking at the solution!
 
@@ -103,6 +104,7 @@ Try yourself before looking at the solution!
 * On previous filter, drag and drop **Set Message** filter
 * Set content type to `application/xml` 
 * Copy the request message example from **SoapUI** for the **getBillStatus** method
+   * You can use the **Populate** dropdown, locate the **getBillStatus** method and import the message body
 * Change **orderNumber** value to `${params.query.order}`
 * Click **Finish**
 
@@ -139,6 +141,7 @@ Try yourself before looking at the solution!
 * Rename to **Retrieve status from message**
 * Type **status** for attribute name for content storage
 
+
 ![Alt text](images/image47.png)
 
 * Create an Xpath:
@@ -173,8 +176,10 @@ Try yourself before looking at the solution!
 ### 4.9. Retrieve **paymentDate** from message
 
 * On previous filter, drag and drop another **Retrieve from message** filter
-* Extract `paymentDate` node value
+* Rename as **Retrieve payment date from message**
+* Extract `paymentDate` node value and store it in a content attribute named `paymentDate`
     * Same steps as the ones you followed to extract `status`
+
 
 ![Alt text](images/image53.png)
 
@@ -186,8 +191,8 @@ Try yourself before looking at the solution!
 * Use the following message body:  
 ```json
 {
-	"status": "${status}“,
-	”paymentDate": "${paymentDate}"
+	"status": "${status}",
+	"paymentDate": "${paymentDate}"
 }
 ```
 
@@ -216,6 +221,7 @@ Try yourself before looking at the solution!
 * Look at API Gateway Manager
     * Policy Path
     * XML and JSON payloads
+
 
 ![Alt text](images/image60.png)
 
