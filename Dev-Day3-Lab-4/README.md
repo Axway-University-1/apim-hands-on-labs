@@ -2,8 +2,8 @@
 
 | Average time required to complete this lab | 20 minutes |
 | ---- | ---- |
-| Lab last updated | March 2024 |
-| Lab last tested | March 2024 |
+| Lab last updated | December 2024 |
+| Lab last tested | December 2024 |
 
 Welcome to the Policy Studio Lab - From Policy to API! In this lab, we'll embark on an exciting journey to explore the process of exposing a policy as an API using Axway's API Management solution. Our main objective is to integrate Billing services seamlessly into API Manager, enhancing management simplicity and efficiency. Whether you're familiar with SOAP or REST, this lab has two versions tailored to your needs, ensuring a comprehensive learning experience.
 
@@ -103,6 +103,7 @@ We want to have same management simplicity as with **OMS** using **API Manager**
 
 * Click **Next**
 
+
 ![Alt text](images/image37.png)
 
 * Expose on 
@@ -110,6 +111,7 @@ We want to have same management simplicity as with **OMS** using **API Manager**
     * `Base Path`: `/bill`
 
 * Click **Finish**
+
 
 ![Alt text](images/image38.png)
 
@@ -140,6 +142,8 @@ We want to have same management simplicity as with **OMS** using **API Manager**
 
 ![Alt text](images/image42.png)
 
+* Click **Next**
+
 #### 3.1.5. Select the policy
 
 * Select `BillingRest` policy
@@ -164,6 +168,7 @@ We want to have same management simplicity as with **OMS** using **API Manager**
 
 Test `http://api-env:8080/bill/status?order=123123`
 
+
 ![Alt text](images/image48.png)
 
 ### 3.2. Expose the business service
@@ -177,17 +182,26 @@ Test `http://api-env:8080/bill/status?order=123123`
 
 * Use `admin/changeme` to connect to configuration
 
+
 ![Alt text](images/image50.png)
+
+
+
+* Add all values as per the screenshot below. Password is `changeme`
 
 ![Alt text](images/image49.png)
 
-* Select all values as per the screenshot below
+* Click **Next**
+* Select all values as per the screenshot below.
+
+
 
 ![Alt text](images/image51.png)
 
 * Click **Import**. A backend Service is created.
 
 * Create a new **Frontend** from **Backend**
+
 
 ![Alt text](images/image52.png)
 
@@ -197,12 +211,14 @@ Test `http://api-env:8080/bill/status?order=123123`
 
 * Click **Save**
 
+
 ![Alt text](images/image55.png)
 
 ### 3.3. Test the service
 
 * Test the newly virtualized API  
 `https://api-env.demo.axway.com:8065/bill/status?order=123123`
+
 
 ![Alt text](images/image54.png)
 
