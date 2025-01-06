@@ -2,8 +2,8 @@
 
 | Average time required to complete this lab | 20 minutes |
 | ---- | ---- |
-| Lab last updated | March 2024 |
-| Lab last tested | March 2024 |
+| Lab last updated | December 2024 |
+| Lab last tested | December 2024 |
 
 Welcome to the Policy Studio Lab on Error Management! In this session, we'll delve into handling error scenarios using Policy Studio within the context of APIM (Axway API Management). Picture a scenario where the 'restifed' service for billing operates seamlessly under normal conditions. But what if there are glitches, such as incorrect input parameters? This lab equips you with the skills to add basic error management functionalities to such services, ensuring smoother operations even when things go awry.
 
@@ -47,7 +47,7 @@ Throughout this session, we'll explore various facets of error management within
 
 * However, what happens when something is not right, say in providing the input parameters?
 
-* Let’s add minimum error management to this service
+* Let’s add some minimum error management to this service
 
 ![Alt text](images/image01.png)
 
@@ -56,7 +56,7 @@ Throughout this session, we'll explore various facets of error management within
 
 * Go to `BillingRest` policy 
 
-* Add **Copy / Modify attributes** filter in the policy  
+* Add **Copy / Modify attributes** filter to this policy  
 See the following image for options
 
 * Create 2 attributes
@@ -110,10 +110,10 @@ See the following image for options
 * Create a new policy **BillingRestFaultHandler** in the same container
 
 * Add a **Set Message** filter with type `application/json` and the following message:
-```json 
-{ 
-“id”: “${id}”,
-“message”: “${error.message}”
+```json
+{
+  "id": "${id}",
+  "message": "${error.message}"
 }
 ```
 
@@ -137,6 +137,7 @@ See the following image for options
 
 
 #### 2.1.7. One sample test
+
 
 ![Alt text](images/image38.png)
 
