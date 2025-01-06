@@ -2,8 +2,8 @@
 
 | Average time required to complete this lab | 70 minutes |
 | ---- | ---- |
-| Lab last updated | March 2024 |
-| Lab last tested | March 2024 |
+| Lab last updated | December 2024 |
+| Lab last tested | December 2024 |
 
 Welcome to today's session on API Gateway management! In this hands-on lab, we'll delve into the dynamic world of API access control and resource restriction using Axway's API Gateway. Throughout this session, you'll learn how to design and implement policies that authenticate users, enforce access quotas based on user groups, and monitor traffic effectively. By the end of this session, you'll have gained valuable insights into managing API access securely and efficiently.
 
@@ -87,12 +87,12 @@ To simulate this partitioning, we will develop the policy to take into account t
 
 * If you are disconnected, click on the username `Axway`
 
-![Alt text](images/image005.png)
+<!-- ![Alt text](images/image005.png) -->
 
-* Enter `axway` in the field **Password**.
-* Click on the button **Unlock**
+* Enter `axway` in the field **Password** to unlock.
+<!-- * Click on the button **Unlock** -->
 
-![Alt text](images/image006.png)
+<!-- ![Alt text](images/image006.png) -->
 
 * If API Management is not started (you can check with the command `statusAll` anywhere from a terminal)
     * Double click the following desktop shortcut **Start API Management** 
@@ -101,6 +101,7 @@ To simulate this partitioning, we will develop the policy to take into account t
 
 * Policy Studio is the tool to configure the API Gateway.
     * Open the policy design interface by double-clicking the **Policy Studio** icon on the desktop
+
 
 ![Alt text](images/image008.png)
 
@@ -137,7 +138,7 @@ You will receive an error message, `Access to service denied`, if you are exceed
 
 In the tree view on the left of the screen
 * Expand **Policies**
-* Right-click on the **TechLabs** container (*if it doesn’t exists Add Container “TechLabs” before adding the policy*)
+* Right-click on the **TechLabs** container (*if it doesn’t exist, add Container “TechLabs” before adding the policy*)
 * Select **Add Policy**
 
 ![Alt text](images/image013.png)
@@ -193,7 +194,7 @@ In the **Configure a new 'Set Message' filter** window,
 * For the **Name** field, enter `Set Message OK`
 * For the **Content-Type** field, enter `text/html`
 * For the **Message Body** field, enter 
-```
+```html
 <html>
 	<body>
 		Access to service authorized
@@ -231,7 +232,7 @@ In the **Configure a new 'Set Message' filter** window,
 * For the **Name** field, enter `Set Message KO`
 * For the **Content-Type** field, enter `text/html`
 * For the **Message Body** field, enter 
-    ```
+    ```html
     <html>
 	    <body>
 		    Access to service denied
@@ -239,7 +240,6 @@ In the **Configure a new 'Set Message' filter** window,
     </html>
     ```
 * Click on the **Finish** button
-
 
 ![Alt text](images/image024.png)
 
@@ -293,9 +293,11 @@ Click the **Add relative path** icon at bottom of the screen:
 * Uncheck the Global policy options
 * Then click **OK**
 
+
 ![Alt text](images/image031.png)
 
-*Note:* the created relative path can be seen in the **Default Services** listener. Path resolvers are managed from this menu.
+*Note:* the created relative path can be seen in the **Default Services** listener under **Environment Configuration > Listeners > API Gateway**. Path resolvers are managed from this menu. 
+
 
 ![Alt text](images/image032.png)
 
@@ -325,13 +327,13 @@ The window **Deploy** appears. You connect to the system by identifying yourself
 * To proceed with the tests, use your Firefox browser. 
 * In the browser, enter the URL: `http://localhost:8080/TechLabs/quota`
 
-![Alt text](images/image036.png)
+
 
 ![Alt text](images/image037.png)
 
 * Click several times on the refresh button to simulate successive requests.
 
-![Alt text](images/image038.png)
+
 
 **Expected result:**
 
@@ -341,12 +343,13 @@ If the number of requests is less than one every 5 seconds, the responses return
 
 If the number of requests is greater than one every 5 seconds, the responses will be negative: `Access to service denied`.
 
+
 ![Alt text](images/image039.png)
 
 The API Gateway Manager is the web console for the administration of the API Gateway server. It is a monitoring tool and helps API developers:
 * Open a new tab by clicking **+**, then click **API Gateway Manager** shortcut.
 
-![Alt text](images/image040.png)
+
 
 * If authentication is prompted,  
 Enter `admin` in the field **Username**   
@@ -361,6 +364,7 @@ The **Dashboard** tab displays:
 
 The **Dashboard** tab displays the total number of messages processed by the API Gateway platform. This corresponds to the total number of clicks made to simulate calls to the **Quota System** policy.
 
+
 ![Alt text](images/image042.png)
 
 The positive responses are listed in **Messages passed** and the negative ones listed in **Messages Failed**.
@@ -369,12 +373,14 @@ The **Monitoring** tab offers:
 * A real-time view of the statistics of the API Gateway server activity.
 * These statistics are grouped into categories: System / API Services / API Methods/ Clients / Remote Hosts.
 
+
 ![Alt text](images/image043.png)
 
 
 The **Traffic** tab is an interface dedicated to developers and administrators in order to view the details of a specific request. 
 
 In the **Traffic** tab, it is possible to identify the requests which have been accepted (`Status: 200 OK`) and those which have been rejected (`Status: 500 Internal Server Error`)
+
 
 ![Alt text](images/image044.png)
 
