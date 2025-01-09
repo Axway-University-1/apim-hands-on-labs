@@ -2,8 +2,8 @@
 
 | Average time required to complete this lab | 90 minutes |
 | ---- | ---- |
-| Lab last updated | March 2024 |
-| Lab last tested | March 2024 |
+| Lab last updated | December 2024 |
+| Lab last tested | December 2024 |
 
 In this lab session, we delve into the intricacies of API management by exploring the concept of mashups, also known as Web Service Composition. A mashup involves blending various existing web services to create a new service that offers added value. This practice lies at the heart of Service-Oriented Architecture (SOA) and Digitalization, offering innovative ways to combine functionalities from disparate services.
 
@@ -46,7 +46,7 @@ This service is not optimized. OMS status is updated by batch every night, but u
 The new version will do the following :
 * Validate the customer purchase (Billing backend service). If the customer has paid for the order, the service will acknowledge it
 * Indicate the stock availability (OMS backend service). The service indicates if the order is in stock
-* Show the delivery status (Shipping mockup service). If the order has been shipped, it will return the status OK
+* Show the delivery status (Shipping partner mockup service). If the order has been shipped, it will return the status OK
 * Merge the 3 services and provide a status with all information
 
 Users will try the new service with **API Portal** and **OAuth** authentication
@@ -144,12 +144,13 @@ Let’s create a variable for each one
 
 ### 3.1. Main policy
 
-* Create base frame by creating policies and putting them in main policy
-    * 0 – InstantFollowOrder
-    * 1 - Request Billing
-    * 2 - Request OMS
-    * 3 - Request Partner
-    * 99 - InstantFollowOrder FaultHandler
+* Create a container named **OMS**
+* Create policies starting with the main policy. `0 - InstantFollowOrder` is the main policy in this example. We will add the content to these policies later. For now, just create these policies.
+* Create the other policies
+    * `1 - Request Billing`
+    * `2 - Request OMS`
+    * `3 - Request Partner`
+    * `99 - InstantFollowOrder FaultHandler`
 
 * Set Fault Handler
 
@@ -177,7 +178,11 @@ Let’s create a variable for each one
 }
 ```
 
+
+
 ![Alt text](images/image38.png)
+
+* Set as start
 
 ### 3.3. Policy - Request Billing
 
@@ -212,10 +217,10 @@ Let’s create a variable for each one
 
 * Add **JSON Path** filter for extracting info
     * `message`
-    * `deliveryOnTime`
+    * `paymentDate`
     * `status`
 * See how JSON paths are defined
-* Type expected is `java.lang.String` for both
+* Type expected is `java.lang.String` 
 * Status and payment date should trigger a failure if absent
 
 
@@ -252,6 +257,8 @@ Let’s create a variable for each one
 
 ![Alt text](images/image52.png)
 
+* Add the true and false filters
+
 *Best practice:* Intermediate test
 
 * It is important to do unitary test during development
@@ -269,6 +276,8 @@ Let’s create a variable for each one
 * Deploy configuration by clicking the deploy icon at the top of **Policy Studio** or press **F6**
 
 * Test the service `http://api-env.demo.axway.com:8080/test`
+    * Test in a private window to avoid issues related to caching.
+
 
 ![Alt text](images/image59.png)
 
@@ -321,7 +330,7 @@ Let’s create a variable for each one
 ```json
 {
   "status": "${order.status}",
-  ”deliveryDate": "${order.deliveryDate}",
+  "deliveryDate": "${order.deliveryDate}",
   "deliveryOnTime": "${order.deliveryOnTime}",
   "message": "Instant follow order response"
 }

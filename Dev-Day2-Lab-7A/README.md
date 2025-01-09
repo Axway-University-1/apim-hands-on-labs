@@ -396,7 +396,7 @@ This is how the policy will look like when implemented.
 
 #### 3.3.1. Create a new **Authentication** policy
 
-We are going to isolate the identification part in an independent Policy. At the same time, you will test the reuse of policies.
+We are going to isolate the identification part in an independent Policy. At the same time, you will understand how to reuse policies.
 
 We are therefore going to create a new policy named **Authentication**. This policy will authenticate the user using basic authentication (use of an identifier / password pair) when logging in.
 * Return to the **Policy Studio** interface 
@@ -424,7 +424,7 @@ Using this filter, the user authentication will be performed against a user stor
 
 In the **Configure 'http Basic'** window, 
 * Select the following in the respective fields:  
-`Credential Format:` `User Name`
+`Credential Format:` `User Name` \
 `Repository Name:` `Local User Store`
 * Leave the **Allow client challenge** option checked
 * Click **Finish**
@@ -438,6 +438,8 @@ In the **Configure 'http Basic'** window,
 You obtain the following policy, which will succeed or fail depending on whether or not the identifiers provided are valid.
 
 ![Alt text](images/image052.png)
+
+
 
 We are now going to return to the **Quota System** policy and use the **Authentication** policy which has just been created.
 * Click on the **Quota System** tab
@@ -486,10 +488,11 @@ The second version of the policy is now ready to be deployed
 
 On the first request, the service returns an authentication request.
  
-In the "Authentication Required" window,
+In the authentication popup,
 * For the **User Name** field, enter `user1`
 * For the **Password** field, enter `axway`
-* Click **OK**
+* Click **Sign In**
+
 
 ![Alt text](images/image060.png)
 
@@ -504,7 +507,7 @@ Test with an unrecognized user: test
 * Close the browser and open it again to start a new session. Alternatively, open a private window
 * In the Firefox browser, enter the URL: `http://localhost:8080/TechLabs/quota`
 * In the **Authentication Required** window, enter the following in the respective fields:  
-`User Name`: `test`
+`User Name`: `test` \
 `Password`: `test`
 * Click **OK**
 

@@ -2,8 +2,8 @@
 
 | Average time required to complete this lab | 30 minutes |
 | ---- | ---- |
-| Lab last updated | March 2024 |
-| Lab last tested | March 2024 |
+| Lab last updated | December 2024 |
+| Lab last tested | December 2024 |
 
 Welcome to the Authentication Lab, where you'll dive into the world of securing APIs using Axway's API Manager. In this session, we'll explore the essential concepts and hands-on techniques for implementing authentication policies within your API management infrastructure. As organizations increasingly rely on APIs to power their digital ecosystems, ensuring secure access to these resources becomes paramount, making authentication a crucial aspect of API management.
 
@@ -77,7 +77,7 @@ The following are the goals to be achieved:
 
 ![Alt text](images/image26.png)
 
-* Create a policy
+* Create a policy named **Custom Authentication**
 
 ![Alt text](images/image27.png)
 
@@ -89,6 +89,7 @@ The following are the goals to be achieved:
 
 * Click **Finish**
 
+![alt text](image.png)
 ![Alt text](images/image29.png)
 
 * Add **HTTP Basic** filter on the previous filter
@@ -108,7 +109,11 @@ The following are the goals to be achieved:
 
 * Make the policy available to **API Manager**
 
+
 ![Alt text](images/image33.png)
+![alt text](images/image51.png)
+
+* Click **Save**
 
 * Deploy the policy
 
@@ -121,16 +126,25 @@ The following are the goals to be achieved:
 * Connect to **API Manager**  
 `apiadmin/changeme`
 
+
 ![Alt text](images/image37.png)
 
 * Virtualization - create a Backend with Swagger
 
+
 ![Alt text](images/image38.png)
+![alt text](images/image52.png)
+
+* Name the backend API as `OMS v1.2`
+* Choose the organization as `API Development`
+![alt text](images/image53.png)
 
 * Virtualization - create a Frontend
 
+
 ![Alt text](images/image39.png)
 
+![alt text](images/image54.png)
 * Click **Save**
 
 ![Alt text](images/image40.png)
