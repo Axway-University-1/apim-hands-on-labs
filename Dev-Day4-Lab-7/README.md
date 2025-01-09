@@ -2,8 +2,8 @@
 
 | Average time required to complete this lab | 20 minutes |
 | ---- | ---- |
-| Lab last updated | March 2024 |
-| Lab last tested | March 2024 |
+| Lab last updated | December 2024 |
+| Lab last tested | December 2024 |
 
 Welcome to the TLS Lab! In this session, we will dive into the intricacies of Transport Layer Security (TLS) within the context of API Gateway configuration. TLS plays a critical role in securing communications over the internet, and understanding how to implement it effectively is paramount for any API management professional. Throughout this lab, we will explore the process of creating a TLS HTTPS listener on the API Gateway, setting up ports, and configuring certificates to ensure secure data transmission.
 
@@ -48,9 +48,12 @@ As organizations increasingly prioritize data security, the ability to configure
     * Set the port to `9443`
     * Click the **X.509 Certificate** button
 
+
 ![Alt text](images/image14.png)
 
 * Select the **DigiCert Inc** certificate and click **OK**
+    * You can type `demo` in the filter text to quickly find this.
+
 
 ![Alt text](images/image15.png)
 
@@ -60,7 +63,10 @@ As organizations increasingly prioritize data security, the ability to configure
 
 For this lab we are going to disable or uncheck `Check that the SSL certificate’s Subject CN resolves to network address`  because we are using the sample certs.  <span style="color:red">**DO NOT DO THIS IN PRODUCTION**</span>
 
+
 ![Alt text](images/image17.png)
+
+* Click **OK**
 
 * Now you should see your new **TLS Lab** listener listed like the screenshot below.  
 Save and deploy your configuration
@@ -71,7 +77,9 @@ Save and deploy your configuration
     * `-v` is verbose
     * `-k` disables certificate verification (we need this; otherwise we’ll have to download the sample CA certificate)
 
-`curl -v -k "https://localhost:9443/healthcheck"`
+```
+curl -v -k "https://localhost:9443/healthcheck"
+```
 
 Expected output:
 
