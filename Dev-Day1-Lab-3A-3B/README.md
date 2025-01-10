@@ -127,6 +127,7 @@ Click on the button **Unlock**
 If products are not started (you can check with the command “statusAll” anywhere from a terminal), double click the following desktop shortcut:
 * Start API Management
 * Start Backend Services
+* Start API Portal
 
 ![Alt text](images/image007.png)
 
