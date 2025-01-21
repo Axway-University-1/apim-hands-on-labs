@@ -86,10 +86,10 @@ The following are the goals to be achieved:
 ![Alt text](images/image28.png)
 
 * Edit filter configuration as per the screenshot below.
+   * Ensure that you have UNCHECKED th option `Authenticate API key and secret`
 
 * Click **Finish**
 
-![alt text](image.png)
 ![Alt text](images/image29.png)
 
 * Add **HTTP Basic** filter on the previous filter
@@ -97,10 +97,11 @@ The following are the goals to be achieved:
 ![Alt text](images/image30.png)
 
 * Edit filter configuration as per the screenshot below.
+   
 
 * Click **Finish**
 
-![Alt text](images/image31.png)
+![alt text](images/image31.png)
 
 * Set the start filter
 
@@ -142,50 +143,72 @@ The following are the goals to be achieved:
 * Virtualization - create a Frontend
 
 
-![Alt text](images/image39.png)
+   ![Alt text](images/image39.png)
 
-![alt text](images/image54.png)
-* Click **Save**
+   ![alt text](images/image54.png)
 
+
+* In the **Inbound** tab, make changes as per the screenshot below and click **Save**
 ![Alt text](images/image40.png)
 
-* Select authentication mechanism and save  
-If the invoke policy does not appear, refresh the browser 
+* In the **Outbound** tab, make changes as per the screenshot. You may have to click **Advanced** button on the top right to see all the advanced options. Select **Custom Authentication** in the Request policy. Click **Save** when you have made all the changes.
 
-![Alt text](images/image41.png)
+   
+   ![Alt text](images/image41.png)
 
 * Create an application
 
-![Alt text](images/image42.png)
+   
+   ![Alt text](images/image42.png)
 
-![Alt text](images/image43.png)
+* Provide API access
+   
+   ![Alt text](images/image43.png)
 
-![Alt text](images/image44.png)
+* In the **Authentication** tab of the newly created application, generate an API key. Ensure that you add a `*` for Javascript origins by clicking on **Edit**
 
-![Alt text](images/image45.png)
+   
+   ![Alt text](images/image45.png)
 
-![Alt text](images/image46.png)
+
 
 * Add the User **Anna** in the Sharing tab
 
-![Alt text](images/image47.png)
+   ![Alt text](images/image47.png)
 
 ### 5.1. Test it!
 
+* Without user and key
 * `curl -k  https://api-env.demo.axway.com:8065/mockup/oms/v1/oms/v1/order/123123`
 
+   
+
+   ![alt text](images/image55.png)
+
+* No user, only key (Replace `MY_KEY` with the key that you created and copied earlier)
 * `curl -k  https://api-env.demo.axway.com:8065/mockup/oms/v1/oms/v1/order/123123?KeyId=MY_KEY`
 
+   ![alt text](images/image56.png)
+
+
+
+* Only user, no key
 * `curl -k -u anna:anna https://api-env.demo.axway.com:8065/mockup/oms/v1/oms/v1/order/123123`
 
+   ![alt text](images/image57.png)
+
+
+* Both user and key
 * `curl -k -u anna:anna https://api-env.demo.axway.com:8065/mockup/oms/v1/oms/v1/order/123123?KeyId=MY_KEY`
 
+   ![alt text](images/image58.png)
 
-![Alt text](images/image48.png)
+<!-- ![Alt text](images/image48.png)
 
-![Alt text](images/image49.png)
+![Alt text](images/image49.png) -->
 
 ### 5.2. Troubleshooting
+
 
 ![Alt text](images/image50.png)
 

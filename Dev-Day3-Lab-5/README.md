@@ -286,7 +286,7 @@ Let’s create a variable for each one
 
 * Use same technique as the one you used with **Request Billing** policy to create **Request OMS** policy 
 * Retrieve OMS backend URL
-* Retrieve response status and message
+* Retrieve response status and deliveryOnTime
 * Update default error message
 
 ![Alt text](images/image60.png)
