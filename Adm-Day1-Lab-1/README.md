@@ -72,10 +72,10 @@ With command line, used for automation
 
 * Installation kit:
     * Installer : `/home/axway/Desktop/APIGateway_7.7.<releasedate>_Install_linux-x86-64_BN<buildnumber>.run`
-    * License(s) : `/home/axway/Desktop/ReadyTech/Inbox/API_7.7_Temp.lic`
+    * License(s) : `/home/axway/demo/data/licenses/classic`
 
 * Installation folder:  
-`mkdir -p /home/axway/install/quickstart`
+`mkdir -p /home/axway/install/quickstart/multiple.lic`
 
 * Execution rights:  
 `chmod +x /home/axway/Desktop/APIGateway_7.7.<releasedate>_Install_linux-x86-64_BN<buildnumber>.run`
