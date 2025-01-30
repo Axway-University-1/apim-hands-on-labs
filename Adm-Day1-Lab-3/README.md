@@ -1,6 +1,6 @@
 # API Gateway Docker Installation Lab 
 
-| Average time required to complete this lab | TBD minutes |
+| Average time required to complete this lab | 90 minutes |
 | ---- | ---- |
 | Lab last updated | March 2024 |
 | Lab last tested | March 2024 |
@@ -10,11 +10,18 @@ Welcome to the API Gateway Docker Installation Lab! In this session, we will exp
 By the end of this lab, you will have the skills to install the API Gateway in a containerized environment, gaining practical insights into deploying API Management solutions using modern containerization technology. Whether you're a beginner exploring containerization or seeking to enhance your deployment capabilities, this lab will equip you with the necessary knowledge to deploy and manage Axway API Management components effectively. Let's dive in and get started with the exciting world of containerized API Gateway installations!
 
 ## Index
-- [1. Learning Objectives](#1-learning-objectives)
-- [2. Virtual Machine Environment](#2-virtual-machine-environment)
-- [3. Installation](#3-installation)
-- [4.Testing API Gateway and API Manager installation](#4-testing-api-gateway-and-api-manager-installation)
-- [5. Conclusion](#5-conclusion)
+- [API Gateway Docker Installation Lab](#api-gateway-docker-installation-lab)
+  - [Index](#index)
+  - [1. Learning objectives](#1-learning-objectives)
+  - [2. Virtual machine environment](#2-virtual-machine-environment)
+  - [3. Installation](#3-installation)
+    - [3.1. View the images in the environment](#31-view-the-images-in-the-environment)
+    - [3.2. Start Cassandra container](#32-start-cassandra-container)
+    - [3.3. Start the Admin Node Manager container](#33-start-the-admin-node-manager-container)
+    - [3.4. Run the API Gateway container](#34-run-the-api-gateway-container)
+  - [4. Testing API Gateway and API Manager installation](#4-testing-api-gateway-and-api-manager-installation)
+    - [4.1. Cleanup and deletion](#41-cleanup-and-deletion)
+  - [5. Conclusion](#5-conclusion)
 
 
 ## 1. Learning objectives
@@ -108,7 +115,7 @@ docker container logs cassandra
 Execute the following command.
 
 ```
-docker container run -d --network training -p 8090:8090 --name anm -v /opt/Axway/license:/opt/Axway/apigateway/conf/licenses -v /opt/Axway/Installs/Artifacts/Merge:/merge -e ACCEPT_GENERAL_CONDITIONS=yes docker.repository.axway.com/apigateway-docker-prod/7.7/admin-nodemanager:7.7.0.20230530-3-BN0009-ubi7
+docker container run -d --network training -p 8090:8090 --name anm -v /home/axway/demo/data/licenses/docker:/opt/Axway/apigateway/conf/licenses -v /opt/Axway/Installs/Artifacts/Merge:/merge -e ACCEPT_GENERAL_CONDITIONS=yes docker.repository.axway.com/apigateway-docker-prod/7.7/admin-nodemanager:7.7.0.20240830-4-BN0145-ubi9
 ```
 
 Attributes
@@ -136,7 +143,7 @@ docker container logs anm
 Execute the following command.
 
 ```
-docker container run -d --network training -p 8075:8075 -p 8065:8065 -p 8080:8080 --name gateway -v /opt/Axway/license/gatewayLicense:/opt/Axway/apigateway/conf/licenses -v /opt/Axway/merge:/merge -e ACCEPT_GENERAL_CONDITIONS=yes -e EMT_ANM_HOSTS=anm:8090 -e CASS_HOST=cassandra -e CASS_KEYSPACE=training_api_kps -e CASS_TKEYSAPCE=t_training_api_kps  docker.repository.axway.com/apigateway-docker-prod/7.7/gateway:7.7.0.20230530-3-BN0009-ubi7
+docker container run -d --network training -p 8075:8075 -p 8065:8065 -p 8080:8080 --name gateway -v /home/axway/demo/data/licenses/docker:/opt/Axway/apigateway/conf/licenses -v /opt/Axway/merge:/merge -e ACCEPT_GENERAL_CONDITIONS=yes -e EMT_ANM_HOSTS=anm:8090 -e CASS_HOST=cassandra -e CASS_KEYSPACE=training_api_kps -e CASS_TKEYSAPCE=t_training_api_kps  docker.repository.axway.com/apigateway-docker-prod/7.7/gateway:7.7.0.20240830-4-BN0145-ubi9
 ```
 
 Attributes
@@ -168,7 +175,7 @@ Launch a web browser (Firefox)
 
 ![Alt text](images/image009.png)
 
-Type the address: `https://api-env.demo.axway.com:8075`
+Type the address: `https://api-env:8075`
 
 This should launch the **API Manager**. 
 
@@ -188,7 +195,7 @@ You are now logged into **API Manager**
 
 ![Alt text](images/image012.png)
 
-Open another tab and type the address: `https://api-env.demo.axway.com:8090`
+Open another tab and type the address: `https://api-env:8090`
 
 ![Alt text](images/image013.png)
 
