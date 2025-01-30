@@ -1,18 +1,18 @@
 # APIM Installation Lab     
 
 
-| Average time required to complete this lab | TBD minutes    |
+| Average time required to complete this lab | 60 minutes    |
 | ---- | ---- |
-| Lab last updated | March 2024 |
-| Lab last tested | March 2024 |
+| Lab last updated | January 2025 |
+| Lab last tested | January 2025 |
 
 Welcome to the APIM Installation Lab! In this hands-on session, we'll delve into the installation process of the Axway API Management (APIM) solution. By the end of this lab, you'll gain the essential skills to install APIM using the QuickStart method and understand its implications. Whether you're a beginner exploring APIM or aiming to automate installations, this lab provides a foundational understanding that sets the stage for your journey with APIM.
 
 ## Index
 - [1. Learning Objectives](#1-learning-objectives)
 - [2. Introduction](#2-introduction)
-- [3. AttendedInstallation](#3-attended-installation)
-- [4. UnattendedInstallation](#4-unattended-installation)
+- [3. Attended Installation](#3-attended-installation)
+- [4. Unattended Installation](#4-unattended-installation)
 - [5. Conclusion](#5-conclusion)
 
 
@@ -89,7 +89,7 @@ With command line, used for automation
     * Policy Studio
     
 
-## 3. Attended installation
+## 3. Attended installation (Skip to unattended installation in Lab environment)
 
 * Execute installer: ``./APIGateway_7.X.Y_Install_linux-x86-64_ZZZ.run`
     * With UI: run it from VM Desktop
@@ -135,11 +135,12 @@ Launch it!
 
 **Example with 7.7.20240830:**
 
-> /home/axway/Desktop/APIGateway_7.7.20240830_Install_linux-x86-64_BN04.run --mode unattended --enable-components nodemanager,cassandra,apigateway,qstart,apimgmt,policystudio,configurationstudio --disable-components packagedeploytools,analytics --setup_type advanced --licenseFilePath /home/axway/demo/data/licenses/classic/multiple.lic --apimgmtLicenseFilePath /home/axway/demo/data/licenses/classic/multiple.lic --prefix /home/axway/install/quickstart --cassandraInstalldir /home/axway/install/quickstart --cassandraJDK /home/axway/install/quickstart/apigateway/platform/jre --acceptGeneralConditions yes
+```
+/home/axway/Desktop/APIGateway_7.7.20240830_Install_linux-x86-64_BN04.run --mode unattended --enable-components nodemanager,cassandra,apigateway,qstart,apimgmt,policystudio,configurationstudio --disable-components packagedeploytools,analytics --setup_type advanced --licenseFilePath /home/axway/demo/data/licenses/classic/multiple.lic --apimgmtLicenseFilePath /home/axway/demo/data/licenses/classic/multiple.lic --prefix /home/axway/install/quickstart --cassandraInstalldir /home/axway/install/quickstart --cassandraJDK /home/axway/install/quickstart/apigateway/platform/jre --acceptGeneralConditions yes
+```
 
 
-
-** Installation takes a few mintues to complete. After issuing the command, there will be no output for a ew mintues. 
+** Installation takes a few mintues to complete. After issuing the command, there will be no output for a few mintues. 
 
 *Important to remember*
 
@@ -245,12 +246,14 @@ Command line
 
 * Stop  
 * `nodemanager -k`
-> /home/axway/install/quickstart/apigateway/posix/bin/nodemanager -k
-
+```
+/home/axway/install/quickstart/apigateway/posix/bin/nodemanager -k
+```
 * Start  
 `nodemanager -d`
-> /home/axway/install/quickstart/apigateway/posix/bin/nodemanager -d
-
+```
+/home/axway/install/quickstart/apigateway/posix/bin/nodemanager -d
+```
 
 * Status  
 `ps -eaf | grep -i "Node Manager"`  
@@ -267,10 +270,8 @@ Default login: `admin/changeme`
 ![Alt text](images/image24.png)
 
 API (call to ANM)
-* See ......[need a working link here]()  
-This is not working  
-http://apidocs.axway.com/swagger-ui/index.html?productname=apigateway&productversion=7.7.0&filename=api-gateway-swagger.json
 
+[Swagger](https://apidocs.axway.com/swagger-ui-NEW/index.html?productname=apigateway&productversion=7.7.0&filename=api-gateway-swagger.json)
 
 #### 4.4.3. API Gateway Instance
 
@@ -286,7 +287,6 @@ Context
 
 * Command line requires logical name
 
-* Internal names can appear in logs
 
 Command line
 
@@ -313,16 +313,15 @@ Context
 * And could be used as KPS
 * Cassandra is supported by Axway as part of the solution
 * See docs.axway.com here for management documentation  
-Need a working link.....This is not working: https://docs.axway.com/bundle/axway-open-docs/page/docs/cass_admin/cassandra_manage/index.html
+[Command line](https://docs.axway.com/bundle/axway-open-docs/page/docs/cass_admin/admin_cassandra_classic/cassandra_manage/index.html)
 
-Command line
 
 * Executable  
 `cassandra/bin/cassandra`
 
 * Start  
-`cassandra -f`  
-> `/home/axway/install/quickstart/cassandra/bin/cassandra -f`
+`cassandra -f &`  
+> `/home/axway/install/quickstart/cassandra/bin/cassandra -f &`
 
 * Stop (cf documentation)  
 `kill <<pid>>`
@@ -346,12 +345,6 @@ Recommended run order
 1. Cassandra
 2. ANM
 3. Instances
-
-
-
-
-
-
 
 ### 4.5. Post installation steps
 
@@ -377,15 +370,15 @@ Recommended run order
     * Or start these in this order
 
 * Connect to API Gateway Manager
-    * `https://myhost:8090`
+    * `https://api-env.demo.axway.com:8090`
     * Default login: `admin/changeme`
 
 * Connect to API Manager
-    * `https://myhost:8075`
+    * `https://api-env.demo.axway.com:8075`
     * Default login: `apiadmin/changeme`
 
 * Call healthcheck API
-    * `curl http://myhost:8080/healthcheck`  
+    * `curl http://api-env.demo.axway.com:8080/healthcheck`  
 
 
 ### 4.7. Containerized installation
@@ -396,8 +389,7 @@ Recommended run order
 
     * Helm charts (AWS, Azure, Google, Openshift, minikube,…)
 
-* Official documentation  
-https://docs.axway.com/bundle/axway-open-docs/page/docs/apim_installation/apigw_containers/index.html
+* [Official documentation](https://docs.axway.com/bundle/axway-open-docs/page/docs/apim_installation/apigw_containers/index.html)
 
 
 ## 5. Conclusion
