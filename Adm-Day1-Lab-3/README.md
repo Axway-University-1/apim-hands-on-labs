@@ -2,8 +2,8 @@
 
 | Average time required to complete this lab | 90 minutes |
 | ---- | ---- |
-| Lab last updated | March 2024 |
-| Lab last tested | March 2024 |
+| Lab last updated | Jan 2025 |
+| Lab last tested | Jan 2025 |
 
 Welcome to the API Gateway Docker Installation Lab! In this session, we will explore the process of installing the Axway API Gateway, API Manager, and Cassandra in a containerized environment. Throughout this lab, you will be provided with step-by-step instructions to install and configure these components using Docker images, offering you a hands-on experience in setting up an API Management solution in a virtualized environment.
 
