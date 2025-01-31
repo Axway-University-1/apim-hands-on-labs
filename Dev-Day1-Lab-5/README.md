@@ -1,9 +1,9 @@
 # API Testing
 
-| Average time required to complete this lab | 20 minutes |
+| Average time required to complete this lab | 30 minutes |
 | ---- | ---- |
-| Lab last updated | December 2024 |
-| Lab last tested | December 2024 |
+| Lab last updated | Jan 2025 |
+| Lab last tested | Jan 2025 |
 
 Welcome to the API Testing lab! In this session, we will delve into the essential aspects of API testing using API Manager and API Portal. This hands-on experience will equip you with the knowledge and skills necessary to effectively test APIs, a crucial aspect of modern software development. Throughout this lab, you will not only learn how to test APIs using API Management interfaces but also explore other common methods such as browser testing, and command-line testing.
 
@@ -11,14 +11,25 @@ By the end of this session, you will have a solid understanding of how to test A
 
 ## Index
 
-- [1. Learning Objectives](#1-learning-objectives)
-- [2. Test from API Management interfaces](#2-test-from-api-management-interfaces)
-- [3. Test from Postman](#3-test-from-postman)
-- [4. Test from your Browser](#4-test-from-your-browser)
-- [5. Test from the Command Line](#5-test-from-the-command-line)
-- [6. Activity Troubleshooting](#6-activity-troubleshooting)
-- [7. Solutions](#7-solutions)
-- [8. Conclusion](#8-conclusion)
+- [API Testing](#api-testing)
+  - [Index](#index)
+  - [1. Learning Objectives](#1-learning-objectives)
+  - [2. Test from API Management interfaces](#2-test-from-api-management-interfaces)
+    - [2.1. Try-out API method - from API Portal and API Manager](#21-try-out-api-method---from-api-portal-and-api-manager)
+      - [2.1.1 With API Portal](#211-with-api-portal)
+      - [2.1.2. With API Manager](#212-with-api-manager)
+  - [3. Test from Postman](#3-test-from-postman)
+    - [3.1 Test postman call to API Manager](#31-test-postman-call-to-api-manager)
+  - [4. Test from your browser](#4-test-from-your-browser)
+  - [5. Test from the command line](#5-test-from-the-command-line)
+  - [6. Activity troubleshooting](#6-activity-troubleshooting)
+  - [7. Solutions](#7-solutions)
+    - [7.1. Test from API Management interfaces - API Portal](#71-test-from-api-management-interfaces---api-portal)
+    - [7.2. Test from API Management interfaces - API Manager](#72-test-from-api-management-interfaces---api-manager)
+    - [7.3. Test from a browser](#73-test-from-a-browser)
+    - [7.4. Test from the command line](#74-test-from-the-command-line)
+    - [7.5. Test from Postman](#75-test-from-postman)
+  - [8. Conclusion](#8-conclusion)
 
 ## 1. Learning Objectives
 
@@ -64,17 +75,11 @@ StockQuote is a trading API providing the value of a company stock
 ## 3. Test from Postman
 
 **Task**: Test the Stockquote API with Postman.
-
+### 3.1 Test postman call to API Manager
 * Open Postman from the Desktop shortcut
     - You need not sign up. If you get a Sign up screen, you can just close it.   
 * Invoke `https://api-env.demo.axway.com:8065/stockquote/rest?symbol=GOOG`
 * Set the header `KeyId=<API key from API Manager or Portal>`. Refer to 2.1.1 or 2.1.2 sections above to connect to API Manager or Portal.
-
-
-![Alt text](images/image22.png)
-* You should get a 200 response
-
-![Alt text](images/image23.png)
 
 ## 4. Test from your browser
 
@@ -164,8 +169,9 @@ The API Gateway has an API to test the connection to an API Gateway instance cal
 
 ![Alt text](images/image30.png)
 
-* Click on **Try it out** under the **GET** method
 * Add the query parameter **GOOG** for the symbol and execute the Get method
+* Click on **Try it out** under the **GET** method
+
 
 ![Alt text](images/image31.png)
 
@@ -232,13 +238,26 @@ If the result is not 200 OK, check that backend services have been started.
     * You should see the result:
     ![Alt text](images/image38.png)
 
-* Type `curl -k -H "Content-Type: application/json" -X POST --data '{“buyStockSymbol” : ”1”}' http://api-env.demo.axway.com:5080/mockup/stockpurchase/rest?symbol=GOOG` in the terminal
+* Type `curl -k -H "Content-Type: application/json" -X POST --data '{“buyStockSymbol” : ”1”}' http://api-env.demo.axway.com:5080/mockup/stockpurchase/rest?symbol=GOOG` in the terminal. This api call is directly  to the backend (port 5080) without api key.
 
     * You should see the result:  
     `{"OrderResult": "Stockquote purchased",
   "Stock": “GOOG"}`
     ![alt text](images/image41.png)
 
+### 7.5. Test from Postman
+**Task**: Test the Stockquote API with Postman.
+
+* Open Postman from the Desktop shortcut
+    - You need not sign up. If you get a Sign up screen, you can just close it.   
+* Invoke `https://api-env.demo.axway.com:8065/stockquote/rest?symbol=GOOG`
+* Set the header `KeyId=<API key from API Manager or Portal>`. Refer to 2.1.1 or 2.1.2 sections above to connect to API Manager or Portal.
+
+
+![Alt text](images/image22.png)
+* You should get a 200 response
+
+![Alt text](images/image23.png)
 ## 8. Conclusion
 
 You now know how to test the APIs using API Portal and API Manager. You can also now use CURL commands for unit testing or automation of testing.
