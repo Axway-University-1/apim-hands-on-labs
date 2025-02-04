@@ -587,7 +587,7 @@ Let’s understand how we can use this command line option:
 
 16.	Click **API → Frontend API**
 
-17.	Click **oms1.1.json**
+17.	Notice the Created on field for oms1.1 must be todays date and approximately the current time. Click **oms1.1**
 
     ![Alt text](images/image035.png) 
 
@@ -603,7 +603,7 @@ Let’s understand how we can use this command line option:
 
     ![Alt text](images/image038.png) 
 
-
+** Sometimes the Status Code is 0 because of javascript Core errors. 
 
 
 
