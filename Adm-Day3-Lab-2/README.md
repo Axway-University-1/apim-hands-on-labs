@@ -89,6 +89,10 @@ In this task, you are required to
 
 #### 2.1.2. Using kpsadmin tool for restore
 
+Open API Manager (https://api-env.demo.axway.com:8075) and go to settings --> Key Property Store --> QuickStart --> HeroesCharactersRegistery. You can see a data inside this table. 
+
+![Alt text](images/image15.png)
+
 * Run kpsadmin tool in interactive mode
 
 * Pick option 10 to clear a table that you’ve just backed up  
