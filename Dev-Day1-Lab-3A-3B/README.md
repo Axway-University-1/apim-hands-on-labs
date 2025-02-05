@@ -544,7 +544,7 @@ In the registration screen of the API Portal:
 * Enter **gabriel@demo.axway.com** in the field **Email**
 * Enter **Techlabs99*** in the field **Password** 
 * Enter **Techlabs99*** in the field **Confirm Password**
-* In the field **Organization Code (optional)**, use the registration code obtained previously in section 5.3.
+* In the field **Organization Code (optional)**, use the registration code obtained previously in section 5.3. Ensure you copy the full code (usually 32 characters long)
 * Accept the Terms & Conditions and Privacy Policy by checking the boxes
 * Click **Sign up** to register
 
