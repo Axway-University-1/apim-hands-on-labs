@@ -70,9 +70,6 @@ The following are the goals to be achieved:
 ## 5. Solution
 
 * Open **Policy Studio**
-
-![Alt text](images/image25.png)
-
 * Open **QuickStart** project
 
 ![Alt text](images/image26.png)
@@ -120,9 +117,6 @@ The following are the goals to be achieved:
 
 ![Alt text](images/image34.png)
 
-![Alt text](images/image35.png)
-
-![Alt text](images/image36.png)
 
 * Connect to **API Manager**  
 `apiadmin/changeme`
@@ -134,6 +128,9 @@ The following are the goals to be achieved:
 
 
 ![Alt text](images/image38.png)
+
+Browse to /home/axway/demo/data/api_library and select oms_v1.json
+
 ![alt text](images/image52.png)
 
 * Name the backend API as `OMS v1.2`

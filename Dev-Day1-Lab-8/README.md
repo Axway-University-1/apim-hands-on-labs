@@ -11,11 +11,15 @@ As technology evolves rapidly, organizations must adapt by efficiently managing 
 
 ## Index
 
-- [1. Learning Objectives](#1-learning-objectives)
-- [2. Scenario Introduction](#2-scenario-introduction)
-- [3. Creation of an API](#3-creation-of-an-api)
-- [4. Solutions](#4-solutions)
-- [5. Conclusion](#5-conclusion)
+- [API lifecycle management using API Manager](#api-lifecycle-management-using-api-manager)
+  - [Index](#index)
+  - [1. Learning objectives](#1-learning-objectives)
+  - [2. Scenario introduction](#2-scenario-introduction)
+  - [3. Creation of an API](#3-creation-of-an-api)
+    - [3.1. API Lifecycle](#31-api-lifecycle)
+    - [3.2. Live and scheduled end-of-life](#32-live-and-scheduled-end-of-life)
+  - [4. Solutions](#4-solutions)
+  - [5. Conclusion](#5-conclusion)
 
 ## 1. Learning objectives
 
@@ -162,9 +166,9 @@ API consumers would like to get the quote for a given date in addition to a give
     * Click on **add image** and add the stockquote image from `Home > demo/data/images/Stockquote.jpg`
     * Click **Save**
 
+
+  
 ![Alt text](images/image27.png)
-
-
 
 * Go to **API > API Catalog**
     * Click on **Stockquote v2**
@@ -194,6 +198,7 @@ Let’s grant him access!
 
 * Login into API manager with `apiadmin/changeme`
 * Select `Stockquote v2` from **Frontend API**
+* Publish the Stockquote V2 2.0 API
 * Click `Manage selected`
 * Select `Grant access`
 * Grant API access to `The following organizations`

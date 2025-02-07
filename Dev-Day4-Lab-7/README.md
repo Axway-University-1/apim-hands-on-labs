@@ -69,7 +69,7 @@ For this lab we are going to disable or uncheck `Check that the SSL certificateâ
 * Click **OK**
 
 * Now you should see your new **TLS Lab** listener listed like the screenshot below.  
-Save and deploy your configuration
+**Save** and **deploy** your configuration
 
 ![Alt text](images/image18.png)
 

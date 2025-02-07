@@ -2,8 +2,8 @@
 
 | Average time required to complete this lab | 20 minutes |
 | ---- | ---- |
-| Lab last updated | March 2024 |
-| Lab last tested | March 2024 |
+| Lab last updated | Feb 2025 |
+| Lab last tested | Feb 2025 |
 
 In this lab, we will navigate the roles of key components such as the Resource Server (API Manager), Authorization Server (API Gateway), and Client Application (API Portal). By immersing ourselves in a hypothetical scenario of a company providing an API to external developers, we will unravel the steps involved in virtualizing APIs and configuring OAuth authentication settings. Get ready to embark on a journey that will equip you with the skills and knowledge to effectively implement OAuth authentication within API Management environments.
 
@@ -80,7 +80,7 @@ It is easy. Try it before looking at the solution!
 
 * Connect to API Manager `https://api-env.demo.axway.com:8075/` as `apiadmin/changeme` 
 
-* Virtualize an API, for example `OMS V1.1` (oms_v1.json located in TechLabs Resources)  
+* Use the existing `OMS V1.1` API.   
 You can get some help to virtualize an API thanks to Amplify API Management demo guide
 
 * Configure the Frontend API, Inbound tab, to use Oauth. In the popup, keep all options as default.
@@ -111,20 +111,27 @@ You can get some help to virtualize an API thanks to Amplify API Management dem
 
 ![Alt text](images/image29.png)
 
-* Add **OAuth** credentials in the Application **Authentication** tab
+* Add **OAuth** credentials in the Application **Authentication** section
 
 
 ![Alt text](images/image30.png)
 
 ### API Portal - Test the OMS API
 
-* Go to **API Catalog**, using **APIs** menu item
+* Go to **API Catalog**, using **APIs** menu item and choose OMS V1.1
 
 ![Alt text](images/image31.png)
 
-* Select the OAuth Client generated in the application, request a token, add an `orderID` and try out the API method `GET`
+* Click on **Methods** tab and choose Authorize.
+![Alt text][images/image31.2.png]
 
-![Alt text](images/image32.png)
+Choose **select all** and **Authorize**
+
+![Alt text](images/image31.2.png)
+
+*  Select **Get** and **Try it out** and enter 123123 in the order id field and choose **Execute**
+* 
+![Alt text](images/image31.3.png)
 
 * Congratulations, you have obtained the resource!
 
@@ -169,12 +176,22 @@ You can get some help to virtualize an API thanks to Amplify API Management dem
 
 * Test the API. If Dave authorizes READ resources, he will only have access to “read” method and will get a “401” “scope not valid” error for the “submit” method.
 
-* If Dave authorizes WRITE resources, he will only have access to “submit” method and will get an error for “read” method.
-
+* Choose Flow: clientCredentials and select resource.READ. Dave authorizes READ resource, he will only have access to "read" method and will get an error for "write" method.
+  
+![Alt text](images/image39.png)
 ![Alt text](images/image38.png)
+
+* If Dave authorizes WRITE resources, he will only have access to "write" method and will get a “401” “scope not valid” error for the "get" method.
+* Choose Flow: clientCredentials and select resource.WRITE.Dave authorizes WRITE resources, he will only have access to “submit” method and will get an error for “read” method.
+
+![Alt text](images/image40.png)
+![Alt text](images/image41.png)
 
 
 
 ## 6. Conclusion
 
 API Management solution allows  to easily use OAuth authentication, with API Gateway, API Manager and API Portal
+
+
+[images/image31.2.png]: images/image31.1.png

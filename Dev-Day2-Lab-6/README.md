@@ -79,15 +79,22 @@ Try yourself before looking at the solution!
 
 
 ## 4. Solution 
+### 4.1. Save response message from **SoapUI**
+* In **SoapUI**, right click on the response message from the `getBillStatus` method.
+* Select the **Save As** option
+* Save **response.xml** to your VM desktop
 
-### 4.1. Create a policy
+![Alt text](images/image48.png)
+
+![Alt text](images/image49.png)
+### 4.2. Create a policy
 
 * Create a new container called **Billing** under the **Training** container.
 * Create a policy **BillingRest** in container **Training/Billing**
 
 ![Alt text](images/image02.png)
 
-### 4.2. Get parameters
+### 4.3. Get parameters
 
 * Validate/retrieve parameters with a **Validate REST filter**
 * Follow the screenshot to add **URI Template** and the **Request Parameter**
@@ -99,7 +106,7 @@ Try yourself before looking at the solution!
 
 ![Alt text](images/image41.png)
 
-### 4.3. Set SOAP message
+### 4.4. Set SOAP message
 
 * On previous filter, drag and drop **Set Message** filter
 * Set content type to `application/xml` 
@@ -110,7 +117,7 @@ Try yourself before looking at the solution!
 
 ![Alt text](images/image43.png)
 
-### 4.4. Add HTTP header
+### 4.5. Add HTTP header
 
 * On previous filter, drag and drop  **Add HTTP Header** filter 
 * Set HTTP Header Name to **SOAPAction**
@@ -119,7 +126,7 @@ Try yourself before looking at the solution!
 
 ![Alt text](images/image44.png)
 
-### 4.5. Connect to URL
+### 4.6. Connect to URL
 
 * On previous filter, drag and drop **Connect to URL** filter
 * Set URL to `http://api-env:5080/BillingService`
@@ -128,7 +135,7 @@ Try yourself before looking at the solution!
 
 ![Alt text](images/image45.png)
 
-### 4.6. Transformation policy
+### 4.7. Transformation policy
 
 * Create a policy called “Transformation” in container Training/Billing  
 *A policy dedicated for transformation will provide more flexibility*
@@ -147,14 +154,7 @@ Try yourself before looking at the solution!
 * Create an Xpath:
     * Click on “…” 
 
-### 4.7. Save response message from **SoapUI**
-* In **SoapUI**, right click on the response message from the `getBillStatus` method.
-* Select the **Save As** option
-* Save **response.xml** to your VM desktop
 
-![Alt text](images/image48.png)
-
-![Alt text](images/image49.png)
 
 ### 4.8. Retrieve **status** from message
 * Right click on **Attribute Locations**
