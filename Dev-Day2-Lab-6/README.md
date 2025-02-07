@@ -2,8 +2,8 @@
 
 | Average time required to complete this lab | 45 minutes |
 | ---- | ---- |
-| Lab last updated | December 2024 |
-| Lab last tested | December 2024 |
+| Lab last updated | Feb 2025 |
+| Lab last tested | Feb 2025 |
 
 In this lab, we'll delve into the world of API mediation using Policy Studio. The focus of this session is on restifying a SOAP Web Service, a crucial skill in modern API management. 
 
