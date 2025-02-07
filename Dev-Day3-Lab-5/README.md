@@ -216,7 +216,6 @@ Let’s create a variable for each one
 ![Alt text](images/image42.png)
 
 * Add **JSON Path** filter for extracting info
-    * `message`
     * `paymentDate`
     * `status`
 * See how JSON paths are defined

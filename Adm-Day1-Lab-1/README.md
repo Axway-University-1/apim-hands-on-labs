@@ -70,8 +70,8 @@ With command line, used for automation
 `axway/axway`
 
 * Installation kit:
-    * Installer : `/home/axway/Desktop/APIGateway_7.7.20240830_Install_linux-x86-64_BN04.run`
-    * License(s) : `/home/axway/demo/data/licenses/classic/multiple.lic`
+    * Installer : `/home/axway/Desktop/APIGateway_7.7.<releasedate>_Install_linux-x86-64_BN<buildnumber>.run`
+    * License(s) : `/home/axway/demo/data/licenses/classic`
 
 * Installation folder:  
 `mkdir -p /home/axway/install/quickstart`
