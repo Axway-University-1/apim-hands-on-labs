@@ -143,7 +143,7 @@ docker container logs anm
 Execute the following command.
 
 ```
-docker container run -d --network training -p 8075:8075 -p 8065:8065 -p 8080:8080 --name gateway -v /home/axway/demo/data/licenses/docker:/opt/Axway/apigateway/conf/licenses -v /opt/Axway/merge:/merge -e ACCEPT_GENERAL_CONDITIONS=yes -e EMT_ANM_HOSTS=anm:8090 -e CASS_HOST=cassandra -e CASS_KEYSPACE=training_api_kps -e CASS_TKEYSAPCE=t_training_api_kps -e CASS_PORT=9042 -e CASS_USERNAME=cassandra -e CASS_PASSWORD=cassandra docker.repository.axway.com/apigateway-docker-prod/7.7/gateway:7.7.0.20240830-4-BN0145-ubi9
+docker container run -d --network training -p 8075:8075 -p 8065:8065 -p 8080:8080 --name gateway -v /home/axway/demo/data/licenses/docker:/opt/Axway/apigateway/conf/licenses -v /opt/Axway/merge:/merge -e ACCEPT_GENERAL_CONDITIONS=yes -e EMT_ANM_HOSTS=anm:8090 -e CASS_HOST=cassandra -e CASS_KEYSPACE=training_api_kps -e CASS_TKEYSPACE=t_training_api_kps -e CASS_PORT=9042 -e CASS_USERNAME=cassandra -e CASS_PASSWORD=cassandra docker.repository.axway.com/apigateway-docker-prod/7.7/gateway:7.7.0.20240830-4-BN0145-ubi9
 ```
 
 Attributes
