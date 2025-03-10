@@ -148,6 +148,9 @@ The API Gateway has an API to test the connection to an API Gateway instance cal
 
 ### 7.1. Test from API Management interfaces - API Portal
 
+Start APIM components. 
+
+![Alt text](images/image25.1.png)
 * Connect to API Portal with `anna/anna`: `https://api-env.demo.axway.com/`
 * In Applications tab, create an application to define rights for API Stockquote called `Stockquote app`
 * Select Stockquote API and click **Next**

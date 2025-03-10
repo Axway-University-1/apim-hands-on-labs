@@ -150,31 +150,37 @@ In this task, you will
 ![Alt text](images/image18.png)
 
 
-#### 2.2.3. Perform a snapshot of one Cassandra keyspace
+#### 2.2.3. List the snapshots
+```
+./nodetool -h ::FFFF:127.0.0.1 listsnapshots
+```
+![Alt text](images/image18.1.png)
 
-* Clear all previous snapshots  
-    ```
-    ./nodetool -h ::FFFF:127.0.0.1 clearsnapshot -- x<DOMAIN_ID>_<GROUP_ID>
-    ```
-![Alt text](images/image19.png)
 
-* Verify that there is no more snapshots directories  
-    ```
-    find ../data/data/x<DOMAIN_ID>_<GROUP_ID> -name snapshots
-    ```
-![Alt text](images/image20.png)
+* Create a snapshot
+```
+./nodetool -h ::FFFF:127.0.0.1 snapshot -t NEW_SNAPSHOT -- x6375dd4f_aa30_48d3_b21a_c17a1622fd14_group_2
+```
+![Alt text](images/image18.2.png)
 
-* Take a snapshot of one keyspace  
-    ```
-    ./nodetool -h ::FFFF:127.0.0.1 snapshot -t NEW_SNAPSHOT -- x<DOMAIN_ID>_<GROUP_ID>
-    ```
-![Alt text](images/image21.png)
 
-* Verify that the new snapshots directories have been created  
-    ```
-    find ../data/data/x<DOMAIN_ID>_<GROUP_ID> -name NEW_SNAPSHOT
-    ```
-![Alt text](images/image22.png)
+*   List snapshots again. This must show the snapshot you have taken earlier.
+``` 
+./nodetool -h ::FFFF:127.0.0.1 listsnapshots
+```
+![Alt text](images/image18.3.png)
+
+*    Clear the newly created snapshot
+```
+./nodetool -h ::FFFF:127.0.0.1 clearsnapshot -t NEW_SNAPSHOT
+```
+![Alt text](images/image18.4.png)
+
+*     List the snapshot again and no more snapshots show up. 
+```
+./nodetool -h ::FFFF:127.0.0.1 listsnapshots
+```
+![Alt text](images/image18.5.png)
 
 
 ## 3. Conclusion
