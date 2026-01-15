@@ -89,7 +89,7 @@ In this task, you are required to
 
 #### 2.1.2. Using kpsadmin tool for restore
 
-Open API Manager (https://api-env.demo.axway.com:8075) and go to settings --> Key Property Store --> QuickStart --> HeroesCharactersRegistery. You can see a data inside this table. 
+Open API Gateway Manager (https://api-env.demo.axway.com:8090) and go to settings --> Key Property Store --> QuickStart --> HeroesCharactersRegistery. You can see a data inside this table. 
 
 ![Alt text](images/image15.png)
 

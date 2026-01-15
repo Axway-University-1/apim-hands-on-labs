@@ -295,11 +295,11 @@ Command line
 
 * Stop  
 `startinstance -n "QuickStart Server" -g "QuickStart Group" -k`
-> /home/axway/install/quickstart/apigateway/posix/bin/startinstance -n "QuickStart Server" -g "QuickStart Group" -k
+> `/home/axway/install/quickstart/apigateway/posix/bin/startinstance -n "QuickStart Server" -g "QuickStart Group" -k`
 
 * Start  
 `startinstance -n "QuickStart Server" -g "QuickStart Group" -d`
-> /home/axway/install/quickstart/apigateway/posix/bin/startinstance -n "QuickStart Server" -g "QuickStart Group" -d
+> `/home/axway/install/quickstart/apigateway/posix/bin/startinstance -n "QuickStart Server" -g "QuickStart Group" -d`
 
 * Status  
 `ps -eaf | grep -i "QuickStart Server"`  

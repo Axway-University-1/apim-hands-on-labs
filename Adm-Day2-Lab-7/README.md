@@ -329,7 +329,10 @@ Open the following file to see the current values for our target API Gateway:
 
 3.	Find the `env.PORT.TRAFFIC` variable and change its value to `8082`.
 
-4.	Add a new HTTPS port as shown in the screen capture:
+4.	Add a new HTTPS port as shown below:
+
+    ```env.PORT.TRAFFIC.HTTPS=8443```
+
     ![Alt text](images/image026.png) 
 
 5.	With this change, after changes have been deployed in the next chapter, you will access your policies through HTTP port 8082. For example:

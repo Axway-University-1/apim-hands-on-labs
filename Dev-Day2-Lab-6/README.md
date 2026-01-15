@@ -56,7 +56,6 @@ Virtualize Billing SOAP service and provide a REST interface
 * Request: `GET /bill/status?order=${id}`
 
 * Response:  
-If id < 1000, then
 ```json
 {
 	"status": "OK",
@@ -121,7 +120,7 @@ Try yourself before looking at the solution!
 
 * On previous filter, drag and drop  **Add HTTP Header** filter 
 * Set HTTP Header Name to **SOAPAction**
-* Set HTTP Header Value to `“getBillStatus”`. Make sure to include the double quotes
+* Set HTTP Header Value to `"getBillStatus"`. Make sure to include the double quotes
 * Click **Finish**
 
 ![Alt text](images/image44.png)

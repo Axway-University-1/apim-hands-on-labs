@@ -135,10 +135,7 @@ Let’s create a variable for each one
 
 * A REST business service declared in API Manager
 
-* Test the API with API key in **API Portal**
-
-
-![Alt text](images/image34.png)
+## ![Alt text](images/image34.png)
 
 ## 3. Solution
 
