@@ -17,6 +17,7 @@ Welcome to the APIM CLI Lab! In this session, you'll delve into how to use the c
     - [2.2 Task 2: Import an API to API Manager using APIM CLI](#22-task-2-import-an-api-to-api-manager-using-apim-cli)
     - [2.3 Task 3: Export an API using APIM CLI to a config file](#23-task-3-export-an-api-using-apim-cli-to-a-config-file)
     - [2.4 Task 4: Change the API definition](#24-task-4-change-the-api-definition)
+    - [2.5 Task 5: Delete the API](#25-task-5-delete-the-api)
   - [3. Conclusion](#3-conclusion)
 
 ## 1. Learning objectives
@@ -48,6 +49,7 @@ Run the following command to list all APIs:
 ```bash
 apim api get -s api-env
 ```
+![apim api -s api-env](images/image0002.png)
 
 You should see a list of all APIs currently managed by your APIM instance.
 
@@ -107,6 +109,8 @@ apim api get -s api-env
 
 You should now see the OMS API in the list.
 
+![OMS shows up in api list](images/image0003.png)
+
 ### 2.3 Task 3: Export an API using APIM CLI to a config file
 
 In this task, you'll export the OMS API definition to a configuration file.
@@ -117,12 +121,13 @@ In this task, you'll export the OMS API definition to a configuration file.
 apim api get -s api-env
 ```
 
-Look for the OMS API in the list and note its ID (e.g., `0fd392aa-7c4b-42a6-84e8-585c423101c8`).
+Look for the OMS API in the list and note its ID (e.g., `cdf72ae3-363b-40ae-a863-e94ea93a1cef`).
 
 **Step 2:** Export the API definition using its ID:
 
 ```bash
-apim api get -s api-env -id 0fd392aa-7c4b-42a6-84e8-585c423101c8 -o json
+apim api get -s api-env -id cdf72ae3-363b-40ae-a863-e94ea93a1cef -o json
+
 ```
 
 This command creates a folder (oms-v1)in the current location containing the complete API definition, including the `api-config.json` file.
@@ -148,7 +153,7 @@ http://backend:8080
 **Step 3:** Import the modified API configuration using the `-force` flag:
 
 ```bash
-apim api import -s api-env -c api-config.json -force
+apim api import -s api-env -c /hom/axway/oms-v1/api-config.json -force
 ```
 
 > **Note:** The `-force` flag is required because changing the backend URL is considered a breaking change.
@@ -158,7 +163,8 @@ apim api import -s api-env -c api-config.json -force
 To export the API again, use the following command:
 
 ```bash
-apim api get -s api-env -ultra -id <id-of-oms-api>```
+apim api get -s api-env -ultra -id <id-of-oms-api>
+```
 
 To view the change in Graphical User Interface (GUI), log in to the API Manager (https://api-env.demo.axway.com:8075), navigate to the "APIs" section --> Frontend API,  and select the "OMS API". Choose the Outbound tab, check the backend URL service to confirm it has been updated to `http://backend:8080`.
 
@@ -174,13 +180,14 @@ In this task, you'll delete the OMS API using the APIM CLI.
 apim api get -s api-env
 ```
 
-Note the API ID (e.g., `3e1cce15-8b2e-4877-8d69-b7af04daa037`).
+Note the API ID (e.g., `cdf72ae3-363b-40ae-a863-e94ea93a1cef`).
 
 **Step 2:** Delete the API using its ID:
 
 ```bash
-apim api delete -s api-env -id 3e1cce15-8b2e-4877-8d69-b7af04daa037
+apim api delete -s api-env -id cdf72ae3-363b-40ae-a863-e94ea93a1cef
 ```
+![API Deleted](images/image0004.png)
 
 **Step 3:** Verify the API has been deleted by listing all APIs:
 
