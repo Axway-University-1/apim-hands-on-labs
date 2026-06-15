@@ -374,7 +374,7 @@ Recommended run order
     * Default login: `admin/changeme`
 
 * Connect to API Manager
-    * `https://api-env:8075`
+    * `https://api-env:8075` 
     * Default login: `apiadmin/changeme`
 
 * Call healthcheck API
