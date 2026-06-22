@@ -370,15 +370,15 @@ Recommended run order
     * Or start these in this order
 
 * Connect to API Gateway Manager
-    * `https://api-env.demo.axway.com:8090`
+    * `https://api-env:8090`
     * Default login: `admin/changeme`
 
 * Connect to API Manager
-    * `https://api-env.demo.axway.com:8075`
+    * `https://api-env:8075` 
     * Default login: `apiadmin/changeme`
 
 * Call healthcheck API
-    * `curl http://api-env.demo.axway.com:8080/healthcheck`  
+    * `curl http://api-env:8080/healthcheck`  
 
 
 ### 4.7. Containerized installation
